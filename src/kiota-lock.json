@@ -2,7 +2,7 @@
   "descriptionHash": "BFEF3A79DC1A8F2C24DB9BA44B260130DE31BCEA59F61307AF6E8957D6E6810F23A98B57A4FCE4809ED196747E87A0A53043D79B6E2D5E8664D7787F2387B45B",
   "descriptionLocation": "../openapi.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.26.0",
+  "kiotaVersion": "1.26.1",
   "clientClassName": "DNSimpleOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.DNSimple.OpenApiClient",
