@@ -4,7 +4,6 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates;
-using Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Collaborators;
 using Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Dnssec;
 using Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Ds_records;
 using Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Email_forwards;
@@ -29,11 +28,6 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Domains.Item
         public global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.CertificatesRequestBuilder Certificates
         {
             get => new global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.CertificatesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The collaborators property</summary>
-        public global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Collaborators.CollaboratorsRequestBuilder Collaborators
-        {
-            get => new global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Collaborators.CollaboratorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dnssec property</summary>
         public global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Dnssec.DnssecRequestBuilder Dnssec
