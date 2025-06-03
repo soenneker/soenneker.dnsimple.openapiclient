@@ -22,7 +22,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
 #else
         public string Content { get; set; }
 #endif
-        /// <summary>A date-time value formatted as ISO 8601.</summary>
+        /// <summary>A date-time value, representing when the entry was created, formatted as ISO 8601.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The id property</summary>
         public int? Id { get; set; }
@@ -38,11 +38,11 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         public int? Priority { get; set; }
         /// <summary>The template_id property</summary>
         public int? TemplateId { get; set; }
-        /// <summary>The ttl property</summary>
+        /// <summary>The Time To Live (TTL) value for the entry, in seconds.</summary>
         public int? Ttl { get; set; }
         /// <summary>Supported DNS record types for templates.</summary>
         public global::Soenneker.DNSimple.OpenApiClient.Models.TemplateRecordType? Type { get; set; }
-        /// <summary>A date-time value formatted as ISO 8601.</summary>
+        /// <summary>A date-time value, representing when the entry was last updated, formatted as ISO 8601.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.TemplateRecord"/> and sets the default values.

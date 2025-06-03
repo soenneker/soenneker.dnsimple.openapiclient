@@ -19,7 +19,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The contact_id property</summary>
         public int? ContactId { get; set; }
-        /// <summary>A date-time value formatted as ISO 8601.</summary>
+        /// <summary>A date-time value, representing when the entry was created, formatted as ISO 8601.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The domain_id property</summary>
         public int? DomainId { get; set; }
@@ -39,7 +39,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         public bool? RegistryOwnerChange { get; set; }
         /// <summary>The state property</summary>
         public global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChange_state? State { get; set; }
-        /// <summary>A date-time value formatted as ISO 8601.</summary>
+        /// <summary>A date-time value, representing when the entry was last updated, formatted as ISO 8601.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChange"/> and sets the default values.

@@ -38,7 +38,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         /// <summary>The contact_id property</summary>
         [Obsolete("")]
         public int? ContactId { get; set; }
-        /// <summary>A date-time value formatted as ISO 8601.</summary>
+        /// <summary>A date-time value, representing when the entry was created, formatted as ISO 8601.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The csr property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -66,7 +66,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
 #endif
         /// <summary>The state property</summary>
         public global::Soenneker.DNSimple.OpenApiClient.Models.Certificate_state? State { get; set; }
-        /// <summary>A date-time value formatted as ISO 8601.</summary>
+        /// <summary>A date-time value, representing when the entry was last updated, formatted as ISO 8601.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The years property</summary>
         public int? Years { get; set; }

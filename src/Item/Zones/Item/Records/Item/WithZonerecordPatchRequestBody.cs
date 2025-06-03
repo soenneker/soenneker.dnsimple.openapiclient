@@ -49,7 +49,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.Item
 #else
         public List<global::Soenneker.DNSimple.OpenApiClient.Models.ZoneRecordRegion?> Regions { get; set; }
 #endif
-        /// <summary>The ttl property</summary>
+        /// <summary>The Time To Live (TTL) value for the entry, in seconds.</summary>
         public int? Ttl { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.Item.WithZonerecordPatchRequestBody"/> and sets the default values.

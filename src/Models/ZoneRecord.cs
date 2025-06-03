@@ -15,7 +15,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The content property</summary>
+        /// <summary>The content/value of the record (e.g., IP address for A records, hostname for CNAME records).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Content { get; set; }
@@ -23,11 +23,11 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
 #else
         public string Content { get; set; }
 #endif
-        /// <summary>A date-time value formatted as ISO 8601.</summary>
+        /// <summary>A date-time value, representing when the entry was created, formatted as ISO 8601.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>The unique identifier for the record.</summary>
         public int? Id { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>The name of the record (e.g., &quot;www&quot; for www.example.com).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -35,11 +35,11 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>If present represents the zone record this record relates to. The parent record is the master record, when the parent is updated or deleted the related record is also updated or deleted. An examle of child record is the TXT descriptive record created for an ALIAS record.</summary>
+        /// <summary>If present represents the zone record this record relates to. The parent record is the master record, when the parent is updated or deleted the related record is also updated or deleted. An example of child record is the TXT descriptive record created for an ALIAS record.</summary>
         public int? ParentId { get; set; }
-        /// <summary>The priority property</summary>
+        /// <summary>The priority value for MX and SRV records. Lower values have higher priority.</summary>
         public int? Priority { get; set; }
-        /// <summary>The regions property</summary>
+        /// <summary>The regions where this record is active. If empty, the record is active in all regions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.DNSimple.OpenApiClient.Models.ZoneRecordRegion?>? Regions { get; set; }
@@ -49,13 +49,13 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
 #endif
         /// <summary>Returns true if a record is a system generated record and thus is not modifiable.</summary>
         public bool? SystemRecord { get; set; }
-        /// <summary>The ttl property</summary>
+        /// <summary>The Time To Live (TTL) value for the entry, in seconds.</summary>
         public int? Ttl { get; set; }
-        /// <summary>Supported DNS record types at DNSimple. Note that some record types may only be available on specific plans.</summary>
+        /// <summary>The type of DNS record. Supported DNS record types are listed below. Note that some record types may only be available on specific plans.</summary>
         public global::Soenneker.DNSimple.OpenApiClient.Models.ZoneRecordType? Type { get; set; }
-        /// <summary>A date-time value formatted as ISO 8601.</summary>
+        /// <summary>A date-time value, representing when the entry was last updated, formatted as ISO 8601.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The zone_id property</summary>
+        /// <summary>The unique identifier of the zone this record belongs to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ZoneId { get; set; }

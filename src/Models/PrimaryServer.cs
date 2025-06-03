@@ -16,7 +16,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         public int? AccountId { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>A date-time value formatted as ISO 8601.</summary>
+        /// <summary>A date-time value, representing when the entry was created, formatted as ISO 8601.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The id property</summary>
         public int? Id { get; set; }
@@ -46,7 +46,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
 #endif
         /// <summary>The port property</summary>
         public int? Port { get; set; }
-        /// <summary>A date-time value formatted as ISO 8601.</summary>
+        /// <summary>A date-time value, representing when the entry was last updated, formatted as ISO 8601.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.PrimaryServer"/> and sets the default values.

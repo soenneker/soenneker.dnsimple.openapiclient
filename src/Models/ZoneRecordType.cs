@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.DNSimple.OpenApiClient.Models
 {
-    /// <summary>Supported DNS record types at DNSimple. Note that some record types may only be available on specific plans.</summary>
+    /// <summary>The type of DNS record. Supported DNS record types are listed below. Note that some record types may only be available on specific plans.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ZoneRecordType
     {

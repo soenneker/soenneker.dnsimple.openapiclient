@@ -16,7 +16,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The auto_renew property</summary>
         public bool? AutoRenew { get; set; }
-        /// <summary>A date-time value formatted as ISO 8601.</summary>
+        /// <summary>A date-time value, representing when the entry was created, formatted as ISO 8601.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The id property</summary>
         public int? Id { get; set; }
@@ -26,7 +26,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         public int? OldCertificateId { get; set; }
         /// <summary>The state property</summary>
         public global::Soenneker.DNSimple.OpenApiClient.Models.LetsencryptCertificateRenewal_state? State { get; set; }
-        /// <summary>A date-time value formatted as ISO 8601.</summary>
+        /// <summary>A date-time value, representing when the entry was last updated, formatted as ISO 8601.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.LetsencryptCertificateRenewal"/> and sets the default values.

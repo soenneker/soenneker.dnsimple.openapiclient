@@ -15,7 +15,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>A date-time value formatted as ISO 8601.</summary>
+        /// <summary>A date-time value, representing when the entry was created, formatted as ISO 8601.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The domain_id property</summary>
         public int? DomainId { get; set; }
@@ -33,7 +33,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
 #else
         public string State { get; set; }
 #endif
-        /// <summary>A date-time value formatted as ISO 8601.</summary>
+        /// <summary>A date-time value, representing when the entry was last updated, formatted as ISO 8601.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The whois_privacy_id property</summary>
         public int? WhoisPrivacyId { get; set; }

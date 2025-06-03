@@ -49,9 +49,9 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records
 #else
         public List<global::Soenneker.DNSimple.OpenApiClient.Models.ZoneRecordRegion?> Regions { get; set; }
 #endif
-        /// <summary>The ttl property</summary>
+        /// <summary>The Time To Live (TTL) value for the entry, in seconds.</summary>
         public int? Ttl { get; set; }
-        /// <summary>Supported DNS record types at DNSimple. Note that some record types may only be available on specific plans.</summary>
+        /// <summary>The type of DNS record. Supported DNS record types are listed below. Note that some record types may only be available on specific plans.</summary>
         public global::Soenneker.DNSimple.OpenApiClient.Models.ZoneRecordType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsPostRequestBody"/> and sets the default values.

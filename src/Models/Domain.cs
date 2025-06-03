@@ -19,7 +19,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The auto_renew property</summary>
         public bool? AutoRenew { get; set; }
-        /// <summary>A date-time value formatted as ISO 8601.</summary>
+        /// <summary>A date-time value, representing when the entry was created, formatted as ISO 8601.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>A nullable date-time value. The value can be null, when present the value is formatted according to the ISO 8601 specification.</summary>
         public DateTimeOffset? ExpiresAt { get; set; }
@@ -49,7 +49,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
 #else
         public string UnicodeName { get; set; }
 #endif
-        /// <summary>A date-time value formatted as ISO 8601.</summary>
+        /// <summary>A date-time value, representing when the entry was last updated, formatted as ISO 8601.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.Domain"/> and sets the default values.

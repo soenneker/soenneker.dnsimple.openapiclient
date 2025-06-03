@@ -18,13 +18,13 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         public bool? AutoRenew { get; set; }
         /// <summary>The certificate_id property</summary>
         public int? CertificateId { get; set; }
-        /// <summary>A date-time value formatted as ISO 8601.</summary>
+        /// <summary>A date-time value, representing when the entry was created, formatted as ISO 8601.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The id property</summary>
         public int? Id { get; set; }
         /// <summary>The state property</summary>
         public global::Soenneker.DNSimple.OpenApiClient.Models.LetsencryptCertificatePurchase_state? State { get; set; }
-        /// <summary>A date-time value formatted as ISO 8601.</summary>
+        /// <summary>A date-time value, representing when the entry was last updated, formatted as ISO 8601.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.LetsencryptCertificatePurchase"/> and sets the default values.

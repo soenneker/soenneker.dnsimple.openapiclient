@@ -16,7 +16,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The auto_renew property</summary>
         public bool? AutoRenew { get; set; }
-        /// <summary>A date-time value formatted as ISO 8601.</summary>
+        /// <summary>A date-time value, representing when the entry was created, formatted as ISO 8601.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The domain_id property</summary>
         public int? DomainId { get; set; }
@@ -34,7 +34,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
 #else
         public string StatusDescription { get; set; }
 #endif
-        /// <summary>A date-time value formatted as ISO 8601.</summary>
+        /// <summary>A date-time value, representing when the entry was last updated, formatted as ISO 8601.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The whois_privacy property</summary>
         public bool? WhoisPrivacy { get; set; }
