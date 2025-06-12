@@ -97,6 +97,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Auto_rene
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -115,6 +116,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Auto_rene
 #endif
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
