@@ -22,6 +22,10 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         public bool? Idn { get; set; }
         /// <summary>The minimum_registration property</summary>
         public int? MinimumRegistration { get; set; }
+        /// <summary>maximum number of name servers required for this TLD</summary>
+        public int? NameServerMax { get; set; }
+        /// <summary>minimum number of name servers required for this TLD</summary>
+        public int? NameServerMin { get; set; }
         /// <summary>true if DNSimple supports registrations for this TLD</summary>
         public bool? RegistrationEnabled { get; set; }
         /// <summary>true if DNSimple supports renewals for this TLD</summary>
@@ -69,6 +73,8 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
                 { "dnssec_interface_type", n => { DnssecInterfaceType = n.GetEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.TLD_dnssec_interface_type>(); } },
                 { "idn", n => { Idn = n.GetBoolValue(); } },
                 { "minimum_registration", n => { MinimumRegistration = n.GetIntValue(); } },
+                { "name_server_max", n => { NameServerMax = n.GetIntValue(); } },
+                { "name_server_min", n => { NameServerMin = n.GetIntValue(); } },
                 { "registration_enabled", n => { RegistrationEnabled = n.GetBoolValue(); } },
                 { "renewal_enabled", n => { RenewalEnabled = n.GetBoolValue(); } },
                 { "tld", n => { TldProp = n.GetStringValue(); } },
@@ -88,6 +94,8 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.TLD_dnssec_interface_type>("dnssec_interface_type", DnssecInterfaceType);
             writer.WriteBoolValue("idn", Idn);
             writer.WriteIntValue("minimum_registration", MinimumRegistration);
+            writer.WriteIntValue("name_server_max", NameServerMax);
+            writer.WriteIntValue("name_server_min", NameServerMin);
             writer.WriteBoolValue("registration_enabled", RegistrationEnabled);
             writer.WriteBoolValue("renewal_enabled", RenewalEnabled);
             writer.WriteStringValue("tld", TldProp);
