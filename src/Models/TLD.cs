@@ -22,7 +22,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         public bool? Idn { get; set; }
         /// <summary>The minimum_registration property</summary>
         public int? MinimumRegistration { get; set; }
-        /// <summary>maximum number of name servers required for this TLD</summary>
+        /// <summary>maximum number of name servers allowed for this TLD</summary>
         public int? NameServerMax { get; set; }
         /// <summary>minimum number of name servers required for this TLD</summary>
         public int? NameServerMin { get; set; }
