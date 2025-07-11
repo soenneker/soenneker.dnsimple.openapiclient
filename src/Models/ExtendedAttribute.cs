@@ -40,6 +40,14 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
 #endif
         /// <summary>The required property</summary>
         public bool? Required { get; set; }
+        /// <summary>The title property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Title { get; set; }
+#nullable restore
+#else
+        public string Title { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.ExtendedAttribute"/> and sets the default values.
         /// </summary>
@@ -69,6 +77,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "options", n => { Options = n.GetCollectionOfObjectValues<global::Soenneker.DNSimple.OpenApiClient.Models.ExtendedAttributeOption>(global::Soenneker.DNSimple.OpenApiClient.Models.ExtendedAttributeOption.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "required", n => { Required = n.GetBoolValue(); } },
+                { "title", n => { Title = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -82,6 +91,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.DNSimple.OpenApiClient.Models.ExtendedAttributeOption>("options", Options);
             writer.WriteBoolValue("required", Required);
+            writer.WriteStringValue("title", Title);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

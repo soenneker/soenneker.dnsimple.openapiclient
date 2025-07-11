@@ -14,6 +14,34 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Templates.Item.Records
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The content property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Content { get; set; }
+#nullable restore
+#else
+        public string Content { get; set; }
+#endif
+        /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
+        /// <summary>The priority property</summary>
+        public int? Priority { get; set; }
+        /// <summary>The ttl property</summary>
+        public int? Ttl { get; set; }
+        /// <summary>The type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Templates.Item.Records.RecordsPostRequestBody"/> and sets the default values.
         /// </summary>
@@ -39,6 +67,11 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Templates.Item.Records
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "content", n => { Content = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "priority", n => { Priority = n.GetIntValue(); } },
+                { "ttl", n => { Ttl = n.GetIntValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +81,11 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Templates.Item.Records
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("content", Content);
+            writer.WriteStringValue("name", Name);
+            writer.WriteIntValue("priority", Priority);
+            writer.WriteIntValue("ttl", Ttl);
+            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

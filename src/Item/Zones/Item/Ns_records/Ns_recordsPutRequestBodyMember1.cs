@@ -5,39 +5,47 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.Item
+namespace Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithZonerecordDeleteRequestBody : IAdditionalDataHolder, IParsable
+    public partial class Ns_recordsPutRequestBodyMember1 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The integrated_zones property</summary>
+        /// <summary>The ns_names property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? IntegratedZones { get; set; }
+        public List<string>? NsNames { get; set; }
 #nullable restore
 #else
-        public List<int?> IntegratedZones { get; set; }
+        public List<string> NsNames { get; set; }
+#endif
+        /// <summary>The ns_set_ids property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<int?>? NsSetIds { get; set; }
+#nullable restore
+#else
+        public List<int?> NsSetIds { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.Item.WithZonerecordDeleteRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records.Ns_recordsPutRequestBodyMember1"/> and sets the default values.
         /// </summary>
-        public WithZonerecordDeleteRequestBody()
+        public Ns_recordsPutRequestBodyMember1()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.Item.WithZonerecordDeleteRequestBody"/></returns>
+        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records.Ns_recordsPutRequestBodyMember1"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.Item.WithZonerecordDeleteRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records.Ns_recordsPutRequestBodyMember1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.Item.WithZonerecordDeleteRequestBody();
+            return new global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records.Ns_recordsPutRequestBodyMember1();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,7 +55,8 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "integrated_zones", n => { IntegratedZones = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
+                { "ns_names", n => { NsNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "ns_set_ids", n => { NsSetIds = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +66,8 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.Item
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<int?>("integrated_zones", IntegratedZones);
+            writer.WriteCollectionOfPrimitiveValues<string>("ns_names", NsNames);
+            writer.WriteCollectionOfPrimitiveValues<int?>("ns_set_ids", NsSetIds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

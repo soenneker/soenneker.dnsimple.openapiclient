@@ -17,7 +17,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Dns_analytics
         public int? AccountId { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>A date value formatted as ISO 8601.</summary>
+        /// <summary>A nullable date-time value. The value can be null, when present the value is formatted according to the ISO 8601 specification.</summary>
         public Date? EndDate { get; set; }
         /// <summary>Grouping applied to the returned data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,7 +39,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Dns_analytics
 #else
         public string Sort { get; set; }
 #endif
-        /// <summary>A date value formatted as ISO 8601.</summary>
+        /// <summary>A nullable date-time value. The value can be null, when present the value is formatted according to the ISO 8601 specification.</summary>
         public Date? StartDate { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Dns_analytics.Dns_analyticsGetResponse_query"/> and sets the default values.
