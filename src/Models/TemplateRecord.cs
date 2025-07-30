@@ -35,7 +35,13 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The priority property</summary>
-        public int? Priority { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Priority { get; set; }
+#nullable restore
+#else
+        public string Priority { get; set; }
+#endif
         /// <summary>The template_id property</summary>
         public int? TemplateId { get; set; }
         /// <summary>The Time To Live (TTL) value for the entry, in seconds.</summary>
@@ -73,7 +79,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "priority", n => { Priority = n.GetIntValue(); } },
+                { "priority", n => { Priority = n.GetStringValue(); } },
                 { "template_id", n => { TemplateId = n.GetIntValue(); } },
                 { "ttl", n => { Ttl = n.GetIntValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.TemplateRecordType>(); } },
@@ -91,7 +97,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteIntValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteIntValue("priority", Priority);
+            writer.WriteStringValue("priority", Priority);
             writer.WriteIntValue("template_id", TemplateId);
             writer.WriteIntValue("ttl", Ttl);
             writer.WriteEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.TemplateRecordType>("type", Type);
