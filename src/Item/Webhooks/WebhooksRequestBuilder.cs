@@ -30,19 +30,6 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Webhooks
                 return new global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.Item.WithWebhookItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Soenneker.DNSimple.OpenApiClient.item.webhooks.item collection</summary>
-        /// <param name="position">The webhoook id</param>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.Item.WithWebhookItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.Item.WithWebhookItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("webhook", position);
-                return new global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.Item.WithWebhookItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -67,34 +54,15 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Webhooks
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksGetResponse?> GetAsWebhooksGetResponseAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksRequestBuilder.WebhooksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksRequestBuilder.WebhooksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksGetResponse> GetAsWebhooksGetResponseAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksRequestBuilder.WebhooksRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksRequestBuilder.WebhooksRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksGetResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// List the webhooks in the account.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsWebhooksGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksRequestBuilder.WebhooksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksRequestBuilder.WebhooksRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Registers a webhook endpoint.
@@ -106,11 +74,11 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Webhooks
         /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Webhooks400Error">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksPostResponse?> PostAsWebhooksPostResponseAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksPostResponse?> PostAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksPostResponse> PostAsWebhooksPostResponseAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksPostResponse> PostAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -120,32 +88,6 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Webhooks
                 { "400", global::Soenneker.DNSimple.OpenApiClient.Models.Webhooks400Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksPostResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Registers a webhook endpoint.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Webhooks400Error">When receiving a 400 status code</exception>
-        [Obsolete("This method is obsolete. Use PostAsWebhooksPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksResponse?> PostAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksResponse> PostAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Soenneker.DNSimple.OpenApiClient.Models.Webhooks400Error.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List the webhooks in the account.
@@ -204,35 +146,8 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Webhooks
         public partial class WebhooksRequestBuilderGetQueryParameters 
         {
             /// <summary>Sort results. Default sorting is by name ascending.</summary>
-            [Obsolete("This property is deprecated, use SortAsGetSortQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("sort")]
-            public string? Sort { get; set; }
-#nullable restore
-#else
-            [QueryParameter("sort")]
-            public string Sort { get; set; }
-#endif
-            /// <summary>Sort results. Default sorting is by name ascending.</summary>
-            [QueryParameter("sort")]
-            public global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.GetSortQueryParameterType? SortAsGetSortQueryParameterType { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WebhooksRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.WebhooksRequestBuilder.WebhooksRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WebhooksRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
+            public global::Soenneker.DNSimple.OpenApiClient.Item.Webhooks.GetSortQueryParameterType? Sort { get; set; }
         }
     }
 }

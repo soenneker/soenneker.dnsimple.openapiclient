@@ -30,19 +30,6 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrat
                 return new global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrations.Item.WithDomainregistrationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Soenneker.DNSimple.OpenApiClient.item.registrar.domains.item.registrations.item collection</summary>
-        /// <param name="position">The domain registration id</param>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrations.Item.WithDomainregistrationItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrations.Item.WithDomainregistrationItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("domainregistration", position);
-                return new global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrations.Item.WithDomainregistrationItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrations.RegistrationsRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -69,11 +56,11 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrat
         /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Registrations400Error">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrations.RegistrationsPostResponse?> PostAsRegistrationsPostResponseAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrations.RegistrationsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrations.RegistrationsPostResponse?> PostAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrations.RegistrationsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrations.RegistrationsPostResponse> PostAsRegistrationsPostResponseAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrations.RegistrationsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrations.RegistrationsPostResponse> PostAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrations.RegistrationsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -83,32 +70,6 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrat
                 { "400", global::Soenneker.DNSimple.OpenApiClient.Models.Registrations400Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrations.RegistrationsPostResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrations.RegistrationsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Registers a domain name.Your account must be active for this command to complete successfully. You will be automatically charged the registration fee upon successful registration, so please be careful with this command.When registering a domain using Solo or Teams subscription, the DNS servicesfor the zone will be automatically enabled and this will be charged on yourfollowing subscription renewal invoices.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrations.RegistrationsResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Registrations400Error">When receiving a 400 status code</exception>
-        [Obsolete("This method is obsolete. Use PostAsRegistrationsPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrations.RegistrationsResponse?> PostAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrations.RegistrationsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrations.RegistrationsResponse> PostAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrations.RegistrationsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Soenneker.DNSimple.OpenApiClient.Models.Registrations400Error.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrations.RegistrationsResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrations.RegistrationsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Registers a domain name.Your account must be active for this command to complete successfully. You will be automatically charged the registration fee upon successful registration, so please be careful with this command.When registering a domain using Solo or Teams subscription, the DNS servicesfor the zone will be automatically enabled and this will be charged on yourfollowing subscription renewal invoices.
@@ -140,14 +101,6 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrat
         public global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrations.RegistrationsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrations.RegistrationsRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RegistrationsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

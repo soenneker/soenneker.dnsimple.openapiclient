@@ -64,11 +64,11 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item
         /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.WithContact404Error">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item.WithContactGetResponse?> GetAsWithContactGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item.WithContactGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item.WithContactGetResponse> GetAsWithContactGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item.WithContactGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -77,30 +77,6 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item
                 { "404", global::Soenneker.DNSimple.OpenApiClient.Models.WithContact404Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item.WithContactGetResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item.WithContactGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves the details of an existing contact.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item.WithContactResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.WithContact404Error">When receiving a 404 status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsWithContactGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item.WithContactResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item.WithContactResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "404", global::Soenneker.DNSimple.OpenApiClient.Models.WithContact404Error.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item.WithContactResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item.WithContactResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates the contact details.
@@ -113,11 +89,11 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item
         /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.WithContact404Error">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item.WithContactPatchResponse?> PatchAsWithContactPatchResponseAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item.WithContactPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item.WithContactPatchResponse?> PatchAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item.WithContactPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item.WithContactPatchResponse> PatchAsWithContactPatchResponseAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item.WithContactPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item.WithContactPatchResponse> PatchAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item.WithContactPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -128,34 +104,6 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item
                 { "404", global::Soenneker.DNSimple.OpenApiClient.Models.WithContact404Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item.WithContactPatchResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item.WithContactPatchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Updates the contact details.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item.WithContactResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.WithContact400Error">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.WithContact404Error">When receiving a 404 status code</exception>
-        [Obsolete("This method is obsolete. Use PatchAsWithContactPatchResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item.WithContactResponse?> PatchAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item.WithContactPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item.WithContactResponse> PatchAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item.WithContactPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Soenneker.DNSimple.OpenApiClient.Models.WithContact400Error.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.DNSimple.OpenApiClient.Models.WithContact404Error.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item.WithContactResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item.WithContactResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Permanently deletes a contact from the account.
@@ -225,30 +173,6 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item
         public global::Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item.WithContactItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.DNSimple.OpenApiClient.Item.Contacts.Item.WithContactItemRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithContactItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithContactItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithContactItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

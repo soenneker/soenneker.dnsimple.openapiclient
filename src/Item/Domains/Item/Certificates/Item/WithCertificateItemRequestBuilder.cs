@@ -54,11 +54,11 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item
         /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.WithCertificate404Error">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item.WithCertificateGetResponse?> GetAsWithCertificateGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item.WithCertificateGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item.WithCertificateGetResponse> GetAsWithCertificateGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item.WithCertificateGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -67,30 +67,6 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item
                 { "404", global::Soenneker.DNSimple.OpenApiClient.Models.WithCertificate404Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item.WithCertificateGetResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item.WithCertificateGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves the details of an existing certificate.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item.WithCertificateResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.WithCertificate404Error">When receiving a 404 status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsWithCertificateGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item.WithCertificateResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item.WithCertificateResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "404", global::Soenneker.DNSimple.OpenApiClient.Models.WithCertificate404Error.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item.WithCertificateResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item.WithCertificateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the details of an existing certificate.
@@ -119,14 +95,6 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item
         public global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item.WithCertificateItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item.WithCertificateItemRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithCertificateItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

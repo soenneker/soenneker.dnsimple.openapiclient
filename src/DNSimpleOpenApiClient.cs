@@ -55,19 +55,6 @@ namespace Soenneker.DNSimple.OpenApiClient
                 return new global::Soenneker.DNSimple.OpenApiClient.Item.WithAccountItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Soenneker.DNSimple.OpenApiClient.item collection</summary>
-        /// <param name="position">The account id</param>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.WithAccountItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Soenneker.DNSimple.OpenApiClient.Item.WithAccountItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("account", position);
-                return new global::Soenneker.DNSimple.OpenApiClient.Item.WithAccountItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.DNSimpleOpenApiClient"/> and sets the default values.
         /// </summary>

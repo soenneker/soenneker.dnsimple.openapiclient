@@ -30,19 +30,6 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records
                 return new global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.Item.WithZonerecordItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Soenneker.DNSimple.OpenApiClient.item.zones.item.records.item collection</summary>
-        /// <param name="position">The zone record id</param>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.Item.WithZonerecordItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.Item.WithZonerecordItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("zonerecord", position);
-                return new global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.Item.WithZonerecordItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -67,34 +54,15 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsGetResponse?> GetAsRecordsGetResponseAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsRequestBuilder.RecordsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsRequestBuilder.RecordsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsGetResponse> GetAsRecordsGetResponseAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsRequestBuilder.RecordsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsRequestBuilder.RecordsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsGetResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Lists the records for a zone.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsRecordsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsRequestBuilder.RecordsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsRequestBuilder.RecordsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new zone record.
@@ -107,11 +75,11 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records
         /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Records404Error">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsPostResponse?> PostAsRecordsPostResponseAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsPostResponse?> PostAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsPostResponse> PostAsRecordsPostResponseAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsPostResponse> PostAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -122,34 +90,6 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records
                 { "404", global::Soenneker.DNSimple.OpenApiClient.Models.Records404Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsPostResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Creates a new zone record.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Records400Error">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Records404Error">When receiving a 404 status code</exception>
-        [Obsolete("This method is obsolete. Use PostAsRecordsPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsResponse?> PostAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsResponse> PostAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Soenneker.DNSimple.OpenApiClient.Models.Records400Error.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.DNSimple.OpenApiClient.Models.Records404Error.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists the records for a zone.
@@ -228,19 +168,8 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records
             public string NameLike { get; set; }
 #endif
             /// <summary>Sort results. Default sorting is by name ascending.</summary>
-            [Obsolete("This property is deprecated, use SortAsGetSortQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("sort")]
-            public string? Sort { get; set; }
-#nullable restore
-#else
-            [QueryParameter("sort")]
-            public string Sort { get; set; }
-#endif
-            /// <summary>Sort results. Default sorting is by name ascending.</summary>
-            [QueryParameter("sort")]
-            public global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.GetSortQueryParameterType? SortAsGetSortQueryParameterType { get; set; }
+            public global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.GetSortQueryParameterType? Sort { get; set; }
             /// <summary>Only include results with a type field exactly matching the given string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -251,22 +180,6 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records
             [QueryParameter("type")]
             public string Type { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RecordsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.RecordsRequestBuilder.RecordsRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RecordsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

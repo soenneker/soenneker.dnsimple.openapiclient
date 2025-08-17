@@ -43,11 +43,11 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Primaries.Item.Unl
         /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Unlink404Error">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Primaries.Item.Unlink.UnlinkPutResponse?> PutAsUnlinkPutResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Primaries.Item.Unlink.UnlinkPutResponse?> PutAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Primaries.Item.Unlink.UnlinkPutResponse> PutAsUnlinkPutResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Primaries.Item.Unlink.UnlinkPutResponse> PutAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPutRequestInformation(requestConfiguration);
@@ -57,32 +57,6 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Primaries.Item.Unl
                 { "404", global::Soenneker.DNSimple.OpenApiClient.Models.Unlink404Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Primaries.Item.Unlink.UnlinkPutResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Primaries.Item.Unlink.UnlinkPutResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Unlink the primary server from a secondary zone.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Primaries.Item.Unlink.UnlinkResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Unlink400Error">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Unlink404Error">When receiving a 404 status code</exception>
-        [Obsolete("This method is obsolete. Use PutAsUnlinkPutResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Primaries.Item.Unlink.UnlinkResponse?> PutAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Primaries.Item.Unlink.UnlinkResponse> PutAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToPutRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Soenneker.DNSimple.OpenApiClient.Models.Unlink400Error.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.DNSimple.OpenApiClient.Models.Unlink404Error.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Primaries.Item.Unlink.UnlinkResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Primaries.Item.Unlink.UnlinkResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Unlink the primary server from a secondary zone.
@@ -111,14 +85,6 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Primaries.Item.Unl
         public global::Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Primaries.Item.Unlink.UnlinkRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Primaries.Item.Unlink.UnlinkRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class UnlinkRequestBuilderPutRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

@@ -43,11 +43,11 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records
         /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Ns_records404Error">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records.Ns_recordsPutResponse?> PutAsNs_recordsPutResponseAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records.Ns_recordsRequestBuilder.Ns_recordsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records.Ns_recordsPutResponse?> PutAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records.Ns_recordsRequestBuilder.Ns_recordsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records.Ns_recordsPutResponse> PutAsNs_recordsPutResponseAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records.Ns_recordsRequestBuilder.Ns_recordsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records.Ns_recordsPutResponse> PutAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records.Ns_recordsRequestBuilder.Ns_recordsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -57,32 +57,6 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records
                 { "404", global::Soenneker.DNSimple.OpenApiClient.Models.Ns_records404Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records.Ns_recordsPutResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records.Ns_recordsPutResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Updates the zone&apos;s NS records
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records.Ns_recordsResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Ns_records404Error">When receiving a 404 status code</exception>
-        [Obsolete("This method is obsolete. Use PutAsNs_recordsPutResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records.Ns_recordsResponse?> PutAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records.Ns_recordsRequestBuilder.Ns_recordsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records.Ns_recordsResponse> PutAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records.Ns_recordsRequestBuilder.Ns_recordsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "404", global::Soenneker.DNSimple.OpenApiClient.Models.Ns_records404Error.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records.Ns_recordsResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records.Ns_recordsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates the zone&apos;s NS records
@@ -171,14 +145,6 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
                 writer.WriteObjectValue<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records.Ns_recordsPutRequestBodyMember1>(null, NsRecordsPutRequestBodyMember1, NsRecordsPutRequestBodyMember2);
             }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Ns_recordsRequestBuilderPutRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

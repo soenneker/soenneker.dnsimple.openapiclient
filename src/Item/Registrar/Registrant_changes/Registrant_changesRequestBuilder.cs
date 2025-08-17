@@ -36,19 +36,6 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes
                 return new global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Item.WithRegistrantchangeItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Soenneker.DNSimple.OpenApiClient.item.registrar.registrant_changes.item collection</summary>
-        /// <param name="position">The registrant change id</param>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Item.WithRegistrantchangeItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Item.WithRegistrantchangeItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("registrantchange", position);
-                return new global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Item.WithRegistrantchangeItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -74,11 +61,11 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes
         /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Registrant_changes400Error">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesGetResponse?> GetAsRegistrant_changesGetResponseAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesRequestBuilder.Registrant_changesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesRequestBuilder.Registrant_changesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesGetResponse> GetAsRegistrant_changesGetResponseAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesRequestBuilder.Registrant_changesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesRequestBuilder.Registrant_changesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -87,30 +74,6 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes
                 { "400", global::Soenneker.DNSimple.OpenApiClient.Models.Registrant_changes400Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesGetResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// List registrant changes in the account.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Registrant_changes400Error">When receiving a 400 status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsRegistrant_changesGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesRequestBuilder.Registrant_changesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesRequestBuilder.Registrant_changesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Soenneker.DNSimple.OpenApiClient.Models.Registrant_changes400Error.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Start registrant change.
@@ -122,11 +85,11 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes
         /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Registrant_changes400Error">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesPostResponse?> PostAsRegistrant_changesPostResponseAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesPostResponse?> PostAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesPostResponse> PostAsRegistrant_changesPostResponseAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesPostResponse> PostAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -136,32 +99,6 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes
                 { "400", global::Soenneker.DNSimple.OpenApiClient.Models.Registrant_changes400Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesPostResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Start registrant change.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Registrant_changes400Error">When receiving a 400 status code</exception>
-        [Obsolete("This method is obsolete. Use PostAsRegistrant_changesPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesResponse?> PostAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesResponse> PostAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Soenneker.DNSimple.OpenApiClient.Models.Registrant_changes400Error.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List registrant changes in the account.
@@ -240,49 +177,11 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes
             public string DomainId { get; set; }
 #endif
             /// <summary>Sort results. Default sorting is by id.</summary>
-            [Obsolete("This property is deprecated, use SortAsGetSortQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("sort")]
-            public string? Sort { get; set; }
-#nullable restore
-#else
-            [QueryParameter("sort")]
-            public string Sort { get; set; }
-#endif
-            /// <summary>Sort results. Default sorting is by id.</summary>
-            [QueryParameter("sort")]
-            public global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.GetSortQueryParameterType? SortAsGetSortQueryParameterType { get; set; }
-            /// <summary>Only include results with a state field exactly matching the given string</summary>
-            [Obsolete("This property is deprecated, use StateAsGetStateQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("state")]
-            public string? State { get; set; }
-#nullable restore
-#else
-            [QueryParameter("state")]
-            public string State { get; set; }
-#endif
+            public global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.GetSortQueryParameterType? Sort { get; set; }
             /// <summary>Only include results with a state field exactly matching the given string</summary>
             [QueryParameter("state")]
-            public global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.GetStateQueryParameterType? StateAsGetStateQueryParameterType { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Registrant_changesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesRequestBuilder.Registrant_changesRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Registrant_changesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
+            public global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.GetStateQueryParameterType? State { get; set; }
         }
     }
 }

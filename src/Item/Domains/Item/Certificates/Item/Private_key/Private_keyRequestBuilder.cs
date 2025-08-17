@@ -42,11 +42,11 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item.P
         /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Private_key404Error">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item.Private_key.Private_keyGetResponse?> GetAsPrivate_keyGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item.Private_key.Private_keyGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item.Private_key.Private_keyGetResponse> GetAsPrivate_keyGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item.Private_key.Private_keyGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -55,30 +55,6 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item.P
                 { "404", global::Soenneker.DNSimple.OpenApiClient.Models.Private_key404Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item.Private_key.Private_keyGetResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item.Private_key.Private_keyGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Gets the PEM-encoded certificate private key.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item.Private_key.Private_keyResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Private_key404Error">When receiving a 404 status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsPrivate_keyGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item.Private_key.Private_keyResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item.Private_key.Private_keyResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "404", global::Soenneker.DNSimple.OpenApiClient.Models.Private_key404Error.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item.Private_key.Private_keyResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item.Private_key.Private_keyResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets the PEM-encoded certificate private key.
@@ -107,14 +83,6 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item.P
         public global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item.Private_key.Private_keyRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item.Private_key.Private_keyRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Private_keyRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }
