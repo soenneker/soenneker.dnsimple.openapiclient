@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Activation;
+using Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Batch;
 using Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Distribution;
 using Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.FileNamespace;
 using Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records;
@@ -26,6 +27,11 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Zones.Item
         public global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Activation.ActivationRequestBuilder Activation
         {
             get => new global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Activation.ActivationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The batch property</summary>
+        public global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Batch.BatchRequestBuilder Batch
+        {
+            get => new global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Batch.BatchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The distribution property</summary>
         public global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Distribution.DistributionRequestBuilder Distribution
