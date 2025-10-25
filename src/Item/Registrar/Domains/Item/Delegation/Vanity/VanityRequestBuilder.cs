@@ -75,7 +75,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Delegatio
         public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Delegation.Vanity.VanityPutResponse> PutAsync(List<string> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -118,7 +118,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Delegatio
         public RequestInformation ToPutRequestInformation(List<string> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

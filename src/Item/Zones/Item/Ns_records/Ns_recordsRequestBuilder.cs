@@ -50,7 +50,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records
         public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records.Ns_recordsPutResponse> PutAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records.Ns_recordsRequestBuilder.Ns_recordsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -73,7 +73,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records
         public RequestInformation ToPutRequestInformation(global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records.Ns_recordsRequestBuilder.Ns_recordsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -118,7 +118,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records.Ns_recordsRequestBuilder.Ns_recordsPutRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
             {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var result = new global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records.Ns_recordsRequestBuilder.Ns_recordsPutRequestBody();
                 result.NsRecordsPutRequestBodyMember1 = new global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records.Ns_recordsPutRequestBodyMember1();
                 result.NsRecordsPutRequestBodyMember2 = new global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records.Ns_recordsPutRequestBodyMember2();
@@ -142,7 +142,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 writer.WriteObjectValue<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Ns_records.Ns_recordsPutRequestBodyMember1>(null, NsRecordsPutRequestBodyMember1, NsRecordsPutRequestBodyMember2);
             }
         }

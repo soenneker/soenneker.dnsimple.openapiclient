@@ -53,7 +53,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesPostRequestBody();
         }
         /// <summary>
@@ -75,7 +75,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesPostRequestBody.Registrant_changesPostRequestBody_contact_id>("contact_id", ContactId);
             writer.WriteObjectValue<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesPostRequestBody.Registrant_changesPostRequestBody_domain_id>("domain_id", DomainId);
             writer.WriteObjectValue<global::Soenneker.DNSimple.OpenApiClient.Models.TradeExtendedAttributes>("extended_attributes", ExtendedAttributes);
@@ -104,7 +104,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesPostRequestBody.Registrant_changesPostRequestBody_contact_id CreateFromDiscriminatorValue(IParseNode parseNode)
             {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesPostRequestBody.Registrant_changesPostRequestBody_contact_id();
                 if(parseNode.GetIntValue() is int integerValue)
@@ -131,7 +131,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(Integer != null)
                 {
                     writer.WriteIntValue(null, Integer);
@@ -165,7 +165,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesPostRequestBody.Registrant_changesPostRequestBody_domain_id CreateFromDiscriminatorValue(IParseNode parseNode)
             {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesPostRequestBody.Registrant_changesPostRequestBody_domain_id();
                 if(parseNode.GetIntValue() is int integerValue)
@@ -192,7 +192,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(Integer != null)
                 {
                     writer.WriteIntValue(null, Integer);

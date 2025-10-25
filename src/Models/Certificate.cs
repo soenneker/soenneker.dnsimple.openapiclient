@@ -84,7 +84,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Soenneker.DNSimple.OpenApiClient.Models.Certificate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.DNSimple.OpenApiClient.Models.Certificate();
         }
         /// <summary>
@@ -118,7 +118,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("alternate_names", AlternateNames);
             writer.WriteEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.Certificate_authority_identifier>("authority_identifier", AuthorityIdentifier);
             writer.WriteBoolValue("auto_renew", AutoRenew);
