@@ -14,7 +14,16 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Pushes
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The new_account_email property</summary>
+        /// <summary>The domain push identifier of the target DNSimple account</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DomainPushIdentifier { get; set; }
+#nullable restore
+#else
+        public string DomainPushIdentifier { get; set; }
+#endif
+        /// <summary>Deprecated - use domain_push_identifier instead</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NewAccountEmail { get; set; }
@@ -47,6 +56,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Pushes
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "domain_push_identifier", n => { DomainPushIdentifier = n.GetStringValue(); } },
                 { "new_account_email", n => { NewAccountEmail = n.GetStringValue(); } },
             };
         }
@@ -57,6 +67,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Pushes
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("domain_push_identifier", DomainPushIdentifier);
             writer.WriteStringValue("new_account_email", NewAccountEmail);
             writer.WriteAdditionalData(AdditionalData);
         }
