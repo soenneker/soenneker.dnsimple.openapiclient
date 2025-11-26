@@ -14,15 +14,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Pushes
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The domain push identifier of the target DNSimple account</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DomainPushIdentifier { get; set; }
-#nullable restore
-#else
-        public string DomainPushIdentifier { get; set; }
-#endif
-        /// <summary>Deprecated - use domain_push_identifier instead</summary>
+        /// <summary>Deprecated - use new_account_identifier instead</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,6 +22,14 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Pushes
 #nullable restore
 #else
         public string NewAccountEmail { get; set; }
+#endif
+        /// <summary>The account identifier of the target DNSimple account</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NewAccountIdentifier { get; set; }
+#nullable restore
+#else
+        public string NewAccountIdentifier { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Pushes.PushesPostRequestBody"/> and sets the default values.
@@ -56,8 +56,8 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Pushes
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "domain_push_identifier", n => { DomainPushIdentifier = n.GetStringValue(); } },
                 { "new_account_email", n => { NewAccountEmail = n.GetStringValue(); } },
+                { "new_account_identifier", n => { NewAccountIdentifier = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +67,8 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Pushes
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("domain_push_identifier", DomainPushIdentifier);
             writer.WriteStringValue("new_account_email", NewAccountEmail);
+            writer.WriteStringValue("new_account_identifier", NewAccountIdentifier);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
