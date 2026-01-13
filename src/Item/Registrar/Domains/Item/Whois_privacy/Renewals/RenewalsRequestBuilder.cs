@@ -41,6 +41,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Whois_pri
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Renewals400Error">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Renewals404Error">When receiving a 404 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Whois_privacy.Renewals.RenewalsPostResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -63,6 +64,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Whois_pri
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -82,6 +84,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Whois_pri
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Whois_privacy.Renewals.RenewalsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Whois_privacy.Renewals.RenewalsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Whois_privacy.Renewals.RenewalsRequestBuilder(rawUrl, RequestAdapter);
