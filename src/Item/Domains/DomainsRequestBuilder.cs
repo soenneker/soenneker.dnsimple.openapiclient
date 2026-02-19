@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.DNSimple.OpenApiClient.Item.Domains.Item;
+using Soenneker.DNSimple.OpenApiClient.Item.Domains.Research;
 using Soenneker.DNSimple.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -18,6 +19,11 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Domains
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DomainsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The research property</summary>
+        public global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Research.ResearchRequestBuilder Research
+        {
+            get => new global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Research.ResearchRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Soenneker.DNSimple.OpenApiClient.item.domains.item collection</summary>
         /// <param name="position">The domain name or id</param>
         /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.WithDomainItemRequestBuilder"/></returns>
