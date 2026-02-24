@@ -8,6 +8,7 @@ using Microsoft.Kiota.Serialization.Multipart;
 using Microsoft.Kiota.Serialization.Text;
 using Soenneker.DNSimple.OpenApiClient.Accounts;
 using Soenneker.DNSimple.OpenApiClient.Item;
+using Soenneker.DNSimple.OpenApiClient.Oauth;
 using Soenneker.DNSimple.OpenApiClient.Services;
 using Soenneker.DNSimple.OpenApiClient.Tlds;
 using Soenneker.DNSimple.OpenApiClient.Whoami;
@@ -27,6 +28,11 @@ namespace Soenneker.DNSimple.OpenApiClient
         public global::Soenneker.DNSimple.OpenApiClient.Accounts.AccountsRequestBuilder Accounts
         {
             get => new global::Soenneker.DNSimple.OpenApiClient.Accounts.AccountsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The oauth property</summary>
+        public global::Soenneker.DNSimple.OpenApiClient.Oauth.OauthRequestBuilder Oauth
+        {
+            get => new global::Soenneker.DNSimple.OpenApiClient.Oauth.OauthRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The services property</summary>
         public global::Soenneker.DNSimple.OpenApiClient.Services.ServicesRequestBuilder Services

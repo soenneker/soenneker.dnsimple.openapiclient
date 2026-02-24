@@ -34,26 +34,8 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
 #endif
         /// <summary>The domain_id property</summary>
         public int? DomainId { get; set; }
-        /// <summary>Deprecated in favor of alias_email.</summary>
-        [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? From { get; set; }
-#nullable restore
-#else
-        public string From { get; set; }
-#endif
         /// <summary>The id property</summary>
         public int? Id { get; set; }
-        /// <summary>Deprecated in favor of destination_email.</summary>
-        [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? To { get; set; }
-#nullable restore
-#else
-        public string To { get; set; }
-#endif
         /// <summary>A date-time value, representing when the entry was last updated, formatted as ISO 8601.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -85,9 +67,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "destination_email", n => { DestinationEmail = n.GetStringValue(); } },
                 { "domain_id", n => { DomainId = n.GetIntValue(); } },
-                { "from", n => { From = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
-                { "to", n => { To = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -102,9 +82,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("destination_email", DestinationEmail);
             writer.WriteIntValue("domain_id", DomainId);
-            writer.WriteStringValue("from", From);
             writer.WriteIntValue("id", Id);
-            writer.WriteStringValue("to", To);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

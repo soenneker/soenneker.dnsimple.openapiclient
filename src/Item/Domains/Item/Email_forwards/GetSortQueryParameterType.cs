@@ -16,21 +16,21 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Email_forwards
         #pragma warning disable CS1591
         IdDesc,
         #pragma warning restore CS1591
-        [EnumMember(Value = "from:asc")]
+        [EnumMember(Value = "alias_email:asc")]
         #pragma warning disable CS1591
-        FromAsc,
+        Alias_emailAsc,
         #pragma warning restore CS1591
-        [EnumMember(Value = "from:desc")]
+        [EnumMember(Value = "alias_email:desc")]
         #pragma warning disable CS1591
-        FromDesc,
+        Alias_emailDesc,
         #pragma warning restore CS1591
-        [EnumMember(Value = "to:asc")]
+        [EnumMember(Value = "destination_email:asc")]
         #pragma warning disable CS1591
-        ToAsc,
+        Destination_emailAsc,
         #pragma warning restore CS1591
-        [EnumMember(Value = "to:desc")]
+        [EnumMember(Value = "destination_email:desc")]
         #pragma warning disable CS1591
-        ToDesc,
+        Destination_emailDesc,
         #pragma warning restore CS1591
     }
 }
