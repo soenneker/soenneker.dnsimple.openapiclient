@@ -1,6 +1,6 @@
 {
   "descriptionHash": "DEECD587E9C9386DE72C38692DA283567C43D49184AAC4B8A0B9C701C49BD0790EB9A1B72EE25BE34F3D6C8F9D87A8FC20B6B9EB7C0D9785CD0C12F3EEB4FC43",
-  "descriptionLocation": "../openapi.json",
+  "descriptionLocation": "../../openapi.json",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.30.0",
   "clientClassName": "DNSimpleOpenApiClient",
