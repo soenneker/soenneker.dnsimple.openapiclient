@@ -32,6 +32,8 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         public float? RestorePrice { get; set; }
         /// <summary>The domain transfer price represented as a USD amount with dollars and cents.</summary>
         public float? TransferPrice { get; set; }
+        /// <summary>The trustee service price represented as a USD amount with dollars and cents.</summary>
+        public float? TrusteeServicePrice { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.DomainPrices"/> and sets the default values.
         /// </summary>
@@ -63,6 +65,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
                 { "renewal_price", n => { RenewalPrice = n.GetFloatValue(); } },
                 { "restore_price", n => { RestorePrice = n.GetFloatValue(); } },
                 { "transfer_price", n => { TransferPrice = n.GetFloatValue(); } },
+                { "trustee_service_price", n => { TrusteeServicePrice = n.GetFloatValue(); } },
             };
         }
         /// <summary>
@@ -78,6 +81,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
             writer.WriteFloatValue("renewal_price", RenewalPrice);
             writer.WriteFloatValue("restore_price", RestorePrice);
             writer.WriteFloatValue("transfer_price", TransferPrice);
+            writer.WriteFloatValue("trustee_service_price", TrusteeServicePrice);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

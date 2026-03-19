@@ -28,6 +28,8 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         public int? RegistrantId { get; set; }
         /// <summary>The state property</summary>
         public global::Soenneker.DNSimple.OpenApiClient.Models.DomainRegistration_state? State { get; set; }
+        /// <summary>The trustee_service property</summary>
+        public bool? TrusteeService { get; set; }
         /// <summary>A date-time value, representing when the entry was last updated, formatted as ISO 8601.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The whois_privacy property</summary>
@@ -64,6 +66,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
                 { "period", n => { Period = n.GetIntValue(); } },
                 { "registrant_id", n => { RegistrantId = n.GetIntValue(); } },
                 { "state", n => { State = n.GetEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.DomainRegistration_state>(); } },
+                { "trustee_service", n => { TrusteeService = n.GetBoolValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "whois_privacy", n => { WhoisPrivacy = n.GetBoolValue(); } },
             };
@@ -82,6 +85,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
             writer.WriteIntValue("period", Period);
             writer.WriteIntValue("registrant_id", RegistrantId);
             writer.WriteEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.DomainRegistration_state>("state", State);
+            writer.WriteBoolValue("trustee_service", TrusteeService);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteBoolValue("whois_privacy", WhoisPrivacy);
             writer.WriteAdditionalData(AdditionalData);

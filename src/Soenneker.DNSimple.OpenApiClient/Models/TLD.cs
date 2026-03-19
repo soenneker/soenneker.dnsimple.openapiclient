@@ -42,6 +42,10 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         public int? TldType { get; set; }
         /// <summary>true if DNSimple supports inbound transfers for this TLD</summary>
         public bool? TransferEnabled { get; set; }
+        /// <summary>true if trustee service is enabled by default for this TLD</summary>
+        public bool? TrusteeServiceEnabled { get; set; }
+        /// <summary>true if trustee is required for this TLD</summary>
+        public bool? TrusteeServiceRequired { get; set; }
         /// <summary>true if the suffix allows WHOIS privacy as a separate component. Some registries may provide WHOIS privacy at registry level by limiting the visibility of certain attributes in the WHOIS response.</summary>
         public bool? WhoisPrivacy { get; set; }
         /// <summary>
@@ -80,6 +84,8 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
                 { "tld", n => { TldProp = n.GetStringValue(); } },
                 { "tld_type", n => { TldType = n.GetIntValue(); } },
                 { "transfer_enabled", n => { TransferEnabled = n.GetBoolValue(); } },
+                { "trustee_service_enabled", n => { TrusteeServiceEnabled = n.GetBoolValue(); } },
+                { "trustee_service_required", n => { TrusteeServiceRequired = n.GetBoolValue(); } },
                 { "whois_privacy", n => { WhoisPrivacy = n.GetBoolValue(); } },
             };
         }
@@ -101,6 +107,8 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
             writer.WriteStringValue("tld", TldProp);
             writer.WriteIntValue("tld_type", TldType);
             writer.WriteBoolValue("transfer_enabled", TransferEnabled);
+            writer.WriteBoolValue("trustee_service_enabled", TrusteeServiceEnabled);
+            writer.WriteBoolValue("trustee_service_required", TrusteeServiceRequired);
             writer.WriteBoolValue("whois_privacy", WhoisPrivacy);
             writer.WriteAdditionalData(AdditionalData);
         }
