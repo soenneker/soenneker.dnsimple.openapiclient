@@ -42,6 +42,8 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Transfers
 #endif
         /// <summary>The ID of an existing contact in your account.</summary>
         public int? RegistrantId { get; set; }
+        /// <summary>Set to true to use a trustee service for the transfer. An extra cost may apply. Default: false.</summary>
+        public bool? TrusteeService { get; set; }
         /// <summary>Set to true will attempt to purchase/enable the whois privacy as part of the transfer. An extra cost may apply. Default: false.</summary>
         public bool? WhoisPrivacy { get; set; }
         /// <summary>
@@ -74,6 +76,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Transfers
                 { "extended_attributes", n => { ExtendedAttributes = n.GetObjectValue<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Transfers.TransfersPostRequestBody_extended_attributes>(global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Transfers.TransfersPostRequestBody_extended_attributes.CreateFromDiscriminatorValue); } },
                 { "premium_price", n => { PremiumPrice = n.GetStringValue(); } },
                 { "registrant_id", n => { RegistrantId = n.GetIntValue(); } },
+                { "trustee_service", n => { TrusteeService = n.GetBoolValue(); } },
                 { "whois_privacy", n => { WhoisPrivacy = n.GetBoolValue(); } },
             };
         }
@@ -89,6 +92,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Transfers
             writer.WriteObjectValue<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Transfers.TransfersPostRequestBody_extended_attributes>("extended_attributes", ExtendedAttributes);
             writer.WriteStringValue("premium_price", PremiumPrice);
             writer.WriteIntValue("registrant_id", RegistrantId);
+            writer.WriteBoolValue("trustee_service", TrusteeService);
             writer.WriteBoolValue("whois_privacy", WhoisPrivacy);
             writer.WriteAdditionalData(AdditionalData);
         }
