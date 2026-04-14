@@ -6,7 +6,6 @@ using Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Authorize_tra
 using Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Auto_renewal;
 using Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Check;
 using Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Delegation;
-using Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Premium_price;
 using Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Prices;
 using Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrations;
 using Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Renewals;
@@ -45,11 +44,6 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item
         public global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Delegation.DelegationRequestBuilder Delegation
         {
             get => new global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Delegation.DelegationRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The premium_price property</summary>
-        public global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Premium_price.Premium_priceRequestBuilder Premium_price
-        {
-            get => new global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Premium_price.Premium_priceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The prices property</summary>
         public global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Prices.PricesRequestBuilder Prices
