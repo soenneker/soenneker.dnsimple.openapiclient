@@ -35,9 +35,6 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
 #else
         public string CommonName { get; set; }
 #endif
-        /// <summary>The contact_id property</summary>
-        [Obsolete("")]
-        public int? ContactId { get; set; }
         /// <summary>A date-time value, representing when the entry was created, formatted as ISO 8601.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The csr property</summary>
@@ -99,7 +96,6 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
                 { "authority_identifier", n => { AuthorityIdentifier = n.GetEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.Certificate_authority_identifier>(); } },
                 { "auto_renew", n => { AutoRenew = n.GetBoolValue(); } },
                 { "common_name", n => { CommonName = n.GetStringValue(); } },
-                { "contact_id", n => { ContactId = n.GetIntValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "csr", n => { Csr = n.GetStringValue(); } },
                 { "domain_id", n => { DomainId = n.GetIntValue(); } },
@@ -123,7 +119,6 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.Certificate_authority_identifier>("authority_identifier", AuthorityIdentifier);
             writer.WriteBoolValue("auto_renew", AutoRenew);
             writer.WriteStringValue("common_name", CommonName);
-            writer.WriteIntValue("contact_id", ContactId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("csr", Csr);
             writer.WriteIntValue("domain_id", DomainId);
