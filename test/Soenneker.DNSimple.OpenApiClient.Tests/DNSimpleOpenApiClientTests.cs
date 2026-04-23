@@ -1,18 +1,17 @@
-﻿using Soenneker.Tests.FixturedUnit;
-using Xunit;
+using Soenneker.Tests.HostedUnit;
 
 namespace Soenneker.DNSimple.OpenApiClient.Tests;
 
-[Collection("Collection")]
-public class DNSimpleOpenApiClientTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public class DNSimpleOpenApiClientTests : HostedUnitTest
 {
 
-    public DNSimpleOpenApiClientTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public DNSimpleOpenApiClientTests(Host host) : base(host)
     {
 
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
 
