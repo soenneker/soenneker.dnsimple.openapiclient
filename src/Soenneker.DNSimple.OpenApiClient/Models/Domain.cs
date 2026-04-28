@@ -41,8 +41,8 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         public int? RegistrantId { get; set; }
         /// <summary>The state property</summary>
         public global::Soenneker.DNSimple.OpenApiClient.Models.Domain_state? State { get; set; }
-        /// <summary>The trustee_service property</summary>
-        public bool? TrusteeService { get; set; }
+        /// <summary>The trustee property</summary>
+        public bool? Trustee { get; set; }
         /// <summary>The unicode_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -88,7 +88,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
                 { "private_whois", n => { PrivateWhois = n.GetBoolValue(); } },
                 { "registrant_id", n => { RegistrantId = n.GetIntValue(); } },
                 { "state", n => { State = n.GetEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.Domain_state>(); } },
-                { "trustee_service", n => { TrusteeService = n.GetBoolValue(); } },
+                { "trustee", n => { Trustee = n.GetBoolValue(); } },
                 { "unicode_name", n => { UnicodeName = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -110,7 +110,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
             writer.WriteBoolValue("private_whois", PrivateWhois);
             writer.WriteIntValue("registrant_id", RegistrantId);
             writer.WriteEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.Domain_state>("state", State);
-            writer.WriteBoolValue("trustee_service", TrusteeService);
+            writer.WriteBoolValue("trustee", Trustee);
             writer.WriteStringValue("unicode_name", UnicodeName);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

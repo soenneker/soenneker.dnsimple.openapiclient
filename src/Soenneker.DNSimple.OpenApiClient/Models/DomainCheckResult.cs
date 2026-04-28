@@ -27,7 +27,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         /// <summary>True if the domain is a premium domain and thus will have a non-standard registration, renewal, and/or transfer fee.</summary>
         public bool? Premium { get; set; }
         /// <summary>True if trustee service is enabled for this domain.</summary>
-        public bool? TrusteeService { get; set; }
+        public bool? Trustee { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.DomainCheckResult"/> and sets the default values.
         /// </summary>
@@ -56,7 +56,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
                 { "available", n => { Available = n.GetBoolValue(); } },
                 { "domain", n => { Domain = n.GetStringValue(); } },
                 { "premium", n => { Premium = n.GetBoolValue(); } },
-                { "trustee_service", n => { TrusteeService = n.GetBoolValue(); } },
+                { "trustee", n => { Trustee = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -69,7 +69,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
             writer.WriteBoolValue("available", Available);
             writer.WriteStringValue("domain", Domain);
             writer.WriteBoolValue("premium", Premium);
-            writer.WriteBoolValue("trustee_service", TrusteeService);
+            writer.WriteBoolValue("trustee", Trustee);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

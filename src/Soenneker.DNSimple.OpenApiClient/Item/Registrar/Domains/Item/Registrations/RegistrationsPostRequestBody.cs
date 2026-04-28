@@ -43,7 +43,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrat
         /// <summary>The ID of an existing contact in your account.</summary>
         public int? RegistrantId { get; set; }
         /// <summary>Set to true will attempt to purchase/enable trustee service as part of the registration. An extra cost may apply. Default: false.</summary>
-        public bool? TrusteeService { get; set; }
+        public bool? Trustee { get; set; }
         /// <summary>Set to true will attempt to purchase/enable the whois privacy as part of the registration. An extra cost may apply. Default: false.</summary>
         public bool? WhoisPrivacy { get; set; }
         /// <summary>
@@ -76,7 +76,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrat
                 { "linked_provider", n => { LinkedProvider = n.GetStringValue(); } },
                 { "premium_price", n => { PremiumPrice = n.GetStringValue(); } },
                 { "registrant_id", n => { RegistrantId = n.GetIntValue(); } },
-                { "trustee_service", n => { TrusteeService = n.GetBoolValue(); } },
+                { "trustee", n => { Trustee = n.GetBoolValue(); } },
                 { "whois_privacy", n => { WhoisPrivacy = n.GetBoolValue(); } },
             };
         }
@@ -92,7 +92,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrat
             writer.WriteStringValue("linked_provider", LinkedProvider);
             writer.WriteStringValue("premium_price", PremiumPrice);
             writer.WriteIntValue("registrant_id", RegistrantId);
-            writer.WriteBoolValue("trustee_service", TrusteeService);
+            writer.WriteBoolValue("trustee", Trustee);
             writer.WriteBoolValue("whois_privacy", WhoisPrivacy);
             writer.WriteAdditionalData(AdditionalData);
         }
