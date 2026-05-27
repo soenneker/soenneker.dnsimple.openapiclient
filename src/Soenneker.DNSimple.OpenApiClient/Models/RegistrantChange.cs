@@ -26,10 +26,10 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         /// <summary>The extended_attributes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.DNSimple.OpenApiClient.Models.TradeExtendedAttributes? ExtendedAttributes { get; set; }
+        public global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChange_extended_attributes? ExtendedAttributes { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.DNSimple.OpenApiClient.Models.TradeExtendedAttributes ExtendedAttributes { get; set; }
+        public global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChange_extended_attributes ExtendedAttributes { get; set; }
 #endif
         /// <summary>The id property</summary>
         public int? Id { get; set; }
@@ -70,7 +70,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
                 { "contact_id", n => { ContactId = n.GetIntValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "domain_id", n => { DomainId = n.GetIntValue(); } },
-                { "extended_attributes", n => { ExtendedAttributes = n.GetObjectValue<global::Soenneker.DNSimple.OpenApiClient.Models.TradeExtendedAttributes>(global::Soenneker.DNSimple.OpenApiClient.Models.TradeExtendedAttributes.CreateFromDiscriminatorValue); } },
+                { "extended_attributes", n => { ExtendedAttributes = n.GetObjectValue<global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChange_extended_attributes>(global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChange_extended_attributes.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "irt_lock_lifted_by", n => { IrtLockLiftedBy = n.GetDateValue(); } },
                 { "registry_owner_change", n => { RegistryOwnerChange = n.GetBoolValue(); } },
@@ -89,7 +89,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
             writer.WriteIntValue("contact_id", ContactId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteIntValue("domain_id", DomainId);
-            writer.WriteObjectValue<global::Soenneker.DNSimple.OpenApiClient.Models.TradeExtendedAttributes>("extended_attributes", ExtendedAttributes);
+            writer.WriteObjectValue<global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChange_extended_attributes>("extended_attributes", ExtendedAttributes);
             writer.WriteIntValue("id", Id);
             writer.WriteDateValue("irt_lock_lifted_by", IrtLockLiftedBy);
             writer.WriteBoolValue("registry_owner_change", RegistryOwnerChange);

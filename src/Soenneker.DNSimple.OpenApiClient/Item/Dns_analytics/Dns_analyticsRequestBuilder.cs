@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.DNSimple.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -35,20 +36,20 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Dns_analytics
         /// <summary>
         /// Queries and returns DNS Analytics data available for the provided query parameters. This API is currently in Public Beta. During the Public Beta period, changes may occur at any time.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Dns_analytics.Dns_analyticsGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.QueryDnsAnalytics200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Dns_analytics.Dns_analyticsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Dns_analytics.Dns_analyticsRequestBuilder.Dns_analyticsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.QueryDnsAnalytics200?> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Dns_analytics.Dns_analyticsRequestBuilder.Dns_analyticsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Dns_analytics.Dns_analyticsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Dns_analytics.Dns_analyticsRequestBuilder.Dns_analyticsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.QueryDnsAnalytics200> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Dns_analytics.Dns_analyticsRequestBuilder.Dns_analyticsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Dns_analytics.Dns_analyticsGetResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Dns_analytics.Dns_analyticsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.QueryDnsAnalytics200>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.QueryDnsAnalytics200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Queries and returns DNS Analytics data available for the provided query parameters. This API is currently in Public Beta. During the Public Beta period, changes may occur at any time.
@@ -85,8 +86,15 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Dns_analytics
         public partial class Dns_analyticsRequestBuilderGetQueryParameters 
         {
             /// <summary>Only include results before the given date. Format is ISO8601 (YYYY-MM-DD). It can be a max of 31 days away from the start_date. If omitted, it defaults to 1 day ago.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("end_date")]
-            public Date? EndDate { get; set; }
+            public string? EndDate { get; set; }
+#nullable restore
+#else
+            [QueryParameter("end_date")]
+            public string EndDate { get; set; }
+#endif
             /// <summary>How to group the results of the account&apos;s DNS analytics. No groupings will be applied by default unless specified. Multiple groupings can be provided, separated by a comma. Applying groupings to the query will add columns to the response payload.</summary>
             [QueryParameter("groupings")]
             public global::Soenneker.DNSimple.OpenApiClient.Item.Dns_analytics.GetGroupingsQueryParameterType? Groupings { get; set; }
@@ -107,8 +115,15 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Dns_analytics
             public string Sort { get; set; }
 #endif
             /// <summary>Only include results after the given date. Format is ISO8601 (YYYY-MM-DD). It can be a max of 31 days away from the end_date. If omitted, it defaults to 31 days ago.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("start_date")]
-            public Date? StartDate { get; set; }
+            public string? StartDate { get; set; }
+#nullable restore
+#else
+            [QueryParameter("start_date")]
+            public string StartDate { get; set; }
+#endif
         }
     }
 }

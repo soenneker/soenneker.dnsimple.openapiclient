@@ -19,10 +19,10 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestError_errors? Errors { get; set; }
+        public global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrors? Errors { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestError_errors Errors { get; set; }
+        public global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrors Errors { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => MessageEscaped ?? string.Empty; }
@@ -59,7 +59,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetObjectValue<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestError_errors>(global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestError_errors.CreateFromDiscriminatorValue); } },
+                { "errors", n => { Errors = n.GetObjectValue<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrors>(global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrors.CreateFromDiscriminatorValue); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
             };
         }
@@ -70,7 +70,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestError_errors>("errors", Errors);
+            writer.WriteObjectValue<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrors>("errors", Errors);
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteAdditionalData(AdditionalData);
         }

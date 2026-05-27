@@ -18,10 +18,10 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Restores
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.DNSimple.OpenApiClient.Models.DomainRestore? Data { get; set; }
+        public global::Soenneker.DNSimple.OpenApiClient.Models.DomainRestoreBody? Data { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.DNSimple.OpenApiClient.Models.DomainRestore Data { get; set; }
+        public global::Soenneker.DNSimple.OpenApiClient.Models.DomainRestoreBody Data { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Restores.RestoresPostResponse"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Restores
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetObjectValue<global::Soenneker.DNSimple.OpenApiClient.Models.DomainRestore>(global::Soenneker.DNSimple.OpenApiClient.Models.DomainRestore.CreateFromDiscriminatorValue); } },
+                { "data", n => { Data = n.GetObjectValue<global::Soenneker.DNSimple.OpenApiClient.Models.DomainRestoreBody>(global::Soenneker.DNSimple.OpenApiClient.Models.DomainRestoreBody.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Restores
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.DNSimple.OpenApiClient.Models.DomainRestore>("data", Data);
+            writer.WriteObjectValue<global::Soenneker.DNSimple.OpenApiClient.Models.DomainRestoreBody>("data", Data);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

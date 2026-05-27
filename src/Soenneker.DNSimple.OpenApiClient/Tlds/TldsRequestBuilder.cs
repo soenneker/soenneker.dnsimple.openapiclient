@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.DNSimple.OpenApiClient.Models;
 using Soenneker.DNSimple.OpenApiClient.Tlds.Item;
 using System.Collections.Generic;
 using System.IO;
@@ -48,20 +49,20 @@ namespace Soenneker.DNSimple.OpenApiClient.Tlds
         /// <summary>
         /// Lists TLDs supported for registration or transfer.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Tlds.TldsGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.ListTlds200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Tlds.TldsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Tlds.TldsRequestBuilder.TldsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.ListTlds200?> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Tlds.TldsRequestBuilder.TldsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Tlds.TldsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Tlds.TldsRequestBuilder.TldsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.ListTlds200> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Tlds.TldsRequestBuilder.TldsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Tlds.TldsGetResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Tlds.TldsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.ListTlds200>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.ListTlds200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists TLDs supported for registration or transfer.

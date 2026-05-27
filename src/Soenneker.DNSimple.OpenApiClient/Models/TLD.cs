@@ -38,7 +38,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
 #else
         public string TldProp { get; set; }
 #endif
-        /// <summary>TLD types are: * 1 - gTLD (global TLD) * 2 - ccTLD (country-code TLD) * 3 - newTLD (new global TLD)</summary>
+        /// <summary>&quot;TLD types are: * 1 - gTLD (global TLD) * 2 - ccTLD (country-code TLD) * 3 - newTLD (new global TLD)&quot;</summary>
         public int? TldType { get; set; }
         /// <summary>true if DNSimple supports inbound transfers for this TLD</summary>
         public bool? TransferEnabled { get; set; }

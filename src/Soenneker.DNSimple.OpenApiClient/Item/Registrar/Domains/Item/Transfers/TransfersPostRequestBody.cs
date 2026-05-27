@@ -22,7 +22,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Transfers
 #else
         public string AuthCode { get; set; }
 #endif
-        /// <summary>Set to true to enable the auto-renewal of the domain. Default: false.</summary>
+        /// <summary>&quot;Set to true to enable the auto-renewal of the domain. Default: false.&quot;</summary>
         public bool? AutoRenew { get; set; }
         /// <summary>Required for TLDs that require extended attributes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -42,9 +42,9 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Transfers
 #endif
         /// <summary>The ID of an existing contact in your account.</summary>
         public int? RegistrantId { get; set; }
-        /// <summary>Set to true to use a trustee service for the transfer. An extra cost may apply. Default: false.</summary>
+        /// <summary>&quot;Set to true to use a trustee service for the transfer. An extra cost may apply. Default: false.&quot;</summary>
         public bool? Trustee { get; set; }
-        /// <summary>Set to true will attempt to purchase/enable the whois privacy as part of the transfer. An extra cost may apply. Default: false.</summary>
+        /// <summary>&quot;Set to true will attempt to purchase/enable the whois privacy as part of the transfer. An extra cost may apply. Default: false.&quot;</summary>
         public bool? WhoisPrivacy { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Transfers.TransfersPostRequestBody"/> and sets the default values.
