@@ -24,7 +24,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         public List<string> AlternateNames { get; set; }
 #endif
         /// <summary>The authority_identifier property</summary>
-        public global::Soenneker.DNSimple.OpenApiClient.Models.Certificate_authority_identifier? AuthorityIdentifier { get; set; }
+        public global::Soenneker.DNSimple.OpenApiClient.Models.CertificateAuthorityIdentifier? AuthorityIdentifier { get; set; }
         /// <summary>The auto_renew property</summary>
         public bool? AutoRenew { get; set; }
         /// <summary>The common_name property</summary>
@@ -62,7 +62,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The state property</summary>
-        public global::Soenneker.DNSimple.OpenApiClient.Models.Certificate_state? State { get; set; }
+        public global::Soenneker.DNSimple.OpenApiClient.Models.CertificateState? State { get; set; }
         /// <summary>A date-time value, representing when the entry was last updated, formatted as ISO 8601.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The years property</summary>
@@ -93,7 +93,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "alternate_names", n => { AlternateNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "authority_identifier", n => { AuthorityIdentifier = n.GetEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.Certificate_authority_identifier>(); } },
+                { "authority_identifier", n => { AuthorityIdentifier = n.GetEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.CertificateAuthorityIdentifier>(); } },
                 { "auto_renew", n => { AutoRenew = n.GetBoolValue(); } },
                 { "common_name", n => { CommonName = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
@@ -103,7 +103,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
                 { "expires_on", n => { ExpiresOn = n.GetDateValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.Certificate_state>(); } },
+                { "state", n => { State = n.GetEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.CertificateState>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "years", n => { Years = n.GetIntValue(); } },
             };
@@ -116,7 +116,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("alternate_names", AlternateNames);
-            writer.WriteEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.Certificate_authority_identifier>("authority_identifier", AuthorityIdentifier);
+            writer.WriteEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.CertificateAuthorityIdentifier>("authority_identifier", AuthorityIdentifier);
             writer.WriteBoolValue("auto_renew", AutoRenew);
             writer.WriteStringValue("common_name", CommonName);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
@@ -126,7 +126,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
             writer.WriteDateValue("expires_on", ExpiresOn);
             writer.WriteIntValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.Certificate_state>("state", State);
+            writer.WriteEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.CertificateState>("state", State);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteIntValue("years", Years);
             writer.WriteAdditionalData(AdditionalData);

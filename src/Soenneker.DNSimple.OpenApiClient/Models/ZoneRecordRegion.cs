@@ -14,35 +14,35 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "SV1")]
         #pragma warning disable CS1591
-        SV1,
+        Sv1,
         #pragma warning restore CS1591
         [EnumMember(Value = "ORD")]
         #pragma warning disable CS1591
-        ORD,
+        Ord,
         #pragma warning restore CS1591
         [EnumMember(Value = "IAD")]
         #pragma warning disable CS1591
-        IAD,
+        Iad,
         #pragma warning restore CS1591
         [EnumMember(Value = "AMS")]
         #pragma warning disable CS1591
-        AMS,
+        Ams,
         #pragma warning restore CS1591
         [EnumMember(Value = "TKO")]
         #pragma warning disable CS1591
-        TKO,
+        Tko,
         #pragma warning restore CS1591
         [EnumMember(Value = "SYD")]
         #pragma warning disable CS1591
-        SYD,
+        Syd,
         #pragma warning restore CS1591
         [EnumMember(Value = "CDG")]
         #pragma warning disable CS1591
-        CDG,
+        Cdg,
         #pragma warning restore CS1591
         [EnumMember(Value = "FRA")]
         #pragma warning disable CS1591
-        FRA,
+        Fra,
         #pragma warning restore CS1591
     }
 }

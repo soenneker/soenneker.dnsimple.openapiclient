@@ -36,27 +36,27 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Distribution
         /// <summary>
         /// Checks if a zone is fully distributed to all our name servers across the globe.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Distribution.DistributionGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.CheckZoneDistribution200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Distribution404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Value404Response">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Error">When receiving a 504 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Distribution.DistributionGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.CheckZoneDistribution200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Distribution.DistributionGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.CheckZoneDistribution200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::Soenneker.DNSimple.OpenApiClient.Models.Distribution404Error.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.DNSimple.OpenApiClient.Models.Value404Response.CreateFromDiscriminatorValue },
                 { "504", global::Soenneker.DNSimple.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Distribution.DistributionGetResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Distribution.DistributionGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.CheckZoneDistribution200Response>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.CheckZoneDistribution200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Checks if a zone is fully distributed to all our name servers across the globe.

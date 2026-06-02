@@ -27,7 +27,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         /// <summary>The registrant_id property</summary>
         public int? RegistrantId { get; set; }
         /// <summary>The state property</summary>
-        public global::Soenneker.DNSimple.OpenApiClient.Models.DomainRegistration_state? State { get; set; }
+        public global::Soenneker.DNSimple.OpenApiClient.Models.DomainRegistrationState? State { get; set; }
         /// <summary>The trustee property</summary>
         public bool? Trustee { get; set; }
         /// <summary>A date-time value, representing when the entry was last updated, formatted as ISO 8601.</summary>
@@ -65,7 +65,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "period", n => { Period = n.GetIntValue(); } },
                 { "registrant_id", n => { RegistrantId = n.GetIntValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.DomainRegistration_state>(); } },
+                { "state", n => { State = n.GetEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.DomainRegistrationState>(); } },
                 { "trustee", n => { Trustee = n.GetBoolValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "whois_privacy", n => { WhoisPrivacy = n.GetBoolValue(); } },
@@ -84,7 +84,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
             writer.WriteIntValue("id", Id);
             writer.WriteIntValue("period", Period);
             writer.WriteIntValue("registrant_id", RegistrantId);
-            writer.WriteEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.DomainRegistration_state>("state", State);
+            writer.WriteEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.DomainRegistrationState>("state", State);
             writer.WriteBoolValue("trustee", Trustee);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteBoolValue("whois_privacy", WhoisPrivacy);

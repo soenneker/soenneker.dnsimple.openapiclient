@@ -49,45 +49,45 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Primaries
         /// <summary>
         /// List the primary servers in the account.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.ListPrimaryServers200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.ListPrimaryServers200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.ListPrimaryServers200?> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Primaries.PrimariesRequestBuilder.PrimariesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.ListPrimaryServers200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Primaries.PrimariesRequestBuilder.PrimariesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.ListPrimaryServers200> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Primaries.PrimariesRequestBuilder.PrimariesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.ListPrimaryServers200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Primaries.PrimariesRequestBuilder.PrimariesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.ListPrimaryServers200>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.ListPrimaryServers200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.ListPrimaryServers200Response>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.ListPrimaryServers200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a primary server into the account.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Primaries.PrimariesPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.CreatePrimaryServer201Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Primaries400Error">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Value400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Primaries.PrimariesPostResponse?> PostAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Primaries.PrimariesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.CreatePrimaryServer201Response?> PostAsync(global::Soenneker.DNSimple.OpenApiClient.Models.PrimaryServerCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Primaries.PrimariesPostResponse> PostAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Primaries.PrimariesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.CreatePrimaryServer201Response> PostAsync(global::Soenneker.DNSimple.OpenApiClient.Models.PrimaryServerCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.DNSimple.OpenApiClient.Models.Primaries400Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.DNSimple.OpenApiClient.Models.Value400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Primaries.PrimariesPostResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Primaries.PrimariesPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.CreatePrimaryServer201Response>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.CreatePrimaryServer201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List the primary servers in the account.
@@ -116,11 +116,11 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Primaries
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Primaries.PrimariesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.DNSimple.OpenApiClient.Models.PrimaryServerCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Primaries.PrimariesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.DNSimple.OpenApiClient.Models.PrimaryServerCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -147,7 +147,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Primaries
         {
             /// <summary>Sort results. Default sorting is ascending by id.</summary>
             [QueryParameter("sort")]
-            public global::Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Primaries.GetSortQueryParameterType? Sort { get; set; }
+            public global::Soenneker.DNSimple.OpenApiClient.Models.SortPrimaryServers? Sort { get; set; }
         }
     }
 }

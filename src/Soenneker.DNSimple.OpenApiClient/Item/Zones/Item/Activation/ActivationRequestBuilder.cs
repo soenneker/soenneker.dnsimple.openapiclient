@@ -36,48 +36,48 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Activation
         /// <summary>
         /// Deactivates DNS services for the zone.Under Solo and Teams plans, active zones are charged when renewing your subscription toDNSimple
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Activation.ActivationDeleteResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.DeactivateZoneService200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Activation404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Value404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Activation.ActivationDeleteResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.DeactivateZoneService200Response?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Activation.ActivationDeleteResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.DeactivateZoneService200Response> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::Soenneker.DNSimple.OpenApiClient.Models.Activation404Error.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.DNSimple.OpenApiClient.Models.Value404Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Activation.ActivationDeleteResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Activation.ActivationDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.DeactivateZoneService200Response>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.DeactivateZoneService200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Activate DNS services for the zone.Under Solo and Teams plans, active zones are charged when renewing your subscription toDNSimple
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Activation.ActivationPutResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.ActivateZoneService200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Activation404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Value404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Activation.ActivationPutResponse?> PutAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.ActivateZoneService200Response?> PutAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Activation.ActivationPutResponse> PutAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.ActivateZoneService200Response> PutAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPutRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::Soenneker.DNSimple.OpenApiClient.Models.Activation404Error.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.DNSimple.OpenApiClient.Models.Value404Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Activation.ActivationPutResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Activation.ActivationPutResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.ActivateZoneService200Response>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.ActivateZoneService200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deactivates DNS services for the zone.Under Solo and Teams plans, active zones are charged when renewing your subscription toDNSimple

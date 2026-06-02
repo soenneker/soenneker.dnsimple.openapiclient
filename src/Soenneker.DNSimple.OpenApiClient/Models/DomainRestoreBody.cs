@@ -21,7 +21,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         /// <summary>The id property</summary>
         public int? Id { get; set; }
         /// <summary>The state property</summary>
-        public global::Soenneker.DNSimple.OpenApiClient.Models.DomainRestoreBody_state? State { get; set; }
+        public global::Soenneker.DNSimple.OpenApiClient.Models.DomainRestoreBodyState? State { get; set; }
         /// <summary>A date-time value, representing when the entry was last updated, formatted as ISO 8601.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "domain_id", n => { DomainId = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.DomainRestoreBody_state>(); } },
+                { "state", n => { State = n.GetEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.DomainRestoreBodyState>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteIntValue("domain_id", DomainId);
             writer.WriteIntValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.DomainRestoreBody_state>("state", State);
+            writer.WriteEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.DomainRestoreBodyState>("state", State);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

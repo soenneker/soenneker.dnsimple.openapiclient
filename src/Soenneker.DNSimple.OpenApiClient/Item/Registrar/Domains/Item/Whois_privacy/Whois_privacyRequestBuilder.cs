@@ -36,48 +36,48 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Whois_pri
         /// <summary>
         /// Disables the WHOIS privacy for the domain.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Whois_privacy.Whois_privacyDeleteResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.DisableWhoisPrivacy200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Whois_privacy404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Value404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Whois_privacy.Whois_privacyDeleteResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.DisableWhoisPrivacy200Response?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Whois_privacy.Whois_privacyDeleteResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.DisableWhoisPrivacy200Response> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::Soenneker.DNSimple.OpenApiClient.Models.Whois_privacy404Error.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.DNSimple.OpenApiClient.Models.Value404Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Whois_privacy.Whois_privacyDeleteResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Whois_privacy.Whois_privacyDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.DisableWhoisPrivacy200Response>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.DisableWhoisPrivacy200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Enables the WHOIS privacy for the domain.Note that if the WHOIS privacy is not purchased for the domain, enabling WHOIS privacy will cause the service to be purchased for a period of 1 year. If WHOIS privacy was previously purchased and disabled, then calling this will enable the WHOIS privacy.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Whois_privacy.Whois_privacyPutResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.EnableWhoisPrivacy200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Whois_privacy404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Value404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Whois_privacy.Whois_privacyPutResponse?> PutAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.EnableWhoisPrivacy200Response?> PutAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Whois_privacy.Whois_privacyPutResponse> PutAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.EnableWhoisPrivacy200Response> PutAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPutRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::Soenneker.DNSimple.OpenApiClient.Models.Whois_privacy404Error.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.DNSimple.OpenApiClient.Models.Value404Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Whois_privacy.Whois_privacyPutResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Whois_privacy.Whois_privacyPutResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.EnableWhoisPrivacy200Response>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.EnableWhoisPrivacy200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Disables the WHOIS privacy for the domain.

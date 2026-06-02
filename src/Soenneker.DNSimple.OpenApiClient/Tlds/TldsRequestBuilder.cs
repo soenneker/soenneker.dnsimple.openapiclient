@@ -49,20 +49,20 @@ namespace Soenneker.DNSimple.OpenApiClient.Tlds
         /// <summary>
         /// Lists TLDs supported for registration or transfer.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.ListTlds200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.ListTlds200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.ListTlds200?> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Tlds.TldsRequestBuilder.TldsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.ListTlds200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Tlds.TldsRequestBuilder.TldsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.ListTlds200> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Tlds.TldsRequestBuilder.TldsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.ListTlds200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Tlds.TldsRequestBuilder.TldsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.ListTlds200>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.ListTlds200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.ListTlds200Response>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.ListTlds200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists TLDs supported for registration or transfer.
@@ -100,7 +100,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Tlds
         {
             /// <summary>Sort results. Default sorting is by tld ascending.</summary>
             [QueryParameter("sort")]
-            public global::Soenneker.DNSimple.OpenApiClient.Tlds.GetSortQueryParameterType? Sort { get; set; }
+            public global::Soenneker.DNSimple.OpenApiClient.Models.SortTlDs? Sort { get; set; }
         }
     }
 }

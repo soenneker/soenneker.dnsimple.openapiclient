@@ -41,7 +41,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         public string Reference { get; set; }
 #endif
         /// <summary>The state property</summary>
-        public global::Soenneker.DNSimple.OpenApiClient.Models.Charge_state? State { get; set; }
+        public global::Soenneker.DNSimple.OpenApiClient.Models.ChargeState? State { get; set; }
         /// <summary>The aggregate amount of all line items, that need to be paid.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,7 +79,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
                 { "invoiced_at", n => { InvoicedAt = n.GetDateTimeOffsetValue(); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.DNSimple.OpenApiClient.Models.ChargeItem>(global::Soenneker.DNSimple.OpenApiClient.Models.ChargeItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.Charge_state>(); } },
+                { "state", n => { State = n.GetEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.ChargeState>(); } },
                 { "total_amount", n => { TotalAmount = n.GetStringValue(); } },
             };
         }
@@ -94,7 +94,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("invoiced_at", InvoicedAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.DNSimple.OpenApiClient.Models.ChargeItem>("items", Items);
             writer.WriteStringValue("reference", Reference);
-            writer.WriteEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.Charge_state>("state", State);
+            writer.WriteEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.ChargeState>("state", State);
             writer.WriteStringValue("total_amount", TotalAmount);
             writer.WriteAdditionalData(AdditionalData);
         }

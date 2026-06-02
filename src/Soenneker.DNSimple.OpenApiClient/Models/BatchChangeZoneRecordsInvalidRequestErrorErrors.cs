@@ -17,26 +17,26 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         /// <summary>The creates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrors_creates>? Creates { get; set; }
+        public List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrorsCreatesItem>? Creates { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrors_creates> Creates { get; set; }
+        public List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrorsCreatesItem> Creates { get; set; }
 #endif
         /// <summary>The deletes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrors_deletes>? Deletes { get; set; }
+        public List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrorsDeletesItem>? Deletes { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrors_deletes> Deletes { get; set; }
+        public List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrorsDeletesItem> Deletes { get; set; }
 #endif
         /// <summary>The updates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrors_updates>? Updates { get; set; }
+        public List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrorsUpdatesItem>? Updates { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrors_updates> Updates { get; set; }
+        public List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrorsUpdatesItem> Updates { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrors"/> and sets the default values.
@@ -63,9 +63,9 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "creates", n => { Creates = n.GetCollectionOfObjectValues<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrors_creates>(global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrors_creates.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "deletes", n => { Deletes = n.GetCollectionOfObjectValues<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrors_deletes>(global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrors_deletes.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "updates", n => { Updates = n.GetCollectionOfObjectValues<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrors_updates>(global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrors_updates.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "creates", n => { Creates = n.GetCollectionOfObjectValues<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrorsCreatesItem>(global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrorsCreatesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "deletes", n => { Deletes = n.GetCollectionOfObjectValues<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrorsDeletesItem>(global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrorsDeletesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "updates", n => { Updates = n.GetCollectionOfObjectValues<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrorsUpdatesItem>(global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrorsUpdatesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -75,9 +75,9 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrors_creates>("creates", Creates);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrors_deletes>("deletes", Deletes);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrors_updates>("updates", Updates);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrorsCreatesItem>("creates", Creates);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrorsDeletesItem>("deletes", Deletes);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsInvalidRequestErrorErrorsUpdatesItem>("updates", Updates);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

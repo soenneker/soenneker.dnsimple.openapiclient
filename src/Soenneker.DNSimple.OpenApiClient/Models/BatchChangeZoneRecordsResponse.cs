@@ -26,10 +26,10 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         /// <summary>Zone records that were deleted</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsResponse_deletes>? Deletes { get; set; }
+        public List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsResponseDeletesItem>? Deletes { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsResponse_deletes> Deletes { get; set; }
+        public List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsResponseDeletesItem> Deletes { get; set; }
 #endif
         /// <summary>Zone records that were updated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,7 +65,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "creates", n => { Creates = n.GetCollectionOfObjectValues<global::Soenneker.DNSimple.OpenApiClient.Models.ZoneRecord>(global::Soenneker.DNSimple.OpenApiClient.Models.ZoneRecord.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "deletes", n => { Deletes = n.GetCollectionOfObjectValues<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsResponse_deletes>(global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsResponse_deletes.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "deletes", n => { Deletes = n.GetCollectionOfObjectValues<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsResponseDeletesItem>(global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsResponseDeletesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "updates", n => { Updates = n.GetCollectionOfObjectValues<global::Soenneker.DNSimple.OpenApiClient.Models.ZoneRecord>(global::Soenneker.DNSimple.OpenApiClient.Models.ZoneRecord.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -77,7 +77,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.DNSimple.OpenApiClient.Models.ZoneRecord>("creates", Creates);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsResponse_deletes>("deletes", Deletes);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsResponseDeletesItem>("deletes", Deletes);
             writer.WriteCollectionOfObjectValues<global::Soenneker.DNSimple.OpenApiClient.Models.ZoneRecord>("updates", Updates);
             writer.WriteAdditionalData(AdditionalData);
         }

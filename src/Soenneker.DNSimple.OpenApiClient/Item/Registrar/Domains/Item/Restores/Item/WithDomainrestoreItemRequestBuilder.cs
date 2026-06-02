@@ -36,27 +36,27 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Restores.
         /// <summary>
         /// Retrieves the details of an existing domain restore.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Restores.Item.WithDomainrestoreGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.GetDomainRestore200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.WithDomainrestore401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.WithDomainrestore404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Value401Response">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Value404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Restores.Item.WithDomainrestoreGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.GetDomainRestore200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Restores.Item.WithDomainrestoreGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.GetDomainRestore200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.DNSimple.OpenApiClient.Models.WithDomainrestore401Error.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.DNSimple.OpenApiClient.Models.WithDomainrestore404Error.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.DNSimple.OpenApiClient.Models.Value401Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.DNSimple.OpenApiClient.Models.Value404Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Restores.Item.WithDomainrestoreGetResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Restores.Item.WithDomainrestoreGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.GetDomainRestore200Response>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.GetDomainRestore200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the details of an existing domain restore.

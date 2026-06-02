@@ -49,27 +49,27 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Transfers
         /// <summary>
         /// Transfers a domain name from another registrar.Your account must be active for this command to complete successfully. You will be automatically charged the 1-year transfer fee upon successful transfer, so please be careful with this command. The transfer may take anywhere from a few minutes up to 7 days.When transfering a domain using Solo or Teams subscription, the DNS servicesfor the zone will be automatically enabled and this will be charged on yourfollowing subscription renewal invoices.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Transfers.TransfersPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.TransferDomain201Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Transfers400Error">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Value400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Transfers.TransfersPostResponse?> PostAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Transfers.TransfersPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.TransferDomain201Response?> PostAsync(global::Soenneker.DNSimple.OpenApiClient.Models.DomainTransferRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Transfers.TransfersPostResponse> PostAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Transfers.TransfersPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.TransferDomain201Response> PostAsync(global::Soenneker.DNSimple.OpenApiClient.Models.DomainTransferRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.DNSimple.OpenApiClient.Models.Transfers400Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.DNSimple.OpenApiClient.Models.Value400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Transfers.TransfersPostResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Transfers.TransfersPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.TransferDomain201Response>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.TransferDomain201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Transfers a domain name from another registrar.Your account must be active for this command to complete successfully. You will be automatically charged the 1-year transfer fee upon successful transfer, so please be careful with this command. The transfer may take anywhere from a few minutes up to 7 days.When transfering a domain using Solo or Teams subscription, the DNS servicesfor the zone will be automatically enabled and this will be charged on yourfollowing subscription renewal invoices.
@@ -79,11 +79,11 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Transfers
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Transfers.TransfersPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.DNSimple.OpenApiClient.Models.DomainTransferRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Transfers.TransfersPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.DNSimple.OpenApiClient.Models.DomainTransferRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

@@ -49,54 +49,54 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Email_forwards
         /// <summary>
         /// Lists email forwards for the domain.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.ListEmailForwards200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.ListEmailForwards200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.ListEmailForwards200400Error">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.ListEmailForwards200404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Value400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Value404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.ListEmailForwards200?> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Email_forwards.Email_forwardsRequestBuilder.Email_forwardsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.ListEmailForwards200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Email_forwards.Email_forwardsRequestBuilder.Email_forwardsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.ListEmailForwards200> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Email_forwards.Email_forwardsRequestBuilder.Email_forwardsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.ListEmailForwards200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Email_forwards.Email_forwardsRequestBuilder.Email_forwardsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.DNSimple.OpenApiClient.Models.ListEmailForwards200400Error.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.DNSimple.OpenApiClient.Models.ListEmailForwards200404Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.DNSimple.OpenApiClient.Models.Value400Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.DNSimple.OpenApiClient.Models.Value404Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.ListEmailForwards200>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.ListEmailForwards200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.ListEmailForwards200Response>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.ListEmailForwards200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new email forward for the domain.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Email_forwards.Email_forwardsPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.CreateEmailForward201Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Email_forwards400Error">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Email_forwards404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Value400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Value404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Email_forwards.Email_forwardsPostResponse?> PostAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Email_forwards.Email_forwardsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.CreateEmailForward201Response?> PostAsync(global::Soenneker.DNSimple.OpenApiClient.Models.EmailForwardCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Email_forwards.Email_forwardsPostResponse> PostAsync(global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Email_forwards.Email_forwardsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.CreateEmailForward201Response> PostAsync(global::Soenneker.DNSimple.OpenApiClient.Models.EmailForwardCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.DNSimple.OpenApiClient.Models.Email_forwards400Error.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.DNSimple.OpenApiClient.Models.Email_forwards404Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.DNSimple.OpenApiClient.Models.Value400Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.DNSimple.OpenApiClient.Models.Value404Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Email_forwards.Email_forwardsPostResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Email_forwards.Email_forwardsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.CreateEmailForward201Response>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.CreateEmailForward201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists email forwards for the domain.
@@ -125,11 +125,11 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Email_forwards
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Email_forwards.Email_forwardsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.DNSimple.OpenApiClient.Models.EmailForwardCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Email_forwards.Email_forwardsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.DNSimple.OpenApiClient.Models.EmailForwardCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -156,7 +156,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Email_forwards
         {
             /// <summary>Sort results. Default sorting is by id.</summary>
             [QueryParameter("sort")]
-            public global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Email_forwards.GetSortQueryParameterType? Sort { get; set; }
+            public global::Soenneker.DNSimple.OpenApiClient.Models.SortEmailForwards? Sort { get; set; }
         }
     }
 }

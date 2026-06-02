@@ -25,7 +25,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         /// <summary>The registrant_id property</summary>
         public int? RegistrantId { get; set; }
         /// <summary>The state property</summary>
-        public global::Soenneker.DNSimple.OpenApiClient.Models.DomainTransfer_state? State { get; set; }
+        public global::Soenneker.DNSimple.OpenApiClient.Models.DomainTransferState? State { get; set; }
         /// <summary>The status_description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,7 +70,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
                 { "domain_id", n => { DomainId = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "registrant_id", n => { RegistrantId = n.GetIntValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.DomainTransfer_state>(); } },
+                { "state", n => { State = n.GetEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.DomainTransferState>(); } },
                 { "status_description", n => { StatusDescription = n.GetStringValue(); } },
                 { "trustee", n => { Trustee = n.GetBoolValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -89,7 +89,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
             writer.WriteIntValue("domain_id", DomainId);
             writer.WriteIntValue("id", Id);
             writer.WriteIntValue("registrant_id", RegistrantId);
-            writer.WriteEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.DomainTransfer_state>("state", State);
+            writer.WriteEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.DomainTransferState>("state", State);
             writer.WriteStringValue("status_description", StatusDescription);
             writer.WriteBoolValue("trustee", Trustee);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

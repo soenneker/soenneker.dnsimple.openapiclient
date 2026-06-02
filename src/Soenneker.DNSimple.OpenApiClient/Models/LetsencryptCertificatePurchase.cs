@@ -23,7 +23,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         /// <summary>The id property</summary>
         public int? Id { get; set; }
         /// <summary>The state property</summary>
-        public global::Soenneker.DNSimple.OpenApiClient.Models.LetsencryptCertificatePurchase_state? State { get; set; }
+        public global::Soenneker.DNSimple.OpenApiClient.Models.LetsencryptCertificatePurchaseState? State { get; set; }
         /// <summary>A date-time value, representing when the entry was last updated, formatted as ISO 8601.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
                 { "certificate_id", n => { CertificateId = n.GetIntValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.LetsencryptCertificatePurchase_state>(); } },
+                { "state", n => { State = n.GetEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.LetsencryptCertificatePurchaseState>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -70,7 +70,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
             writer.WriteIntValue("certificate_id", CertificateId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteIntValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.LetsencryptCertificatePurchase_state>("state", State);
+            writer.WriteEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.LetsencryptCertificatePurchaseState>("state", State);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

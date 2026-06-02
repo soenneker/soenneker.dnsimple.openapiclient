@@ -39,8 +39,8 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Vanity.Item
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.WithDomain400Error">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.WithDomain404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Value400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Value404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -53,35 +53,35 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Vanity.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.DNSimple.OpenApiClient.Models.WithDomain400Error.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.DNSimple.OpenApiClient.Models.WithDomain404Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.DNSimple.OpenApiClient.Models.Value400Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.DNSimple.OpenApiClient.Models.Value404Response.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Enables Vanity Name Servers for the domain.This method sets up the appropriate A and AAAA records for the domain to provide vanity name servers, but it does not change the delegation for the domain. To change the delegation for domains to vanity name servers use the endpoints to Delegate to Vanity Name Servers or Dedelegate from Vanity Name Servers.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Vanity.Item.WithDomainPutResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.EnableVanityNameServers200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.WithDomain400Error">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.WithDomain404Error">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Value400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Value404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Vanity.Item.WithDomainPutResponse?> PutAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.EnableVanityNameServers200Response?> PutAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Vanity.Item.WithDomainPutResponse> PutAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.EnableVanityNameServers200Response> PutAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPutRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.DNSimple.OpenApiClient.Models.WithDomain400Error.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.DNSimple.OpenApiClient.Models.WithDomain404Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.DNSimple.OpenApiClient.Models.Value400Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.DNSimple.OpenApiClient.Models.Value404Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Vanity.Item.WithDomainPutResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Vanity.Item.WithDomainPutResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.EnableVanityNameServers200Response>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.EnableVanityNameServers200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Disables Vanity Name Servers for the domain.This method removes the A and AAAA records required for the domain to provide vanity name servers, but it does not change the delegation for the domain. To change the delegation for domains to vanity name servers use the endpoints to Delegate to Vanity Name Servers or Dedelegate from Vanity Name Servers.

@@ -36,27 +36,27 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Billing.Charges
         /// <summary>
         /// Lists the billing charges for the account.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.ListCharges200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.ListCharges200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.ListCharges200401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.ListCharges200429Error">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Value401Response">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Value429Response">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.ListCharges200?> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Billing.Charges.ChargesRequestBuilder.ChargesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.ListCharges200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Billing.Charges.ChargesRequestBuilder.ChargesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.ListCharges200> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Billing.Charges.ChargesRequestBuilder.ChargesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.ListCharges200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Billing.Charges.ChargesRequestBuilder.ChargesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.DNSimple.OpenApiClient.Models.ListCharges200401Error.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.DNSimple.OpenApiClient.Models.ListCharges200429Error.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.DNSimple.OpenApiClient.Models.Value401Response.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.DNSimple.OpenApiClient.Models.Value429Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.ListCharges200>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.ListCharges200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.ListCharges200Response>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.ListCharges200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists the billing charges for the account.
@@ -104,7 +104,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Billing.Charges
 #endif
             /// <summary>Sort results. Default sorting is by invoiced ascending.</summary>
             [QueryParameter("sort")]
-            public global::Soenneker.DNSimple.OpenApiClient.Item.Billing.Charges.GetSortQueryParameterType? Sort { get; set; }
+            public global::Soenneker.DNSimple.OpenApiClient.Models.SortCharges? Sort { get; set; }
             /// <summary>Only include results after the given date. Format is ISO8601 (YYYY-MM-DD).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

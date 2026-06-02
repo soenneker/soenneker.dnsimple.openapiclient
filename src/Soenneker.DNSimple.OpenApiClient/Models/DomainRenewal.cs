@@ -23,7 +23,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         /// <summary>The period property</summary>
         public int? Period { get; set; }
         /// <summary>The state property</summary>
-        public global::Soenneker.DNSimple.OpenApiClient.Models.DomainRenewal_state? State { get; set; }
+        public global::Soenneker.DNSimple.OpenApiClient.Models.DomainRenewalState? State { get; set; }
         /// <summary>A date-time value, representing when the entry was last updated, formatted as ISO 8601.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
                 { "domain_id", n => { DomainId = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "period", n => { Period = n.GetIntValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.DomainRenewal_state>(); } },
+                { "state", n => { State = n.GetEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.DomainRenewalState>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -70,7 +70,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
             writer.WriteIntValue("domain_id", DomainId);
             writer.WriteIntValue("id", Id);
             writer.WriteIntValue("period", Period);
-            writer.WriteEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.DomainRenewal_state>("state", State);
+            writer.WriteEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.DomainRenewalState>("state", State);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

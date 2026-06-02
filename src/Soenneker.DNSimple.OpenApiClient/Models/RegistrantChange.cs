@@ -26,10 +26,10 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         /// <summary>The extended_attributes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChange_extended_attributes? ExtendedAttributes { get; set; }
+        public global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeExtendedAttributes? ExtendedAttributes { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChange_extended_attributes ExtendedAttributes { get; set; }
+        public global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeExtendedAttributes ExtendedAttributes { get; set; }
 #endif
         /// <summary>The id property</summary>
         public int? Id { get; set; }
@@ -38,7 +38,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         /// <summary>The registry_owner_change property</summary>
         public bool? RegistryOwnerChange { get; set; }
         /// <summary>The state property</summary>
-        public global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChange_state? State { get; set; }
+        public global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeState? State { get; set; }
         /// <summary>A date-time value, representing when the entry was last updated, formatted as ISO 8601.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -70,11 +70,11 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
                 { "contact_id", n => { ContactId = n.GetIntValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "domain_id", n => { DomainId = n.GetIntValue(); } },
-                { "extended_attributes", n => { ExtendedAttributes = n.GetObjectValue<global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChange_extended_attributes>(global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChange_extended_attributes.CreateFromDiscriminatorValue); } },
+                { "extended_attributes", n => { ExtendedAttributes = n.GetObjectValue<global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeExtendedAttributes>(global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeExtendedAttributes.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "irt_lock_lifted_by", n => { IrtLockLiftedBy = n.GetDateValue(); } },
                 { "registry_owner_change", n => { RegistryOwnerChange = n.GetBoolValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChange_state>(); } },
+                { "state", n => { State = n.GetEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeState>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -89,11 +89,11 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
             writer.WriteIntValue("contact_id", ContactId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteIntValue("domain_id", DomainId);
-            writer.WriteObjectValue<global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChange_extended_attributes>("extended_attributes", ExtendedAttributes);
+            writer.WriteObjectValue<global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeExtendedAttributes>("extended_attributes", ExtendedAttributes);
             writer.WriteIntValue("id", Id);
             writer.WriteDateValue("irt_lock_lifted_by", IrtLockLiftedBy);
             writer.WriteBoolValue("registry_owner_change", RegistryOwnerChange);
-            writer.WriteEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChange_state>("state", State);
+            writer.WriteEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeState>("state", State);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

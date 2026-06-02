@@ -15,7 +15,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The availability status</summary>
-        public global::Soenneker.DNSimple.OpenApiClient.Models.DomainResearch_availability? Availability { get; set; }
+        public global::Soenneker.DNSimple.OpenApiClient.Models.DomainResearchAvailability? Availability { get; set; }
         /// <summary>The domain name that was researched</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,7 +65,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "availability", n => { Availability = n.GetEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.DomainResearch_availability>(); } },
+                { "availability", n => { Availability = n.GetEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.DomainResearchAvailability>(); } },
                 { "domain", n => { Domain = n.GetStringValue(); } },
                 { "errors", n => { Errors = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "request_id", n => { RequestId = n.GetStringValue(); } },
@@ -78,7 +78,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.DomainResearch_availability>("availability", Availability);
+            writer.WriteEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.DomainResearchAvailability>("availability", Availability);
             writer.WriteStringValue("domain", Domain);
             writer.WriteCollectionOfPrimitiveValues<string>("errors", Errors);
             writer.WriteStringValue("request_id", RequestId);

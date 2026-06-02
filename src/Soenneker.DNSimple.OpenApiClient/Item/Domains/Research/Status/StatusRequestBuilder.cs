@@ -36,29 +36,29 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Domains.Research.Status
         /// <summary>
         /// Research a domain name for availability and registration status information.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Research.Status.StatusGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.GetDomainsResearchStatus200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Status400Error">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Status401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Status429Error">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Value400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Value401Response">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.Value429Response">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Research.Status.StatusGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Research.Status.StatusRequestBuilder.StatusRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.GetDomainsResearchStatus200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Research.Status.StatusRequestBuilder.StatusRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Research.Status.StatusGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Research.Status.StatusRequestBuilder.StatusRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.GetDomainsResearchStatus200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Research.Status.StatusRequestBuilder.StatusRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.DNSimple.OpenApiClient.Models.Status400Error.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.DNSimple.OpenApiClient.Models.Status401Error.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.DNSimple.OpenApiClient.Models.Status429Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.DNSimple.OpenApiClient.Models.Value400Response.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.DNSimple.OpenApiClient.Models.Value401Response.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.DNSimple.OpenApiClient.Models.Value429Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Research.Status.StatusGetResponse>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Research.Status.StatusGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.GetDomainsResearchStatus200Response>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.GetDomainsResearchStatus200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Research a domain name for availability and registration status information.
