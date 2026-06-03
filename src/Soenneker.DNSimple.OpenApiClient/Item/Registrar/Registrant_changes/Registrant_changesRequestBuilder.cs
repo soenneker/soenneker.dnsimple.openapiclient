@@ -41,7 +41,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Registrant_changesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{account}/registrar/registrant_changes{?contact_id*,domain_id*,sort*,state*}", pathParameters)
+        public Registrant_changesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Registrant_changesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{account}/registrar/registrant_changes{?contact_id*,domain_id*,sort*,state*}", rawUrl)
+        public Registrant_changesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>

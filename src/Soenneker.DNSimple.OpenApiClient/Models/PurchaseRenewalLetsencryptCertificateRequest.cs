@@ -30,6 +30,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         public PurchaseRenewalLetsencryptCertificateRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            AutoRenew = false;
             SignatureAlgorithm = "ECDSA";
         }
         /// <summary>

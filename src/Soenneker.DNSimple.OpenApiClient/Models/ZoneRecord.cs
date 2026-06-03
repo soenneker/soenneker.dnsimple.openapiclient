@@ -69,6 +69,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         public ZoneRecord()
         {
             AdditionalData = new Dictionary<string, object>();
+            Priority = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

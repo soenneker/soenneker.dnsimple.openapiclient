@@ -41,6 +41,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Oauth.Access_token
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.OAuthToken400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.DNSimple.OpenApiClient.Models.OAuthToken401Response">When receiving a 401 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.DNSimple.OpenApiClient.Models.OAuthToken200Response?> PostAsync(global::Soenneker.DNSimple.OpenApiClient.Models.OAuthTokenRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -55,6 +56,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Oauth.Access_token
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.DNSimple.OpenApiClient.Models.OAuthToken400Response.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.DNSimple.OpenApiClient.Models.OAuthToken401Response.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.OAuthToken200Response>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.OAuthToken200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

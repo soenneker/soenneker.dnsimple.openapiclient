@@ -46,6 +46,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         public PurchaseLetsencryptCertificateRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            AutoRenew = false;
             Name = "www";
             SignatureAlgorithm = "ECDSA";
         }
