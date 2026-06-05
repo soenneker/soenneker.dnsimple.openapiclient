@@ -41,7 +41,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Registrant_changesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
+        public Registrant_changesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{account}/registrar/registrant_changes{?contact_id*,domain_id*,sort*,state*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Registrant_changesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
+        public Registrant_changesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{account}/registrar/registrant_changes{?contact_id*,domain_id*,sort*,state*}", rawUrl)
         {
         }
         /// <summary>
@@ -114,7 +114,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes.Registrant_changesRequestBuilder.Registrant_changesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/{account}/registrar/registrant_changes{?contact_id*,domain_id*,sort*,state*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -135,7 +135,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Registrant_changes
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/{account}/registrar/registrant_changes", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
