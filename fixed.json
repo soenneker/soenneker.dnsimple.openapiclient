@@ -3389,7 +3389,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponse"
+                  "$ref": "#/components/schemas/DeleteTemplate204Response"
                 }
               }
             }
@@ -3750,7 +3750,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson"
+                  "$ref": "#/components/schemas/DeleteWebhook204Response"
                 }
               }
             }
@@ -10410,7 +10410,7 @@
           }
         }
       },
-      "DefaultResponse": {
+      "DeleteTemplate204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -10487,7 +10487,7 @@
           }
         }
       },
-      "DefaultResponseResponseJson": {
+      "DeleteWebhook204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
