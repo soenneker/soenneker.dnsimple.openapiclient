@@ -5715,6 +5715,22 @@
         },
         "description": "Payload for domain.delegation_change"
       },
+      "EventDomainRegistrationNotice": {
+        "required": [
+          "domain",
+          "registration_notice"
+        ],
+        "type": "object",
+        "properties": {
+          "domain": {
+            "$ref": "#/components/schemas/Domain"
+          },
+          "registration_notice": {
+            "$ref": "#/components/schemas/EventDomainRegistrationNoticeRegistrationNotice"
+          }
+        },
+        "description": "Payload for domain.registration_notice. Emitted when a registry sends an\ninformational notice about a domain that requires action by the account.\n"
+      },
       "EventDomainRegistrantChangeStarted": {
         "required": [
           "domain",
@@ -8558,6 +8574,9 @@
             "$ref": "#/components/schemas/EventDomainRegisterStarted"
           },
           {
+            "$ref": "#/components/schemas/EventDomainRegistrationNotice"
+          },
+          {
             "$ref": "#/components/schemas/EventDomainRegistrantChange"
           },
           {
@@ -8769,6 +8788,7 @@
             "EventDomainRegister": "#/components/schemas/EventDomainRegister",
             "EventDomainRegisterCancelled": "#/components/schemas/EventDomainRegisterCancelled",
             "EventDomainRegisterStarted": "#/components/schemas/EventDomainRegisterStarted",
+            "EventDomainRegistrationNotice": "#/components/schemas/EventDomainRegistrationNotice",
             "EventDomainRegistrantChange": "#/components/schemas/EventDomainRegistrantChange",
             "EventDomainRegistrantChangeCancelled": "#/components/schemas/EventDomainRegistrantChangeCancelled",
             "EventDomainRegistrantChangeStarted": "#/components/schemas/EventDomainRegistrantChangeStarted",
@@ -8985,6 +9005,23 @@
             "items": {
               "$ref": "#/components/schemas/BatchChangeZoneRecordsInvalidRequestErrorErrorsDeletesItem"
             }
+          }
+        }
+      },
+      "EventDomainRegistrationNoticeRegistrationNotice": {
+        "required": [
+          "type",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Notice family. New values may be added at any time; treat an unknown value as informational and fall back to displaying \u0060message\u0060 verbatim. Values currently emitted:\n- \u0060de_holder_verification_notice\u0060\n- \u0060de_holder_verification_suspension\u0060\n"
+          },
+          "message": {
+            "type": "string",
+            "description": "Human-readable summary of the notice, with UTC ISO 8601 deadlines interpolated."
           }
         }
       },
@@ -11425,6 +11462,7 @@
           "domain.register",
           "domain.register:cancelled",
           "domain.register:started",
+          "domain.registration_notice",
           "domain.registrant_change",
           "domain.registrant_change:cancelled",
           "domain.registrant_change:started",
@@ -11623,6 +11661,10 @@
             {
               "value": "domain.register:started",
               "name": "DomainRegisterColonStarted"
+            },
+            {
+              "value": "domain.registration_notice",
+              "name": "DomainRegistrationNotice"
             },
             {
               "value": "domain.registrant_change",
