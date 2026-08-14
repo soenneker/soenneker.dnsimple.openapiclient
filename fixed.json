@@ -1,5 +1,5 @@
 {
-  "openapi": "3.0.4",
+  "openapi": "3.1.2",
   "info": {
     "title": "DNSimple API",
     "description": "[DNSimple](https://dnsimple.com) provides DNS hosting and domain registration that is simple and friendly. We provide an extensive API and an easy-to-use web interface so you can get your domain registered and set up with a minimal amount of effort.",
@@ -64,12 +64,15 @@
             }
           },
           "401": {
+            "description": "The authentication credentials are invalid.",
             "$ref": "#/components/responses/401"
           },
           "429": {
+            "description": "You exceeded the allowed number of requests per hour and your request has temporarily been throttled.",
             "$ref": "#/components/responses/429"
           },
           "default": {
+            "description": "An error occurred",
             "$ref": "#/components/responses/Error"
           }
         }
@@ -137,15 +140,19 @@
         "operationId": "ListCharges",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "Only include results after the given date. Format is ISO8601 (YYYY-MM-DD).",
             "$ref": "#/components/parameters/FilterStartDate"
           },
           {
+            "description": "Only include results before the given date. Format is ISO8601 (YYYY-MM-DD).",
             "$ref": "#/components/parameters/FilterEndDate"
           },
           {
+            "description": "Sort results. Default sorting is by invoiced ascending.",
             "$ref": "#/components/parameters/SortCharges"
           }
         ],
@@ -161,9 +168,11 @@
             }
           },
           "401": {
+            "description": "The authentication credentials are invalid.",
             "$ref": "#/components/responses/401"
           },
           "429": {
+            "description": "You exceeded the allowed number of requests per hour and your request has temporarily been throttled.",
             "$ref": "#/components/responses/429"
           }
         }
@@ -179,15 +188,19 @@
         "operationId": "ListDomains",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "Only include results with a name field containing the given string",
             "$ref": "#/components/parameters/FilterNameLike"
           },
           {
+            "description": "Only include results with the registrant_id field matching the given value",
             "$ref": "#/components/parameters/FilterRegistrantId"
           },
           {
+            "description": "Sort results. Default sorting is ascending by name.",
             "$ref": "#/components/parameters/SortDomains"
           }
         ],
@@ -213,10 +226,12 @@
         "operationId": "CreateDomain",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           }
         ],
         "requestBody": {
+          "description": "Domain attributes",
           "$ref": "#/components/requestBodies/DomainCreate"
         },
         "responses": {
@@ -231,6 +246,7 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           }
         }
@@ -246,9 +262,11 @@
         "operationId": "GetDomain",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           }
         ],
@@ -264,9 +282,11 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -280,17 +300,21 @@
         "operationId": "DeleteDomain",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           }
         ],
         "responses": {
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -306,6 +330,7 @@
         "operationId": "GetDomainsResearchStatus",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
@@ -330,12 +355,15 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "401": {
+            "description": "The authentication credentials are invalid.",
             "$ref": "#/components/responses/401"
           },
           "429": {
+            "description": "You exceeded the allowed number of requests per hour and your request has temporarily been throttled.",
             "$ref": "#/components/responses/429"
           }
         }
@@ -351,9 +379,11 @@
         "operationId": "GetDomainDnssec",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           }
         ],
@@ -369,9 +399,11 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -385,9 +417,11 @@
         "operationId": "EnableDomainDnssec",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           }
         ],
@@ -403,9 +437,11 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -419,17 +455,21 @@
         "operationId": "DisableDomainDnssec",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           }
         ],
         "responses": {
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -445,12 +485,15 @@
         "operationId": "ListDomainDelegationSignerRecords",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           },
           {
+            "description": "Sort results. Default sorting is by id.",
             "$ref": "#/components/parameters/SortDelegationSignerRecords"
           }
         ],
@@ -466,9 +509,11 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -482,13 +527,16 @@
         "operationId": "CreateDomainDelegationSignerRecord",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           }
         ],
         "requestBody": {
+          "description": "Delegation signer attributes",
           "$ref": "#/components/requestBodies/DelegationSignerCreate"
         },
         "responses": {
@@ -503,9 +551,11 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -521,12 +571,15 @@
         "operationId": "GetDomainDelegationSignerRecord",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           },
           {
+            "description": "The delegation signer record id",
             "$ref": "#/components/parameters/DelegationSigner"
           }
         ],
@@ -542,9 +595,11 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -558,20 +613,25 @@
         "operationId": "DeleteDomainDelegationSignerRecord",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           },
           {
+            "description": "The delegation signer record id",
             "$ref": "#/components/parameters/DelegationSigner"
           }
         ],
         "responses": {
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -587,12 +647,15 @@
         "operationId": "ListEmailForwards",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           },
           {
+            "description": "Sort results. Default sorting is by id.",
             "$ref": "#/components/parameters/SortEmailForwards"
           }
         ],
@@ -608,9 +671,11 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -624,13 +689,16 @@
         "operationId": "CreateEmailForward",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           }
         ],
         "requestBody": {
+          "description": "Email forward attributes",
           "$ref": "#/components/requestBodies/EmailForwardCreate"
         },
         "responses": {
@@ -645,9 +713,11 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -663,12 +733,15 @@
         "operationId": "GetEmailForward",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           },
           {
+            "description": "The email forward id",
             "$ref": "#/components/parameters/EmailForward"
           }
         ],
@@ -684,9 +757,11 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -700,17 +775,21 @@
         "operationId": "DeleteEmailForward",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           },
           {
+            "description": "The email forward id",
             "$ref": "#/components/parameters/EmailForward"
           }
         ],
         "responses": {
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -726,13 +805,16 @@
         "operationId": "InitiateDomainPush",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           }
         ],
         "requestBody": {
+          "description": "Push attributes",
           "$ref": "#/components/requestBodies/PushInitiate"
         },
         "responses": {
@@ -747,9 +829,11 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -765,6 +849,7 @@
         "operationId": "ListPushes",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           }
         ],
@@ -792,20 +877,25 @@
         "operationId": "AcceptPush",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The push id",
             "$ref": "#/components/parameters/Push"
           }
         ],
         "requestBody": {
+          "description": "Attributes required to accept a push",
           "$ref": "#/components/requestBodies/PushAccept"
         },
         "responses": {
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -819,17 +909,21 @@
         "operationId": "RejectPush",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The push id",
             "$ref": "#/components/parameters/Push"
           }
         ],
         "responses": {
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -845,12 +939,15 @@
         "operationId": "ListCertificates",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           },
           {
+            "description": "Sort results. Default sorting is by id.",
             "$ref": "#/components/parameters/SortCertificates"
           }
         ],
@@ -866,6 +963,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -881,12 +979,15 @@
         "operationId": "GetCertificate",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           },
           {
+            "description": "The certificate id",
             "$ref": "#/components/parameters/Certificate"
           }
         ],
@@ -902,6 +1003,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -917,12 +1019,15 @@
         "operationId": "DownloadCertificate",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           },
           {
+            "description": "The certificate id",
             "$ref": "#/components/parameters/Certificate"
           }
         ],
@@ -938,6 +1043,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -953,12 +1059,15 @@
         "operationId": "GetCertificatePrivateKey",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           },
           {
+            "description": "The certificate id",
             "$ref": "#/components/parameters/Certificate"
           }
         ],
@@ -974,6 +1083,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -989,9 +1099,11 @@
         "operationId": "PurchaseLetsencryptCertificate",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           }
         ],
@@ -1016,6 +1128,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -1031,9 +1144,11 @@
         "operationId": "IssueLetsencryptCertificate",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           },
           {
@@ -1058,6 +1173,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -1073,12 +1189,15 @@
         "operationId": "PurchaseRenewalLetsencryptCertificate",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           },
           {
+            "description": "The certificate id",
             "$ref": "#/components/parameters/Certificate"
           }
         ],
@@ -1103,6 +1222,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -1118,12 +1238,15 @@
         "operationId": "IssueRenewalLetsencryptCertificate",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           },
           {
+            "description": "The certificate id",
             "$ref": "#/components/parameters/Certificate"
           },
           {
@@ -1148,6 +1271,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -1163,6 +1287,7 @@
         "operationId": "ListTlds",
         "parameters": [
           {
+            "description": "Sort results. Default sorting is by tld ascending.",
             "$ref": "#/components/parameters/SortTLDs"
           }
         ],
@@ -1190,6 +1315,7 @@
         "operationId": "GetTld",
         "parameters": [
           {
+            "description": "The TLD string",
             "$ref": "#/components/parameters/TLD"
           }
         ],
@@ -1205,6 +1331,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -1220,6 +1347,7 @@
         "operationId": "GetTldExtendedAttributes",
         "parameters": [
           {
+            "description": "The TLD string",
             "$ref": "#/components/parameters/TLD"
           }
         ],
@@ -1235,6 +1363,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -1250,9 +1379,11 @@
         "operationId": "CheckDomain",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           }
         ],
@@ -1280,9 +1411,11 @@
         "operationId": "GetDomainPrices",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           }
         ],
@@ -1298,6 +1431,7 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           }
         }
@@ -1313,13 +1447,16 @@
         "operationId": "RegisterDomain",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           }
         ],
         "requestBody": {
+          "description": "Domain registration attributes",
           "$ref": "#/components/requestBodies/DomainRegister"
         },
         "responses": {
@@ -1334,6 +1471,7 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           }
         }
@@ -1349,12 +1487,15 @@
         "operationId": "GetDomainRegistration",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           },
           {
+            "description": "The domain registration id",
             "$ref": "#/components/parameters/DomainRegistration"
           }
         ],
@@ -1370,6 +1511,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -1385,13 +1527,16 @@
         "operationId": "TransferDomain",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           }
         ],
         "requestBody": {
+          "description": "Domain transfer attributes",
           "$ref": "#/components/requestBodies/DomainTransfer"
         },
         "responses": {
@@ -1406,6 +1551,7 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           }
         }
@@ -1421,12 +1567,15 @@
         "operationId": "GetDomainTransfer",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           },
           {
+            "description": "The domain transfer id",
             "$ref": "#/components/parameters/DomainTransfer"
           }
         ],
@@ -1442,6 +1591,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -1455,12 +1605,15 @@
         "operationId": "CancelDomainTransfer",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           },
           {
+            "description": "The domain transfer id",
             "$ref": "#/components/parameters/DomainTransfer"
           }
         ],
@@ -1476,6 +1629,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -1491,13 +1645,16 @@
         "operationId": "DomainRenew",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           }
         ],
         "requestBody": {
+          "description": "Domain renewal attributes",
           "$ref": "#/components/requestBodies/DomainRenew"
         },
         "responses": {
@@ -1512,6 +1669,7 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           }
         }
@@ -1527,12 +1685,15 @@
         "operationId": "GetDomainRenewal",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           },
           {
+            "description": "The domain renewal id",
             "$ref": "#/components/parameters/DomainRenewal"
           }
         ],
@@ -1548,6 +1709,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -1563,13 +1725,16 @@
         "operationId": "DomainRestore",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           }
         ],
         "requestBody": {
+          "description": "Domain restore attributes",
           "$ref": "#/components/requestBodies/DomainRestore"
         },
         "responses": {
@@ -1584,12 +1749,15 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "401": {
+            "description": "The authentication credentials are invalid.",
             "$ref": "#/components/responses/401"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -1605,12 +1773,15 @@
         "operationId": "GetDomainRestore",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           },
           {
+            "description": "The domain restore id",
             "$ref": "#/components/parameters/DomainRestore"
           }
         ],
@@ -1626,9 +1797,11 @@
             }
           },
           "401": {
+            "description": "The authentication credentials are invalid.",
             "$ref": "#/components/responses/401"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -1644,14 +1817,17 @@
         "operationId": "AuthorizeDomainTransferOut",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           }
         ],
         "responses": {
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           }
         }
@@ -1667,9 +1843,11 @@
         "operationId": "GetDomainDelegation",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           }
         ],
@@ -1685,6 +1863,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -1698,13 +1877,16 @@
         "operationId": "ChangeDomainDelegation",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           }
         ],
         "requestBody": {
+          "description": "A collection of domain name servers",
           "$ref": "#/components/requestBodies/DomainNameServers"
         },
         "responses": {
@@ -1719,9 +1901,11 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -1737,13 +1921,16 @@
         "operationId": "ChangeDomainDelegationToVanity",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           }
         ],
         "requestBody": {
+          "description": "A collection of vanity name servers",
           "$ref": "#/components/requestBodies/VanityNameServers"
         },
         "responses": {
@@ -1758,12 +1945,15 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           },
           "412": {
+            "description": "Feature is not available on your plan.",
             "$ref": "#/components/responses/412-feature"
           }
         }
@@ -1777,20 +1967,25 @@
         "operationId": "ChangeDomainDelegationFromVanity",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           }
         ],
         "responses": {
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           },
           "412": {
+            "description": "Feature is not available on your plan.",
             "$ref": "#/components/responses/412-feature"
           }
         }
@@ -1806,9 +2001,11 @@
         "operationId": "GetDomainTransferLock",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           }
         ],
@@ -1824,6 +2021,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -1837,9 +2035,11 @@
         "operationId": "EnableDomainTransferLock",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           }
         ],
@@ -1855,9 +2055,11 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -1871,9 +2073,11 @@
         "operationId": "DisableDomainTransferLock",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           }
         ],
@@ -1889,9 +2093,11 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -1907,17 +2113,21 @@
         "operationId": "EnableDomainAutoRenewal",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           }
         ],
         "responses": {
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -1931,17 +2141,21 @@
         "operationId": "DisableDomainAutoRenewal",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           }
         ],
         "responses": {
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -1957,9 +2171,11 @@
         "operationId": "EnableWhoisPrivacy",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           }
         ],
@@ -1985,6 +2201,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -1998,9 +2215,11 @@
         "operationId": "DisableWhoisPrivacy",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           }
         ],
@@ -2016,6 +2235,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -2031,9 +2251,11 @@
         "operationId": "ListPrimaryServers",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "Sort results. Default sorting is ascending by id.",
             "$ref": "#/components/parameters/SortPrimaryServers"
           }
         ],
@@ -2059,10 +2281,12 @@
         "operationId": "CreatePrimaryServer",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           }
         ],
         "requestBody": {
+          "description": "Primary Server attributes",
           "$ref": "#/components/requestBodies/PrimaryServerCreate"
         },
         "responses": {
@@ -2077,6 +2301,7 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           }
         }
@@ -2092,9 +2317,11 @@
         "operationId": "GetPrimaryServer",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The primary server id",
             "$ref": "#/components/parameters/PrimaryServer"
           }
         ],
@@ -2110,9 +2337,11 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -2126,14 +2355,17 @@
         "operationId": "RemovePrimaryServer",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The primary server id",
             "$ref": "#/components/parameters/PrimaryServer"
           }
         ],
         "responses": {
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -2149,9 +2381,11 @@
         "operationId": "LinkPrimaryServer",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The primary server id",
             "$ref": "#/components/parameters/PrimaryServer"
           }
         ],
@@ -2167,9 +2401,11 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -2185,9 +2421,11 @@
         "operationId": "UnlinkPrimaryServer",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The primary server id",
             "$ref": "#/components/parameters/PrimaryServer"
           }
         ],
@@ -2203,9 +2441,11 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -2221,10 +2461,12 @@
         "operationId": "CreateSecondaryZone",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           }
         ],
         "requestBody": {
+          "description": "Secondary Zone attributes",
           "$ref": "#/components/requestBodies/SecondaryZoneCreate"
         },
         "responses": {
@@ -2239,6 +2481,7 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           }
         }
@@ -2254,12 +2497,15 @@
         "operationId": "ListZones",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "Only include results with a name field containing the given string",
             "$ref": "#/components/parameters/FilterNameLike"
           },
           {
+            "description": "Sort results. Default sorting is by name ascending.",
             "$ref": "#/components/parameters/SortZones"
           }
         ],
@@ -2287,9 +2533,11 @@
         "operationId": "GetZone",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The zone name",
             "$ref": "#/components/parameters/Zone"
           }
         ],
@@ -2305,6 +2553,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -2320,9 +2569,11 @@
         "operationId": "GetZoneFile",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The zone name",
             "$ref": "#/components/parameters/Zone"
           }
         ],
@@ -2338,6 +2589,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -2353,9 +2605,11 @@
         "operationId": "CheckZoneDistribution",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The zone name",
             "$ref": "#/components/parameters/Zone"
           }
         ],
@@ -2371,6 +2625,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           },
           "504": {
@@ -2396,13 +2651,16 @@
         "operationId": "UpdateZoneNsRecords",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The zone name",
             "$ref": "#/components/parameters/Zone"
           }
         ],
         "requestBody": {
+          "description": "Zone name server attributes",
           "$ref": "#/components/requestBodies/ZoneNsRecordsUpdate"
         },
         "responses": {
@@ -2417,6 +2675,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -2432,21 +2691,27 @@
         "operationId": "ListZoneRecords",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The zone name",
             "$ref": "#/components/parameters/Zone"
           },
           {
+            "description": "Only include results with a name field containing the given string",
             "$ref": "#/components/parameters/FilterNameLike"
           },
           {
+            "description": "Only include results with a name field exactly matching the given string",
             "$ref": "#/components/parameters/FilterName"
           },
           {
+            "description": "Only include results with a type field exactly matching the given string",
             "$ref": "#/components/parameters/FilterType"
           },
           {
+            "description": "Sort results. Default sorting is by name ascending.",
             "$ref": "#/components/parameters/SortZoneRecords"
           }
         ],
@@ -2472,13 +2737,16 @@
         "operationId": "CreateZoneRecord",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The zone name",
             "$ref": "#/components/parameters/Zone"
           }
         ],
         "requestBody": {
+          "description": "Zone record attributes",
           "$ref": "#/components/requestBodies/ZoneRecordCreate"
         },
         "responses": {
@@ -2493,9 +2761,11 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -2511,12 +2781,15 @@
         "operationId": "GetZoneRecord",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The zone name",
             "$ref": "#/components/parameters/Zone"
           },
           {
+            "description": "The zone record id",
             "$ref": "#/components/parameters/ZoneRecord"
           }
         ],
@@ -2532,6 +2805,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -2545,16 +2819,20 @@
         "operationId": "UpdateZoneRecord",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The zone name",
             "$ref": "#/components/parameters/Zone"
           },
           {
+            "description": "The zone record id",
             "$ref": "#/components/parameters/ZoneRecord"
           }
         ],
         "requestBody": {
+          "description": "Zone record update attributes",
           "$ref": "#/components/requestBodies/ZoneRecordUpdate"
         },
         "responses": {
@@ -2569,9 +2847,11 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -2585,17 +2865,21 @@
         "operationId": "DeleteZoneRecord",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The zone name",
             "$ref": "#/components/parameters/Zone"
           },
           {
+            "description": "The zone record id",
             "$ref": "#/components/parameters/ZoneRecord"
           }
         ],
         "responses": {
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -2611,13 +2895,16 @@
         "operationId": "BatchChangeZoneRecords",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The zone name",
             "$ref": "#/components/parameters/Zone"
           }
         ],
         "requestBody": {
+          "description": "Batch change zone records input attributes",
           "$ref": "#/components/requestBodies/BatchChangeZoneRecords"
         },
         "responses": {
@@ -2642,6 +2929,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -2657,12 +2945,15 @@
         "operationId": "CheckZoneRecordDistribution",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The zone name",
             "$ref": "#/components/parameters/Zone"
           },
           {
+            "description": "The zone record id",
             "$ref": "#/components/parameters/ZoneRecord"
           }
         ],
@@ -2678,6 +2969,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           },
           "504": {
@@ -2703,9 +2995,11 @@
         "operationId": "ActivateZoneService",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The zone name",
             "$ref": "#/components/parameters/Zone"
           }
         ],
@@ -2721,6 +3015,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -2734,9 +3029,11 @@
         "operationId": "DeactivateZoneService",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The zone name",
             "$ref": "#/components/parameters/Zone"
           }
         ],
@@ -2752,6 +3049,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -2767,9 +3065,11 @@
         "operationId": "ListContacts",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "Sort results. Default sorting is by id ascending.",
             "$ref": "#/components/parameters/SortContacts"
           }
         ],
@@ -2795,10 +3095,12 @@
         "operationId": "CreateContact",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           }
         ],
         "requestBody": {
+          "description": "Contact create attributes",
           "$ref": "#/components/requestBodies/ContactCreate"
         },
         "responses": {
@@ -2813,6 +3115,7 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           }
         }
@@ -2828,9 +3131,11 @@
         "operationId": "GetContact",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The contact id",
             "$ref": "#/components/parameters/Contact"
           }
         ],
@@ -2846,6 +3151,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -2859,13 +3165,16 @@
         "operationId": "UpdateContact",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The contact id",
             "$ref": "#/components/parameters/Contact"
           }
         ],
         "requestBody": {
+          "description": "Contact update attributes",
           "$ref": "#/components/requestBodies/ContactUpdate"
         },
         "responses": {
@@ -2880,9 +3189,11 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -2896,14 +3207,17 @@
         "operationId": "DeleteContact",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The contact id",
             "$ref": "#/components/parameters/Contact"
           }
         ],
         "responses": {
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -2919,18 +3233,23 @@
         "operationId": "ListRegistrantChanges",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "Sort results. Default sorting is by id.",
             "$ref": "#/components/parameters/SortRegistrantChanges"
           },
           {
+            "description": "Only include results with a state field exactly matching the given string",
             "$ref": "#/components/parameters/FilterRegistrantChangeState"
           },
           {
+            "description": "Only include results with a domain_id field exactly matching the given string",
             "$ref": "#/components/parameters/FilterDomainId"
           },
           {
+            "description": "Only include results with a contact_id field exactly matching the given string",
             "$ref": "#/components/parameters/FilterContactId"
           }
         ],
@@ -2946,6 +3265,7 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           }
         }
@@ -2959,10 +3279,12 @@
         "operationId": "CreateRegistrantChange",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           }
         ],
         "requestBody": {
+          "description": "Contact change attributes",
           "$ref": "#/components/requestBodies/RegistrantChangeCreate"
         },
         "responses": {
@@ -2987,6 +3309,7 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           }
         }
@@ -3002,10 +3325,12 @@
         "operationId": "CheckRegistrantChange",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           }
         ],
         "requestBody": {
+          "description": "Contact change attributes",
           "$ref": "#/components/requestBodies/RegistrantChangeCheck"
         },
         "responses": {
@@ -3020,6 +3345,7 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           }
         }
@@ -3035,9 +3361,11 @@
         "operationId": "GetRegistrantChange",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The registrant change id",
             "$ref": "#/components/parameters/RegistrantChange"
           }
         ],
@@ -3053,6 +3381,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -3066,9 +3395,11 @@
         "operationId": "DeleteRegistrantChange",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The registrant change id",
             "$ref": "#/components/parameters/RegistrantChange"
           }
         ],
@@ -3084,9 +3415,11 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -3102,6 +3435,7 @@
         "operationId": "ListServices",
         "parameters": [
           {
+            "description": "Sort results. Default sorting is by id ascending.",
             "$ref": "#/components/parameters/SortServices"
           }
         ],
@@ -3129,6 +3463,7 @@
         "operationId": "GetService",
         "parameters": [
           {
+            "description": "The service sid or id",
             "$ref": "#/components/parameters/Service"
           }
         ],
@@ -3144,6 +3479,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -3159,9 +3495,11 @@
         "operationId": "ListDomainAppliedServices",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           }
         ],
@@ -3177,6 +3515,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -3192,23 +3531,29 @@
         "operationId": "ApplyServiceToDomain",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           },
           {
+            "description": "The service sid or id",
             "$ref": "#/components/parameters/Service"
           }
         ],
         "requestBody": {
+          "description": "Optional hash of settings for some specific services, corresponding to the service fields. For instance, Heroku requires a settings[app] setting.",
           "$ref": "#/components/requestBodies/ServiceApply"
         },
         "responses": {
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -3222,20 +3567,25 @@
         "operationId": "UnapplyServiceFromDomain",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           },
           {
+            "description": "The service sid or id",
             "$ref": "#/components/parameters/Service"
           }
         ],
         "responses": {
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -3251,9 +3601,11 @@
         "operationId": "ListTemplates",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "Sort results. Default sorting is by id ascending.",
             "$ref": "#/components/parameters/SortTemplates"
           }
         ],
@@ -3279,10 +3631,12 @@
         "operationId": "CreateTemplate",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           }
         ],
         "requestBody": {
+          "description": "Attributes for creating a template.",
           "$ref": "#/components/requestBodies/TemplateCreate"
         },
         "responses": {
@@ -3297,6 +3651,7 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           }
         }
@@ -3312,9 +3667,11 @@
         "operationId": "GetTemplate",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The template id or short name",
             "$ref": "#/components/parameters/Template"
           }
         ],
@@ -3330,6 +3687,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -3343,13 +3701,16 @@
         "operationId": "UpdateTemplate",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The template id or short name",
             "$ref": "#/components/parameters/Template"
           }
         ],
         "requestBody": {
+          "description": "Attributes for updating a template.",
           "$ref": "#/components/requestBodies/TemplateUpdate"
         },
         "responses": {
@@ -3364,6 +3725,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -3377,9 +3739,11 @@
         "operationId": "DeleteTemplate",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The template id or short name",
             "$ref": "#/components/parameters/Template"
           }
         ],
@@ -3407,12 +3771,15 @@
         "operationId": "ListTemplateRecords",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The template id or short name",
             "$ref": "#/components/parameters/Template"
           },
           {
+            "description": "Sort results. Default sorting is by id ascending.",
             "$ref": "#/components/parameters/SortTemplateRecords"
           }
         ],
@@ -3438,13 +3805,16 @@
         "operationId": "CreateTemplateRecord",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The template id or short name",
             "$ref": "#/components/parameters/Template"
           }
         ],
         "requestBody": {
+          "description": "Attributes for creating a template record",
           "$ref": "#/components/requestBodies/TemplateRecordCreateOrUpdate"
         },
         "responses": {
@@ -3471,12 +3841,15 @@
         "operationId": "GetTemplateRecord",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The template id or short name",
             "$ref": "#/components/parameters/Template"
           },
           {
+            "description": "The template record id",
             "$ref": "#/components/parameters/TemplateRecord"
           }
         ],
@@ -3492,6 +3865,7 @@
             }
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -3505,17 +3879,21 @@
         "operationId": "DeleteTemplateRecord",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The template id or short name",
             "$ref": "#/components/parameters/Template"
           },
           {
+            "description": "The template record id",
             "$ref": "#/components/parameters/TemplateRecord"
           }
         ],
         "responses": {
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -3531,17 +3909,21 @@
         "operationId": "ApplyTemplateToDomain",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           },
           {
+            "description": "The template id or short name",
             "$ref": "#/components/parameters/Template"
           }
         ],
         "responses": {
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -3557,9 +3939,11 @@
         "operationId": "EnableVanityNameServers",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           }
         ],
@@ -3575,9 +3959,11 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -3591,17 +3977,21 @@
         "operationId": "DisableVanityNameServers",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The domain name or id",
             "$ref": "#/components/parameters/Domain"
           }
         ],
         "responses": {
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           },
           "404": {
+            "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
           }
         }
@@ -3617,9 +4007,11 @@
         "operationId": "ListWebhooks",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "Sort results. Default sorting is by name ascending.",
             "$ref": "#/components/parameters/SortWebhooks"
           }
         ],
@@ -3645,6 +4037,7 @@
         "operationId": "CreateWebhook",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           }
         ],
@@ -3669,6 +4062,7 @@
             }
           },
           "400": {
+            "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
           }
         },
@@ -3710,9 +4104,11 @@
         "operationId": "GetWebhook",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The webhoook id",
             "$ref": "#/components/parameters/Webhook"
           }
         ],
@@ -3738,9 +4134,11 @@
         "operationId": "DeleteWebhook",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
+            "description": "The webhoook id",
             "$ref": "#/components/parameters/Webhook"
           }
         ],
@@ -3769,6 +4167,7 @@
         "operationId": "QueryDnsAnalytics",
         "parameters": [
           {
+            "description": "The account id",
             "$ref": "#/components/parameters/Account"
           },
           {
@@ -3796,12 +4195,15 @@
             }
           },
           {
+            "description": "Sort results. Default sorting policy is by ascending date, then ascending zone_name.",
             "$ref": "#/components/parameters/SortDNSAnalytics"
           },
           {
+            "description": "The page of the results requested. Defaults to 1.",
             "$ref": "#/components/parameters/PaginationPage"
           },
           {
+            "description": "The amount of rows to return in each page. The default is usually 100. There are endpoints that override this default to accommodate specific use cases.",
             "$ref": "#/components/parameters/PaginationPerPage"
           }
         ],
@@ -3875,8 +4277,10 @@
             "type": "string"
           },
           "address2": {
-            "type": "string",
-            "nullable": true
+            "type": [
+              "null",
+              "string"
+            ]
           },
           "city": {
             "type": "string"
@@ -3897,8 +4301,10 @@
             "type": "string"
           },
           "fax": {
-            "type": "string",
-            "nullable": true
+            "type": [
+              "null",
+              "string"
+            ]
           },
           "organization_name": {
             "type": "string",
@@ -3926,16 +4332,20 @@
         }
       },
       "NullableDate": {
-        "type": "string",
+        "type": [
+          "null",
+          "string"
+        ],
         "description": "A nullable date-time value. The value can be null, when present the value is formatted according to the ISO 8601 specification.",
-        "format": "date",
-        "nullable": true
+        "format": "date"
       },
       "NullableDateTime": {
-        "type": "string",
+        "type": [
+          "null",
+          "string"
+        ],
         "description": "A nullable date-time value. The value can be null, when present the value is formatted according to the ISO 8601 specification.",
-        "format": "date-time",
-        "nullable": true
+        "format": "date-time"
       },
       "Error": {
         "required": [
@@ -4081,6 +4491,7 @@
             "format": "date-time"
           },
           "invitation_accepted_at": {
+            "description": "A nullable date-time value. The value can be null, when present the value is formatted according to the ISO 8601 specification.",
             "$ref": "#/components/schemas/NullableDateTime"
           },
           "created_at": {
@@ -4190,6 +4601,35 @@
         }
       },
       "BatchChangeZoneRecordsInvalidRequestError": {
+        "examples": [
+          {
+            "message": "Validation failed",
+            "errors": {
+              "creates": [
+                {
+                  "index": 0,
+                  "message": "Validation failed",
+                  "errors": {
+                    "base": [
+                      "Matching record already exists for this zone"
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "message": "Validation failed",
+            "errors": {
+              "creates": [
+                {
+                  "index": 0,
+                  "message": "Region selection is not allowed for your plan"
+                }
+              ]
+            }
+          }
+        ],
         "required": [
           "message",
           "errors"
@@ -4308,8 +4748,10 @@
             "type": "string"
           },
           "root": {
-            "type": "string",
-            "nullable": true
+            "type": [
+              "null",
+              "string"
+            ]
           },
           "chain": {
             "type": "array",
@@ -4516,18 +4958,22 @@
             "type": "string"
           },
           "product_id": {
-            "type": "integer",
-            "description": "The ID of the product that was charged. Null when the product type is \u0022manual\u0022.",
-            "nullable": true
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "The ID of the product that was charged. Null when the product type is \u0022manual\u0022."
           },
           "product_type": {
             "type": "string",
             "description": "The type of the product that was charged."
           },
           "product_reference": {
-            "type": "string",
-            "description": "A unique or representative reference. For example, the domain name that was charged.\nOr the ID of the subscription or the order ID of the product. Null when the product\ntype is \u0022manual\u0022\n",
-            "nullable": true
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "A unique or representative reference. For example, the domain name that was charged.\nOr the ID of the subscription or the order ID of the product. Null when the product\ntype is \u0022manual\u0022\n"
           }
         },
         "example": {
@@ -4620,8 +5066,10 @@
             "type": "integer"
           },
           "registrant_id": {
-            "type": "integer",
-            "nullable": true
+            "type": [
+              "null",
+              "integer"
+            ]
           },
           "name": {
             "type": "string"
@@ -4639,6 +5087,7 @@
             "type": "boolean"
           },
           "expires_at": {
+            "description": "A nullable date-time value. The value can be null, when present the value is formatted according to the ISO 8601 specification.",
             "$ref": "#/components/schemas/NullableDateTime"
           },
           "trustee": {
@@ -4735,8 +5184,10 @@
             "type": "string"
           },
           "address2": {
-            "type": "string",
-            "nullable": true
+            "type": [
+              "null",
+              "string"
+            ]
           },
           "city": {
             "type": "string"
@@ -4757,8 +5208,10 @@
             "type": "string"
           },
           "fax": {
-            "type": "string",
-            "nullable": true
+            "type": [
+              "null",
+              "string"
+            ]
           },
           "organization_name": {
             "type": "string",
@@ -5456,6 +5909,7 @@
             "$ref": "#/components/schemas/Dnssec"
           },
           "zone": {
+            "description": "Represents a DNS zone.",
             "$ref": "#/components/schemas/Zone"
           }
         },
@@ -5472,6 +5926,7 @@
             "$ref": "#/components/schemas/Dnssec"
           },
           "zone": {
+            "description": "Represents a DNS zone.",
             "$ref": "#/components/schemas/Zone"
           }
         },
@@ -5492,6 +5947,7 @@
             "$ref": "#/components/schemas/Dnssec"
           },
           "zone": {
+            "description": "Represents a DNS zone.",
             "$ref": "#/components/schemas/Zone"
           }
         },
@@ -5512,6 +5968,7 @@
             "$ref": "#/components/schemas/Dnssec"
           },
           "zone": {
+            "description": "Represents a DNS zone.",
             "$ref": "#/components/schemas/Zone"
           }
         },
@@ -5874,6 +6331,7 @@
             "$ref": "#/components/schemas/Domain"
           },
           "state_change": {
+            "description": "Prior and new domain registration states and reason for a domain.state_change webhook",
             "$ref": "#/components/schemas/DomainStateChangeTransition"
           }
         },
@@ -6075,6 +6533,7 @@
         "type": "object",
         "properties": {
           "zone_record": {
+            "description": "A single DNS record in a zone.",
             "$ref": "#/components/schemas/ZoneRecord"
           }
         },
@@ -6087,6 +6546,7 @@
         "type": "object",
         "properties": {
           "zone_record": {
+            "description": "A single DNS record in a zone.",
             "$ref": "#/components/schemas/ZoneRecord"
           }
         },
@@ -6099,6 +6559,7 @@
         "type": "object",
         "properties": {
           "zone_record": {
+            "description": "A single DNS record in a zone.",
             "$ref": "#/components/schemas/ZoneRecord"
           }
         },
@@ -6199,6 +6660,7 @@
             "$ref": "#/components/schemas/Template"
           },
           "zone": {
+            "description": "Represents a DNS zone.",
             "$ref": "#/components/schemas/Zone"
           }
         },
@@ -6383,6 +6845,7 @@
         "type": "object",
         "properties": {
           "zone": {
+            "description": "Represents a DNS zone.",
             "$ref": "#/components/schemas/Zone"
           }
         },
@@ -6395,6 +6858,7 @@
         "type": "object",
         "properties": {
           "zone": {
+            "description": "Represents a DNS zone.",
             "$ref": "#/components/schemas/Zone"
           }
         },
@@ -6762,6 +7226,7 @@
             "format": "date-time"
           },
           "accepted_at": {
+            "description": "A nullable date-time value. The value can be null, when present the value is formatted according to the ISO 8601 specification.",
             "$ref": "#/components/schemas/NullableDateTime"
           }
         },
@@ -6949,18 +7414,22 @@
             "description": "A human-readable description of the one-click service"
           },
           "setup_description": {
-            "type": "string",
-            "description": "Describes setup requirements",
-            "nullable": true
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Describes setup requirements"
           },
           "requires_setup": {
             "type": "boolean",
             "description": "Flag indicating whether setup is required"
           },
           "default_subdomain": {
-            "type": "string",
-            "description": "The default subdomain used when creating DNS records",
-            "nullable": true
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The default subdomain used when creating DNS records"
           },
           "created_at": {
             "type": "string",
@@ -7021,9 +7490,11 @@
             "description": "The human-readable label value"
           },
           "append": {
-            "type": "string",
-            "description": "Additional text to append to the input field",
-            "nullable": true
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Additional text to append to the input field"
           },
           "description": {
             "type": "string",
@@ -7159,10 +7630,13 @@
             "description": "The Time To Live (TTL) value for the entry, in seconds."
           },
           "priority": {
-            "type": "string",
-            "nullable": true
+            "type": [
+              "null",
+              "string"
+            ]
           },
           "type": {
+            "description": "Supported DNS record types for templates.",
             "$ref": "#/components/schemas/TemplateRecordType"
           },
           "created_at": {
@@ -7522,6 +7996,7 @@
             "format": "uri"
           },
           "suppressed_at": {
+            "description": "A nullable date-time value. The value can be null, when present the value is formatted according to the ISO 8601 specification.",
             "$ref": "#/components/schemas/NullableDateTime"
           }
         },
@@ -7671,10 +8146,12 @@
             "description": "Returns true for a secondary zone, false for a primary zone."
           },
           "last_transferred_at": {
-            "type": "string",
+            "type": [
+              "null",
+              "string"
+            ],
             "description": "Returns the date the zone was last transferred. Used if it is a secondary zone.",
             "format": "date-time",
-            "nullable": true,
             "example": "2010-01-01T01:00:00Z"
           },
           "active": {
@@ -7762,9 +8239,11 @@
             "description": "The unique identifier of the zone this record belongs to"
           },
           "parent_id": {
-            "type": "integer",
-            "description": "If present represents the zone record this record relates to. The parent record is the master record, when the parent is updated or deleted the related record is also updated or deleted. An example of child record is the TXT descriptive record created for an ALIAS record.",
-            "nullable": true
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "If present represents the zone record this record relates to. The parent record is the master record, when the parent is updated or deleted the related record is also updated or deleted. An example of child record is the TXT descriptive record created for an ALIAS record."
           },
           "name": {
             "type": "string",
@@ -7780,12 +8259,15 @@
             "description": "The Time To Live (TTL) value for the entry, in seconds."
           },
           "priority": {
-            "type": "integer",
+            "type": [
+              "null",
+              "integer"
+            ],
             "description": "The priority value for MX and SRV records. Lower values have higher priority.",
-            "default": 0,
-            "nullable": true
+            "default": 0
           },
           "type": {
+            "description": "The type of DNS record. Supported DNS record types are listed below. Note that some record types may only be available on specific plans.",
             "$ref": "#/components/schemas/ZoneRecordType"
           },
           "regions": {
@@ -8341,6 +8823,7 @@
             "type": "string"
           },
           "type": {
+            "description": "The type of DNS record. Supported DNS record types are listed below. Note that some record types may only be available on specific plans.",
             "$ref": "#/components/schemas/ZoneRecordType"
           },
           "content": {
@@ -9059,6 +9542,7 @@
             "type": "string"
           },
           "type": {
+            "description": "The type of DNS record. Supported DNS record types are listed below. Note that some record types may only be available on specific plans.",
             "$ref": "#/components/schemas/ZoneRecordType"
           },
           "content": {
@@ -9298,8 +9782,10 @@
             "example": "bearer"
           },
           "scope": {
-            "type": "string",
-            "nullable": true
+            "type": [
+              "null",
+              "string"
+            ]
           },
           "account_id": {
             "type": "integer"
@@ -10187,6 +10673,7 @@
         "type": "object",
         "properties": {
           "data": {
+            "description": "Represents a DNS zone.",
             "$ref": "#/components/schemas/Zone"
           }
         }
@@ -10198,6 +10685,7 @@
         "type": "object",
         "properties": {
           "data": {
+            "description": "Represents a DNS zone.",
             "$ref": "#/components/schemas/Zone"
           }
         }
@@ -10209,6 +10697,7 @@
         "type": "object",
         "properties": {
           "data": {
+            "description": "A DNS zone file.",
             "$ref": "#/components/schemas/ZoneFile"
           }
         }
@@ -10220,6 +10709,7 @@
         "type": "object",
         "properties": {
           "data": {
+            "description": "Zone distribution check",
             "$ref": "#/components/schemas/ZoneDistribution"
           }
         }
@@ -10245,6 +10735,7 @@
         "type": "object",
         "properties": {
           "data": {
+            "description": "A single DNS record in a zone.",
             "$ref": "#/components/schemas/ZoneRecord"
           }
         }
@@ -10256,6 +10747,7 @@
         "type": "object",
         "properties": {
           "data": {
+            "description": "A single DNS record in a zone.",
             "$ref": "#/components/schemas/ZoneRecord"
           }
         }
@@ -10267,6 +10759,7 @@
         "type": "object",
         "properties": {
           "data": {
+            "description": "A single DNS record in a zone.",
             "$ref": "#/components/schemas/ZoneRecord"
           }
         }
@@ -10278,6 +10771,7 @@
         "type": "object",
         "properties": {
           "data": {
+            "description": "Response from batch change of zone records",
             "$ref": "#/components/schemas/BatchChangeZoneRecordsResponse"
           }
         }
@@ -10289,6 +10783,7 @@
         "type": "object",
         "properties": {
           "data": {
+            "description": "Zone distribution check",
             "$ref": "#/components/schemas/ZoneDistribution"
           }
         }
@@ -10300,6 +10795,7 @@
         "type": "object",
         "properties": {
           "data": {
+            "description": "Represents a DNS zone.",
             "$ref": "#/components/schemas/Zone"
           }
         }
@@ -10311,6 +10807,7 @@
         "type": "object",
         "properties": {
           "data": {
+            "description": "Represents a DNS zone.",
             "$ref": "#/components/schemas/Zone"
           }
         }
@@ -10669,9 +11166,11 @@
             "type": "integer"
           },
           "start_date": {
+            "description": "A nullable date-time value. The value can be null, when present the value is formatted according to the ISO 8601 specification.",
             "$ref": "#/components/schemas/NullableDate"
           },
           "end_date": {
+            "description": "A nullable date-time value. The value can be null, when present the value is formatted according to the ISO 8601 specification.",
             "$ref": "#/components/schemas/NullableDate"
           },
           "sort": {
@@ -10680,9 +11179,11 @@
             "example": "date:asc,zone_name:asc"
           },
           "groupings": {
-            "type": "string",
+            "type": [
+              "null",
+              "string"
+            ],
             "description": "Grouping applied to the returned data.",
-            "nullable": true,
             "example": "date,zone_name"
           },
           "page": {
@@ -10698,8 +11199,10 @@
         }
       },
       "Whoami200ResponseDataUser": {
-        "type": "object",
-        "nullable": true
+        "type": [
+          "null",
+          "object"
+        ]
       },
       "CertificateState": {
         "enum": [
