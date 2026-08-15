@@ -14,7 +14,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;Set to true to enable the auto-renewal of the domain. Default: false.&quot;</summary>
+        /// <summary>Set to true to enable the auto-renewal of the domain. Default: false.</summary>
         public bool? AutoRenew { get; set; }
         /// <summary>Required for TLDs that require extended attributes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -42,9 +42,9 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
 #endif
         /// <summary>The ID of an existing contact in your account.</summary>
         public int? RegistrantId { get; set; }
-        /// <summary>&quot;Set to true will attempt to purchase/enable trustee service as part of the registration. An extra cost may apply. Default: false.&quot;</summary>
+        /// <summary>Set to true will attempt to purchase/enable trustee service as part of the registration. An extra cost may apply. Default: false.</summary>
         public bool? Trustee { get; set; }
-        /// <summary>&quot;Set to true will attempt to purchase/enable the whois privacy as part of the registration. An extra cost may apply. Default: false.&quot;</summary>
+        /// <summary>Set to true will attempt to purchase/enable the whois privacy as part of the registration. An extra cost may apply. Default: false.</summary>
         public bool? WhoisPrivacy { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.DomainRegisterRequest"/> and sets the default values.
