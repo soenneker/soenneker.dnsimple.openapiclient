@@ -40,7 +40,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Delegatio
         {
         }
         /// <summary>
-        /// Lists the name servers for the domain.
+        /// Lists the name servers for the domain.The canonical DNSimple name server hostnames are ns1.dnsimple-edge.com, ns2.dnsimple-edge.net, ns3.dnsimple-edge.io, and ns4.dnsimple-edge.org. Domains delegated to the legacy ns1.dnsimple.com through ns4.dnsimple.com hostnames are returned as delegated to those hostnames, which still resolve and answer from the same edge infrastructure.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.GetDomainDelegation200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -63,7 +63,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Delegatio
             return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.GetDomainDelegation200Response>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.GetDomainDelegation200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Changes the domain name servers.
+        /// Changes the domain name servers.Both the canonical dnsimple-edge hostnames and the legacy ns1.dnsimple.com through ns4.dnsimple.com hostnames are accepted. New delegations should use the canonical hostnames.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.ChangeDomainDelegation200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Delegatio
             return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.ChangeDomainDelegation200Response>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.ChangeDomainDelegation200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists the name servers for the domain.
+        /// Lists the name servers for the domain.The canonical DNSimple name server hostnames are ns1.dnsimple-edge.com, ns2.dnsimple-edge.net, ns3.dnsimple-edge.io, and ns4.dnsimple-edge.org. Domains delegated to the legacy ns1.dnsimple.com through ns4.dnsimple.com hostnames are returned as delegated to those hostnames, which still resolve and answer from the same edge infrastructure.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +109,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Delegatio
             return requestInfo;
         }
         /// <summary>
-        /// Changes the domain name servers.
+        /// Changes the domain name servers.Both the canonical dnsimple-edge hostnames and the legacy ns1.dnsimple.com through ns4.dnsimple.com hostnames are accepted. New delegations should use the canonical hostnames.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

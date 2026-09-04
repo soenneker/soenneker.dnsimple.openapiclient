@@ -1864,7 +1864,7 @@
           "registrar delegation"
         ],
         "summary": "List domain name servers",
-        "description": "Lists the name servers for the domain.",
+        "description": "Lists the name servers for the domain.\n\nThe canonical DNSimple name server hostnames are ns1.dnsimple-edge.com, ns2.dnsimple-edge.net, ns3.dnsimple-edge.io, and ns4.dnsimple-edge.org. Domains delegated to the legacy ns1.dnsimple.com through ns4.dnsimple.com hostnames are returned as delegated to those hostnames, which still resolve and answer from the same edge infrastructure.",
         "operationId": "GetDomainDelegation",
         "parameters": [
           {
@@ -1898,7 +1898,7 @@
           "registrar delegation"
         ],
         "summary": "Change domain name servers",
-        "description": "Changes the domain name servers.",
+        "description": "Changes the domain name servers.\n\nBoth the canonical dnsimple-edge hostnames and the legacy ns1.dnsimple.com through ns4.dnsimple.com hostnames are accepted. New delegations should use the canonical hostnames.",
         "operationId": "ChangeDomainDelegation",
         "parameters": [
           {
@@ -8241,7 +8241,7 @@
         },
         "description": "A DNS zone file.",
         "example": {
-          "zone": "$ORIGIN example.com.\n$TTL 1h\nexample.com. 3600 IN SOA ns1.dnsimple.com. admin.dnsimple.com. 1453132552 86400 7200 604800 300\nexample.com. 3600 IN NS ns1.dnsimple.com.\nexample.com. 3600 IN NS ns2.dnsimple.com.\nexample.com. 3600 IN NS ns3.dnsimple.com.\nexample.com. 3600 IN NS ns4.dnsimple.com.\n"
+          "zone": "$ORIGIN example.com.\n$TTL 1h\nexample.com. 3600 IN SOA ns1.dnsimple-edge.com. admin.dnsimple.com. 1453132552 86400 7200 604800 300\nexample.com. 3600 IN NS ns1.dnsimple-edge.com.\nexample.com. 3600 IN NS ns2.dnsimple-edge.net.\nexample.com. 3600 IN NS ns3.dnsimple-edge.io.\nexample.com. 3600 IN NS ns4.dnsimple-edge.org.\n"
         }
       },
       "ZoneDistribution": {
@@ -8345,7 +8345,7 @@
           "zone_id": "example.com",
           "parent_id": null,
           "name": "",
-          "content": "ns1.dnsimple.com admin.dnsimple.com 1458642070 86400 7200 604800 300",
+          "content": "ns1.dnsimple-edge.com admin.dnsimple.com 1458642070 86400 7200 604800 300",
           "ttl": 3600,
           "priority": null,
           "type": "SOA",
@@ -9532,7 +9532,7 @@
         "properties": {
           "type": {
             "type": "string",
-            "description": "Notice family. New values may be added at any time; treat an unknown value as informational and fall back to displaying \u0060message\u0060 verbatim. Values currently emitted:\n- \u0060de_holder_verification_notice\u0060\n- \u0060de_holder_verification_suspension\u0060\n"
+            "description": "Notice family. New values may be added at any time; treat an unknown value as informational and fall back to displaying \u0060message\u0060 verbatim. Values currently emitted:\n- \u0060de_holder_verification_notice\u0060\n- \u0060de_holder_verification_suspension\u0060\n- \u0060se_registrant_verification_notice\u0060\n- \u0060icann_email_verification_notice\u0060\n- \u0060icann_email_verification_suspension\u0060\n- \u0060icann_email_verification_reactivation\u0060\n"
           },
           "message": {
             "type": "string",
