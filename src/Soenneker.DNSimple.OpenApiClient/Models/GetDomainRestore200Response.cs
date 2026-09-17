@@ -17,10 +17,10 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.DNSimple.OpenApiClient.Models.DomainRestoreBody? Data { get; set; }
+        public global::Soenneker.DNSimple.OpenApiClient.Models.DomainRestore? Data { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.DNSimple.OpenApiClient.Models.DomainRestoreBody Data { get; set; }
+        public global::Soenneker.DNSimple.OpenApiClient.Models.DomainRestore Data { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.GetDomainRestore200Response"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetObjectValue<global::Soenneker.DNSimple.OpenApiClient.Models.DomainRestoreBody>(global::Soenneker.DNSimple.OpenApiClient.Models.DomainRestoreBody.CreateFromDiscriminatorValue); } },
+                { "data", n => { Data = n.GetObjectValue<global::Soenneker.DNSimple.OpenApiClient.Models.DomainRestore>(global::Soenneker.DNSimple.OpenApiClient.Models.DomainRestore.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.DNSimple.OpenApiClient.Models.DomainRestoreBody>("data", Data);
+            writer.WriteObjectValue<global::Soenneker.DNSimple.OpenApiClient.Models.DomainRestore>("data", Data);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

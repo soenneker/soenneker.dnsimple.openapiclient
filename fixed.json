@@ -1664,7 +1664,7 @@
         ],
         "summary": "Renew a domain",
         "description": "Explicitly renews a domain, if the registry supports this function.\n\nYour account must be active for this command to complete successfully. You will be automatically charged the renewal fee upon successful renewal, so please be careful with this command.",
-        "operationId": "DomainRenew",
+        "operationId": "RenewDomain",
         "parameters": [
           {
             "description": "The account id",
@@ -1685,7 +1685,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DomainRenew201Response"
+                  "$ref": "#/components/schemas/RenewDomain201Response"
                 }
               }
             }
@@ -1744,7 +1744,7 @@
         ],
         "summary": "Restore a domain",
         "description": "Explicitly restores an domain that can not be renewed anymore, if the registry supports this function.\n\nYour account must be active for this command to complete successfully. You will be automatically charged the restore fee upon successful restore, so please be careful with this command.",
-        "operationId": "DomainRestore",
+        "operationId": "RestoreDomain",
         "parameters": [
           {
             "description": "The account id",
@@ -1765,7 +1765,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DomainRestore201Response"
+                  "$ref": "#/components/schemas/RestoreDomain201Response"
                 }
               }
             }
@@ -5483,7 +5483,7 @@
           "updated_at": "2016-12-09T19:46:45Z"
         }
       },
-      "DomainRestoreBody": {
+      "DomainRestore": {
         "required": [
           "id",
           "domain_id",
@@ -5500,7 +5500,7 @@
             "type": "integer"
           },
           "state": {
-            "$ref": "#/components/schemas/DomainRestoreBodyState"
+            "$ref": "#/components/schemas/DomainRestoreState"
           },
           "created_at": {
             "type": "string",
@@ -8290,7 +8290,8 @@
               "null",
               "integer"
             ],
-            "description": "If present represents the zone record this record relates to. The parent record is the master record, when the parent is updated or deleted the related record is also updated or deleted. An example of child record is the TXT descriptive record created for an ALIAS record."
+            "description": "Deprecated - the value is always null.",
+            "deprecated": true
           },
           "name": {
             "type": "string",
@@ -10536,7 +10537,7 @@
           }
         }
       },
-      "DomainRenew201Response": {
+      "RenewDomain201Response": {
         "required": [
           "data"
         ],
@@ -10558,14 +10559,14 @@
           }
         }
       },
-      "DomainRestore201Response": {
+      "RestoreDomain201Response": {
         "required": [
           "data"
         ],
         "type": "object",
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/DomainRestoreBody"
+            "$ref": "#/components/schemas/DomainRestore"
           }
         }
       },
@@ -10576,7 +10577,7 @@
         "type": "object",
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/DomainRestoreBody"
+            "$ref": "#/components/schemas/DomainRestore"
           }
         }
       },
@@ -11466,7 +11467,7 @@
           ]
         }
       },
-      "DomainRestoreBodyState": {
+      "DomainRestoreState": {
         "enum": [
           "new",
           "restoring",
@@ -11476,7 +11477,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "DomainRestoreBodyState",
+          "name": "DomainRestoreState",
           "modelAsString": false,
           "values": [
             {

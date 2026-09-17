@@ -35,7 +35,8 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>If present represents the zone record this record relates to. The parent record is the master record, when the parent is updated or deleted the related record is also updated or deleted. An example of child record is the TXT descriptive record created for an ALIAS record.</summary>
+        /// <summary>Deprecated - the value is always null.</summary>
+        [Obsolete("")]
         public int? ParentId { get; set; }
         /// <summary>The priority value for MX and SRV records. Lower values have higher priority.</summary>
         public int? Priority { get; set; }
