@@ -47,7 +47,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Restores
         {
         }
         /// <summary>
-        /// Explicitly restores an domain that can not be renewed anymore, if the registry supports this function.Your account must be active for this command to complete successfully. You will be automatically charged the restore fee upon successful restore, so please be careful with this command.
+        /// Explicitly restores a domain that can no longer be renewed, if the registry supports this function.Your account must be active for this command to complete successfully. You will be automatically charged the restore fee upon successful restore, so please be careful with this command.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.RestoreDomain201Response"/></returns>
         /// <param name="body">The request body</param>
@@ -76,7 +76,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Restores
             return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.RestoreDomain201Response>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.RestoreDomain201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Explicitly restores an domain that can not be renewed anymore, if the registry supports this function.Your account must be active for this command to complete successfully. You will be automatically charged the restore fee upon successful restore, so please be careful with this command.
+        /// Explicitly restores a domain that can no longer be renewed, if the registry supports this function.Your account must be active for this command to complete successfully. You will be automatically charged the restore fee upon successful restore, so please be careful with this command.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
