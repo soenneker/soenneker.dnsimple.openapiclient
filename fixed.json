@@ -4222,7 +4222,9 @@
             "in": "query",
             "description": "Only include results after the given date. Format is ISO8601 (YYYY-MM-DD). It can be a max of 31 days away from the end_date. If omitted, it defaults to 31 days ago.",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "A date value formatted as ISO 8601.",
+              "format": "date"
             }
           },
           {
@@ -4230,7 +4232,9 @@
             "in": "query",
             "description": "Only include results before the given date. Format is ISO8601 (YYYY-MM-DD). It can be a max of 31 days away from the start_date. If omitted, it defaults to 1 day ago.",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "A date value formatted as ISO 8601.",
+              "format": "date"
             }
           },
           {
@@ -4271,112 +4275,29 @@
   },
   "components": {
     "schemas": {
-      "DomainNameServersRequest": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        }
+      "Date": {
+        "type": "string",
+        "description": "A date value formatted as ISO 8601.",
+        "format": "date",
+        "example": "2010-01-01"
       },
-      "DomainCreateRequest": {
-        "required": [
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string"
-          }
-        }
+      "DateTime": {
+        "type": "string",
+        "description": "A date-time value formatted as ISO 8601.",
+        "format": "date-time",
+        "example": "2010-01-01T01:00:00Z"
       },
-      "DelegationSignerCreateRequest": {
-        "type": "object",
-        "properties": {
-          "algorithm": {
-            "type": "string"
-          },
-          "digest": {
-            "type": "string"
-          },
-          "digest_type": {
-            "type": "string"
-          },
-          "keytag": {
-            "type": "string"
-          },
-          "public_key": {
-            "type": "string"
-          }
-        }
+      "DateTimeCreatedAt": {
+        "type": "string",
+        "description": "A date-time value, representing when the entry was created, formatted as ISO 8601.",
+        "format": "date-time",
+        "example": "2010-01-01T01:00:00Z"
       },
-      "ContactUpdateRequest": {
-        "type": "object",
-        "properties": {
-          "label": {
-            "type": "string"
-          },
-          "first_name": {
-            "type": "string"
-          },
-          "last_name": {
-            "type": "string"
-          },
-          "address1": {
-            "type": "string"
-          },
-          "address2": {
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "city": {
-            "type": "string"
-          },
-          "state_province": {
-            "type": "string"
-          },
-          "postal_code": {
-            "type": "string"
-          },
-          "country": {
-            "type": "string"
-          },
-          "email": {
-            "type": "string"
-          },
-          "phone": {
-            "type": "string"
-          },
-          "fax": {
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "organization_name": {
-            "type": "string",
-            "description": "The company name. If the organization_name is specified, then you must also include job_title."
-          },
-          "job_title": {
-            "type": "string",
-            "description": "The contact\u0027s job title. Required if the organization_name is specified."
-          }
-        },
-        "example": {
-          "label": "Default",
-          "first_name": "First",
-          "last_name": "User",
-          "job_title": "CEO",
-          "organization_name": "Awesome Company",
-          "email": "first@example.com",
-          "phone": "\u002B18001234567",
-          "fax": "\u002B18011234567",
-          "address1": "Italian Street, 10",
-          "city": "Roma",
-          "state_province": "RM",
-          "postal_code": "00100",
-          "country": "IT"
-        }
+      "DateTimeUpdatedAt": {
+        "type": "string",
+        "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
+        "format": "date-time",
+        "example": "2010-01-01T01:00:00Z"
       },
       "NullableDate": {
         "type": [
@@ -5204,86 +5125,8 @@
           "trustee": true
         }
       },
-      "ContactCreateRequest": {
-        "required": [
-          "first_name",
-          "last_name",
-          "email",
-          "phone",
-          "address1",
-          "city",
-          "state_province",
-          "postal_code",
-          "country"
-        ],
-        "type": "object",
-        "properties": {
-          "label": {
-            "type": "string"
-          },
-          "first_name": {
-            "type": "string"
-          },
-          "last_name": {
-            "type": "string"
-          },
-          "address1": {
-            "type": "string"
-          },
-          "address2": {
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "city": {
-            "type": "string"
-          },
-          "state_province": {
-            "type": "string"
-          },
-          "postal_code": {
-            "type": "string"
-          },
-          "country": {
-            "type": "string"
-          },
-          "email": {
-            "type": "string"
-          },
-          "phone": {
-            "type": "string"
-          },
-          "fax": {
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "organization_name": {
-            "type": "string",
-            "description": "The company name. If the organization_name is specified, then you must also include job_title."
-          },
-          "job_title": {
-            "type": "string",
-            "description": "The contact\u0027s job title. Required if the organization_name is specified."
-          }
-        },
-        "example": {
-          "label": "Default",
-          "first_name": "First",
-          "last_name": "User",
-          "job_title": "CEO",
-          "organization_name": "Awesome Company",
-          "email": "first@example.com",
-          "phone": "\u002B18001234567",
-          "fax": "\u002B18011234567",
-          "address1": "Italian Street, 10",
-          "city": "Roma",
-          "state_province": "RM",
-          "postal_code": "00100",
-          "country": "IT"
-        }
+      "DomainNameServer": {
+        "type": "string"
       },
       "DomainPrices": {
         "required": [
@@ -7912,52 +7755,11 @@
         "additionalProperties": false,
         "description": "TLD types are: * 1 - gTLD (global TLD) * 2 - ccTLD (country-code TLD) * 3 - newTLD (new global TLD)"
       },
-      "BatchChangeZoneRecordsRequest": {
-        "type": "object",
-        "properties": {
-          "creates": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BatchChangeZoneRecordsRequestCreatesItem"
-            },
-            "description": "Zone records to create"
-          },
-          "updates": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BatchChangeZoneRecordsRequestUpdatesItem"
-            },
-            "description": "Zone records to update"
-          },
-          "deletes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BatchChangeZoneRecordsRequestDeletesItem"
-            },
-            "description": "Zone record IDs to delete"
-          }
-        },
-        "example": {
-          "creates": [
-            {
-              "name": "ab",
-              "type": "A",
-              "content": "3.2.3.4",
-              "ttl": 3600
-            }
-          ],
-          "updates": [
-            {
-              "id": 67622534,
-              "content": "3.2.3.40"
-            }
-          ],
-          "deletes": [
-            {
-              "id": 67622509
-            }
-          ]
-        }
+      "Ttl": {
+        "minimum": 0,
+        "type": "integer",
+        "description": "The Time To Live (TTL) value for the entry, in seconds.",
+        "default": 3600
       },
       "User": {
         "required": [
@@ -8517,6 +8319,241 @@
               "name": "Url"
             }
           ]
+        }
+      },
+      "BatchChangeZoneRecordsRequest": {
+        "type": "object",
+        "properties": {
+          "creates": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BatchChangeZoneRecordsRequestCreatesItem"
+            },
+            "description": "Zone records to create"
+          },
+          "updates": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BatchChangeZoneRecordsRequestUpdatesItem"
+            },
+            "description": "Zone records to update"
+          },
+          "deletes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BatchChangeZoneRecordsRequestDeletesItem"
+            },
+            "description": "Zone record IDs to delete"
+          }
+        },
+        "example": {
+          "creates": [
+            {
+              "name": "ab",
+              "type": "A",
+              "content": "3.2.3.4",
+              "ttl": 3600
+            }
+          ],
+          "updates": [
+            {
+              "id": 67622534,
+              "content": "3.2.3.40"
+            }
+          ],
+          "deletes": [
+            {
+              "id": 67622509
+            }
+          ]
+        }
+      },
+      "ContactCreateRequest": {
+        "required": [
+          "first_name",
+          "last_name",
+          "email",
+          "phone",
+          "address1",
+          "city",
+          "state_province",
+          "postal_code",
+          "country"
+        ],
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "first_name": {
+            "type": "string"
+          },
+          "last_name": {
+            "type": "string"
+          },
+          "address1": {
+            "type": "string"
+          },
+          "address2": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "city": {
+            "type": "string"
+          },
+          "state_province": {
+            "type": "string"
+          },
+          "postal_code": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "fax": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "organization_name": {
+            "type": "string",
+            "description": "The company name. If the organization_name is specified, then you must also include job_title."
+          },
+          "job_title": {
+            "type": "string",
+            "description": "The contact\u0027s job title. Required if the organization_name is specified."
+          }
+        },
+        "example": {
+          "label": "Default",
+          "first_name": "First",
+          "last_name": "User",
+          "job_title": "CEO",
+          "organization_name": "Awesome Company",
+          "email": "first@example.com",
+          "phone": "\u002B18001234567",
+          "fax": "\u002B18011234567",
+          "address1": "Italian Street, 10",
+          "city": "Roma",
+          "state_province": "RM",
+          "postal_code": "00100",
+          "country": "IT"
+        }
+      },
+      "ContactUpdateRequest": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "first_name": {
+            "type": "string"
+          },
+          "last_name": {
+            "type": "string"
+          },
+          "address1": {
+            "type": "string"
+          },
+          "address2": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "city": {
+            "type": "string"
+          },
+          "state_province": {
+            "type": "string"
+          },
+          "postal_code": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "fax": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "organization_name": {
+            "type": "string",
+            "description": "The company name. If the organization_name is specified, then you must also include job_title."
+          },
+          "job_title": {
+            "type": "string",
+            "description": "The contact\u0027s job title. Required if the organization_name is specified."
+          }
+        },
+        "example": {
+          "label": "Default",
+          "first_name": "First",
+          "last_name": "User",
+          "job_title": "CEO",
+          "organization_name": "Awesome Company",
+          "email": "first@example.com",
+          "phone": "\u002B18001234567",
+          "fax": "\u002B18011234567",
+          "address1": "Italian Street, 10",
+          "city": "Roma",
+          "state_province": "RM",
+          "postal_code": "00100",
+          "country": "IT"
+        }
+      },
+      "DelegationSignerCreateRequest": {
+        "type": "object",
+        "properties": {
+          "algorithm": {
+            "type": "string"
+          },
+          "digest": {
+            "type": "string"
+          },
+          "digest_type": {
+            "type": "string"
+          },
+          "keytag": {
+            "type": "string"
+          },
+          "public_key": {
+            "type": "string"
+          }
+        }
+      },
+      "DomainCreateRequest": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "DomainNameServersRequest": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       },
       "ZoneNsRecordsUpdateRequest": {
@@ -13402,7 +13439,9 @@
         "in": "query",
         "description": "Only include results after the given date. Format is ISO8601 (YYYY-MM-DD).",
         "schema": {
-          "type": "string"
+          "type": "string",
+          "description": "A date value formatted as ISO 8601.",
+          "format": "date"
         }
       },
       "FilterEndDate": {
@@ -13410,7 +13449,9 @@
         "in": "query",
         "description": "Only include results before the given date. Format is ISO8601 (YYYY-MM-DD).",
         "schema": {
-          "type": "string"
+          "type": "string",
+          "description": "A date value formatted as ISO 8601.",
+          "format": "date"
         }
       },
       "FilterType": {

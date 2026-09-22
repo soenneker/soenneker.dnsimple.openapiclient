@@ -93,28 +93,14 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Billing.Charges
         public partial class ChargesRequestBuilderGetQueryParameters 
         {
             /// <summary>Only include results before the given date. Format is ISO8601 (YYYY-MM-DD).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("end_date")]
-            public string? EndDate { get; set; }
-#nullable restore
-#else
-            [QueryParameter("end_date")]
-            public string EndDate { get; set; }
-#endif
+            public Date? EndDate { get; set; }
             /// <summary>Sort results. Default sorting is by invoiced ascending.</summary>
             [QueryParameter("sort")]
             public global::Soenneker.DNSimple.OpenApiClient.Models.SortCharges? Sort { get; set; }
             /// <summary>Only include results after the given date. Format is ISO8601 (YYYY-MM-DD).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("start_date")]
-            public string? StartDate { get; set; }
-#nullable restore
-#else
-            [QueryParameter("start_date")]
-            public string StartDate { get; set; }
-#endif
+            public Date? StartDate { get; set; }
         }
     }
 }
