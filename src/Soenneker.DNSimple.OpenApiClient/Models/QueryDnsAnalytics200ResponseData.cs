@@ -25,10 +25,10 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         /// <summary>The rows property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? Rows { get; set; }
+        public UntypedNode? Rows { get; set; }
 #nullable restore
 #else
-        public List<int?> Rows { get; set; }
+        public UntypedNode Rows { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.QueryDnsAnalytics200ResponseData"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "headers", n => { Headers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "rows", n => { Rows = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
+                { "rows", n => { Rows = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("headers", Headers);
-            writer.WriteCollectionOfPrimitiveValues<int?>("rows", Rows);
+            writer.WriteObjectValue<UntypedNode>("rows", Rows);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

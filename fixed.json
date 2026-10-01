@@ -11098,7 +11098,7 @@
           "type": "string"
         }
       },
-      "QueryDnsAnalytics200ResponseDataRowsItem": {
+      "QueryDnsAnalytics200ResponseDataRowsItemItem": {
         "type": "object",
         "anyOf": [
           {
@@ -11198,14 +11198,16 @@
           "rows": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/QueryDnsAnalytics200ResponseDataRowsItem"
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/QueryDnsAnalytics200ResponseDataRowsItemItem"
+              }
             }
           },
           "headers": {
             "type": "array",
             "items": {
-              "type": "string",
-              "example": "zone_name,volume"
+              "type": "string"
             }
           }
         }
