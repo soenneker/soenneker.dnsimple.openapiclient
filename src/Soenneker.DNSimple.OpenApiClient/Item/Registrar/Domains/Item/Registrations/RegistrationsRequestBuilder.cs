@@ -47,7 +47,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrat
         {
         }
         /// <summary>
-        /// Registers a domain name.Your account must be active for this command to complete successfully. You will be automatically charged the registration fee upon successful registration, so please be careful with this command.When registering a domain using Solo or Teams subscription, the DNS servicesfor the zone will be automatically enabled and this will be charged on yourfollowing subscription renewal invoices.
+        /// Registers a domain name.Your account must be active for this command to complete successfully. You will be automatically charged the registration fee upon successful registration, so please be careful with this command.When you register a domain on a Solo, Solo Pro or Teams plan, DNSimple automatically enables DNS services for its zone. DNSimple charges for the zone on each subscription renewal invoice.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.RegisterDomain201Response"/></returns>
         /// <param name="body">The request body</param>
@@ -72,7 +72,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Registrat
             return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.RegisterDomain201Response>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.RegisterDomain201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Registers a domain name.Your account must be active for this command to complete successfully. You will be automatically charged the registration fee upon successful registration, so please be careful with this command.When registering a domain using Solo or Teams subscription, the DNS servicesfor the zone will be automatically enabled and this will be charged on yourfollowing subscription renewal invoices.
+        /// Registers a domain name.Your account must be active for this command to complete successfully. You will be automatically charged the registration fee upon successful registration, so please be careful with this command.When you register a domain on a Solo, Solo Pro or Teams plan, DNSimple automatically enables DNS services for its zone. DNSimple charges for the zone on each subscription renewal invoice.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

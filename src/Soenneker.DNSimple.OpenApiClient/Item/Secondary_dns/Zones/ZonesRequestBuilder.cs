@@ -34,7 +34,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Zones
         {
         }
         /// <summary>
-        /// Creates a secondary zone into the account.When creating a secondary zone using Solo or Teams subscription, the DNSservices for the zone will be automatically enabled and this will be chargedon your following subscription renewal invoices.
+        /// Creates a secondary zone into the account.When you create a secondary zone on a Solo Pro or Teams plan, DNSimple automatically enables DNS services for the zone. DNSimple charges for the zone on each subscription renewal invoice.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.CreateSecondaryZone201Response"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Secondary_dns.Zones
             return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.CreateSecondaryZone201Response>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.CreateSecondaryZone201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a secondary zone into the account.When creating a secondary zone using Solo or Teams subscription, the DNSservices for the zone will be automatically enabled and this will be chargedon your following subscription renewal invoices.
+        /// Creates a secondary zone into the account.When you create a secondary zone on a Solo Pro or Teams plan, DNSimple automatically enables DNS services for the zone. DNSimple charges for the zone on each subscription renewal invoice.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

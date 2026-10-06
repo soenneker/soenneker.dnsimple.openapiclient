@@ -68,7 +68,7 @@
             "$ref": "#/components/responses/401"
           },
           "429": {
-            "description": "You exceeded the allowed number of requests per hour and your request has temporarily been throttled.",
+            "description": "You exceeded the allowed number of requests per hour and your request has temporarily been throttled. The API also returns this status after too many failed authentication attempts. That block lasts up to one hour.",
             "$ref": "#/components/responses/429"
           },
           "default": {
@@ -173,7 +173,7 @@
             "$ref": "#/components/responses/401"
           },
           "429": {
-            "description": "You exceeded the allowed number of requests per hour and your request has temporarily been throttled.",
+            "description": "You exceeded the allowed number of requests per hour and your request has temporarily been throttled. The API also returns this status after too many failed authentication attempts. That block lasts up to one hour.",
             "$ref": "#/components/responses/429"
           }
         }
@@ -223,7 +223,7 @@
           "domains"
         ],
         "summary": "Create a domain",
-        "description": "Creates a domain and the corresponding zone into the account.\n\nWhen creating a domain using Solo or Teams subscription, the DNS services\nfor the zone will be automatically enabled and this will be charged on your\nfollowing subscription renewal invoices.",
+        "description": "Creates a domain and the corresponding zone into the account.\n\nWhen you create a domain on a Solo, Solo Pro or Teams plan, DNSimple automatically enables DNS services for its zone. DNSimple charges for the zone on each subscription renewal invoice.",
         "operationId": "CreateDomain",
         "parameters": [
           {
@@ -367,7 +367,7 @@
             "$ref": "#/components/responses/401"
           },
           "429": {
-            "description": "You exceeded the allowed number of requests per hour and your request has temporarily been throttled.",
+            "description": "You exceeded the allowed number of requests per hour and your request has temporarily been throttled. The API also returns this status after too many failed authentication attempts. That block lasts up to one hour.",
             "$ref": "#/components/responses/429"
           }
         }
@@ -1465,7 +1465,7 @@
           "registrar"
         ],
         "summary": "Register a domain",
-        "description": "Registers a domain name.\n\nYour account must be active for this command to complete successfully. You will be automatically charged the registration fee upon successful registration, so please be careful with this command.\n\nWhen registering a domain using Solo or Teams subscription, the DNS services\nfor the zone will be automatically enabled and this will be charged on your\nfollowing subscription renewal invoices.",
+        "description": "Registers a domain name.\n\nYour account must be active for this command to complete successfully. You will be automatically charged the registration fee upon successful registration, so please be careful with this command.\n\nWhen you register a domain on a Solo, Solo Pro or Teams plan, DNSimple automatically enables DNS services for its zone. DNSimple charges for the zone on each subscription renewal invoice.",
         "operationId": "RegisterDomain",
         "parameters": [
           {
@@ -1545,7 +1545,7 @@
           "registrar"
         ],
         "summary": "Transfer a domain",
-        "description": "Transfers a domain name from another registrar.\n\nYour account must be active for this command to complete successfully. You will be automatically charged the 1-year transfer fee upon successful transfer, so please be careful with this command. The transfer may take anywhere from a few minutes up to 7 days.\n\nWhen transfering a domain using Solo or Teams subscription, the DNS services\nfor the zone will be automatically enabled and this will be charged on your\nfollowing subscription renewal invoices.",
+        "description": "Transfers a domain name from another registrar.\n\nYour account must be active for this command to complete successfully. You will be automatically charged the 1-year transfer fee upon successful transfer, so please be careful with this command. The transfer may take anywhere from a few minutes up to 7 days.\n\nWhen you transfer a domain on a Solo, Solo Pro or Teams plan, DNSimple automatically enables DNS services for its zone. DNSimple charges for the zone on each subscription renewal invoice.",
         "operationId": "TransferDomain",
         "parameters": [
           {
@@ -2494,7 +2494,7 @@
           "secondary dns"
         ],
         "summary": "Create a secondary zone",
-        "description": "Creates a secondary zone into the account.\n\nWhen creating a secondary zone using Solo or Teams subscription, the DNS\nservices for the zone will be automatically enabled and this will be charged\non your following subscription renewal invoices.",
+        "description": "Creates a secondary zone into the account.\n\nWhen you create a secondary zone on a Solo Pro or Teams plan, DNSimple automatically enables DNS services for the zone. DNSimple charges for the zone on each subscription renewal invoice.",
         "operationId": "CreateSecondaryZone",
         "parameters": [
           {
@@ -3031,7 +3031,7 @@
           "zones"
         ],
         "summary": "Activate a zone DNS service",
-        "description": "Activate DNS services for the zone.\n\nUnder Solo and Teams plans, active zones are charged when renewing your subscription to\nDNSimple",
+        "description": "Activate DNS services for the zone.\n\nOn the Solo, Solo Pro and Teams plans, DNSimple charges for each active zone when your subscription renews.",
         "operationId": "ActivateZoneService",
         "parameters": [
           {
@@ -3065,7 +3065,7 @@
           "zones"
         ],
         "summary": "Deactivate a zone DNS service",
-        "description": "Deactivates DNS services for the zone.\n\nUnder Solo and Teams plans, active zones are charged when renewing your subscription to\nDNSimple",
+        "description": "Deactivates DNS services for the zone.\n\nOn the Solo, Solo Pro and Teams plans, DNSimple charges for each active zone when your subscription renews.",
         "operationId": "DeactivateZoneService",
         "parameters": [
           {
@@ -8016,6 +8016,14 @@
             "type": "string",
             "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
             "format": "date-time"
+          },
+          "records_count": {
+            "type": "integer",
+            "description": "The number of records in the zone. Returned only when retrieving a single zone."
+          },
+          "records_limit": {
+            "type": "integer",
+            "description": "The maximum number of records the zone can hold. Returned only when retrieving a single zone."
           }
         },
         "description": "Represents a DNS zone.",
@@ -11840,7 +11848,12 @@
           "Professional",
           "Master Reseller",
           "Gold v1",
-          "Platinum"
+          "Platinum",
+          "Solo",
+          "Solo Pro",
+          "Teams",
+          "Corporate",
+          "Corporate Yearly"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -11927,6 +11940,14 @@
             {
               "value": "Gold v1",
               "name": "GoldV1"
+            },
+            {
+              "value": "Solo Pro",
+              "name": "SoloPro"
+            },
+            {
+              "value": "Corporate Yearly",
+              "name": "CorporateYearly"
             }
           ]
         }
@@ -13190,8 +13211,11 @@
         "description": "A precondition failed while trying to access a resource."
       },
       "429": {
-        "description": "You exceeded the allowed number of requests per hour and your request has temporarily been throttled.",
+        "description": "You exceeded the allowed number of requests per hour and your request has temporarily been throttled. The API also returns this status after too many failed authentication attempts. That block lasts up to one hour.",
         "headers": {
+          "Retry-After": {
+            "$ref": "#/components/headers/Retry-After"
+          },
           "X-RateLimit-Limit": {
             "$ref": "#/components/headers/X-RateLimit-Limit"
           },
@@ -13211,6 +13235,11 @@
               "example-1": {
                 "value": {
                   "message": "quota exceeded"
+                }
+              },
+              "failed-authentication": {
+                "value": {
+                  "message": "Too many failed authentication attempts. Try again after 2026-09-30T14:00:00Z."
                 }
               }
             }
@@ -13913,6 +13942,12 @@
       }
     },
     "headers": {
+      "Retry-After": {
+        "description": "When the API accepts requests again. A failed authentication block sends the number of seconds until the block ends. A monthly request cap sends an HTTP date.",
+        "schema": {
+          "type": "string"
+        }
+      },
       "X-RateLimit-Limit": {
         "description": "The maximum number of requests you can perform per hour.",
         "schema": {

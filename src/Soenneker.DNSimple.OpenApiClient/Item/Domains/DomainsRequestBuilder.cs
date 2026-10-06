@@ -71,7 +71,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Domains
             return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.ListDomains200Response>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.ListDomains200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a domain and the corresponding zone into the account.When creating a domain using Solo or Teams subscription, the DNS servicesfor the zone will be automatically enabled and this will be charged on yourfollowing subscription renewal invoices.
+        /// Creates a domain and the corresponding zone into the account.When you create a domain on a Solo, Solo Pro or Teams plan, DNSimple automatically enables DNS services for its zone. DNSimple charges for the zone on each subscription renewal invoice.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.CreateDomain201Response"/></returns>
         /// <param name="body">The request body</param>
@@ -115,7 +115,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Domains
             return requestInfo;
         }
         /// <summary>
-        /// Creates a domain and the corresponding zone into the account.When creating a domain using Solo or Teams subscription, the DNS servicesfor the zone will be automatically enabled and this will be charged on yourfollowing subscription renewal invoices.
+        /// Creates a domain and the corresponding zone into the account.When you create a domain on a Solo, Solo Pro or Teams plan, DNSimple automatically enables DNS services for its zone. DNSimple charges for the zone on each subscription renewal invoice.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -47,7 +47,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Transfers
         {
         }
         /// <summary>
-        /// Transfers a domain name from another registrar.Your account must be active for this command to complete successfully. You will be automatically charged the 1-year transfer fee upon successful transfer, so please be careful with this command. The transfer may take anywhere from a few minutes up to 7 days.When transfering a domain using Solo or Teams subscription, the DNS servicesfor the zone will be automatically enabled and this will be charged on yourfollowing subscription renewal invoices.
+        /// Transfers a domain name from another registrar.Your account must be active for this command to complete successfully. You will be automatically charged the 1-year transfer fee upon successful transfer, so please be careful with this command. The transfer may take anywhere from a few minutes up to 7 days.When you transfer a domain on a Solo, Solo Pro or Teams plan, DNSimple automatically enables DNS services for its zone. DNSimple charges for the zone on each subscription renewal invoice.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.TransferDomain201Response"/></returns>
         /// <param name="body">The request body</param>
@@ -72,7 +72,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Registrar.Domains.Item.Transfers
             return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.TransferDomain201Response>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.TransferDomain201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Transfers a domain name from another registrar.Your account must be active for this command to complete successfully. You will be automatically charged the 1-year transfer fee upon successful transfer, so please be careful with this command. The transfer may take anywhere from a few minutes up to 7 days.When transfering a domain using Solo or Teams subscription, the DNS servicesfor the zone will be automatically enabled and this will be charged on yourfollowing subscription renewal invoices.
+        /// Transfers a domain name from another registrar.Your account must be active for this command to complete successfully. You will be automatically charged the 1-year transfer fee upon successful transfer, so please be careful with this command. The transfer may take anywhere from a few minutes up to 7 days.When you transfer a domain on a Solo, Solo Pro or Teams plan, DNSimple automatically enables DNS services for its zone. DNSimple charges for the zone on each subscription renewal invoice.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

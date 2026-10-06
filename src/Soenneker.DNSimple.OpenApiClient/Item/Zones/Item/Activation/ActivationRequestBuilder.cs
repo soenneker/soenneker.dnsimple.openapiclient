@@ -34,7 +34,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Activation
         {
         }
         /// <summary>
-        /// Deactivates DNS services for the zone.Under Solo and Teams plans, active zones are charged when renewing your subscription toDNSimple
+        /// Deactivates DNS services for the zone.On the Solo, Solo Pro and Teams plans, DNSimple charges for each active zone when your subscription renews.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.DeactivateZoneService200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Activation
             return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.DeactivateZoneService200Response>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.DeactivateZoneService200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Activate DNS services for the zone.Under Solo and Teams plans, active zones are charged when renewing your subscription toDNSimple
+        /// Activate DNS services for the zone.On the Solo, Solo Pro and Teams plans, DNSimple charges for each active zone when your subscription renews.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.ActivateZoneService200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +80,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Activation
             return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.ActivateZoneService200Response>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.ActivateZoneService200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deactivates DNS services for the zone.Under Solo and Teams plans, active zones are charged when renewing your subscription toDNSimple
+        /// Deactivates DNS services for the zone.On the Solo, Solo Pro and Teams plans, DNSimple charges for each active zone when your subscription renews.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -99,7 +99,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Activation
             return requestInfo;
         }
         /// <summary>
-        /// Activate DNS services for the zone.Under Solo and Teams plans, active zones are charged when renewing your subscription toDNSimple
+        /// Activate DNS services for the zone.On the Solo, Solo Pro and Teams plans, DNSimple charges for each active zone when your subscription renews.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

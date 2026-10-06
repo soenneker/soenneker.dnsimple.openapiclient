@@ -33,6 +33,10 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The number of records in the zone. Returned only when retrieving a single zone.</summary>
+        public int? RecordsCount { get; set; }
+        /// <summary>The maximum number of records the zone can hold. Returned only when retrieving a single zone.</summary>
+        public int? RecordsLimit { get; set; }
         /// <summary>Returns true for a reverse zone, false for a forward zone.</summary>
         public bool? Reverse { get; set; }
         /// <summary>Returns true for a secondary zone, false for a primary zone.</summary>
@@ -70,6 +74,8 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "last_transferred_at", n => { LastTransferredAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "records_count", n => { RecordsCount = n.GetIntValue(); } },
+                { "records_limit", n => { RecordsLimit = n.GetIntValue(); } },
                 { "reverse", n => { Reverse = n.GetBoolValue(); } },
                 { "secondary", n => { Secondary = n.GetBoolValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -88,6 +94,8 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
             writer.WriteIntValue("id", Id);
             writer.WriteDateTimeOffsetValue("last_transferred_at", LastTransferredAt);
             writer.WriteStringValue("name", Name);
+            writer.WriteIntValue("records_count", RecordsCount);
+            writer.WriteIntValue("records_limit", RecordsLimit);
             writer.WriteBoolValue("reverse", Reverse);
             writer.WriteBoolValue("secondary", Secondary);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
