@@ -33,7 +33,9 @@
         <LangVersion>latest</LangVersion>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageIcon>icon.png</PackageIcon>
-    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild></PropertyGroup>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+        <PackageReleaseNotes Condition="'$(PACKAGE_RELEASE_NOTES)' != ''">$(PACKAGE_RELEASE_NOTES)</PackageReleaseNotes>
+</PropertyGroup>
 
     <ItemGroup>
 
