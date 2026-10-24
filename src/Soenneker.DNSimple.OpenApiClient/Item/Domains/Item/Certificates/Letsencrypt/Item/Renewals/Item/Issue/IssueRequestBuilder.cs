@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Letsencrypt.Item.Renewals.Item.Issue
 {
     /// <summary>
-    /// Builds and executes requests for operations under \{account}\domains\{domain}\certificates\letsencrypt\{certificate-id}\renewals\{renewalId}\issue
+    /// Builds and executes requests for operations under \{account}\domains\{domain}\certificates\letsencrypt\{purchaseId}\renewals\{renewalId}\issue
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IssueRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Letsen
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IssueRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{account}/domains/{domain}/certificates/letsencrypt/{certificate%2Did}/renewals/{renewalId}/issue", pathParameters)
+        public IssueRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{account}/domains/{domain}/certificates/letsencrypt/{purchaseId}/renewals/{renewalId}/issue", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Letsen
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IssueRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{account}/domains/{domain}/certificates/letsencrypt/{certificate%2Did}/renewals/{renewalId}/issue", rawUrl)
+        public IssueRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{account}/domains/{domain}/certificates/letsencrypt/{purchaseId}/renewals/{renewalId}/issue", rawUrl)
         {
         }
         /// <summary>

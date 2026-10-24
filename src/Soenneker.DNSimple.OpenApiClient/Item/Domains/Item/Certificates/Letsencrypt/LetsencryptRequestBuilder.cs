@@ -19,15 +19,15 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Letsen
     public partial class LetsencryptRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.DNSimple.OpenApiClient.item.domains.item.certificates.letsencrypt.item collection</summary>
-        /// <param name="position">The certificate id</param>
-        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Letsencrypt.Item.CertificateItemRequestBuilder"/></returns>
-        public global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Letsencrypt.Item.CertificateItemRequestBuilder this[int position]
+        /// <param name="position">The certificate purchase order id received by `purchaseLetsencryptCertificate`.</param>
+        /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Letsencrypt.Item.WithPurchaseItemRequestBuilder"/></returns>
+        public global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Letsencrypt.Item.WithPurchaseItemRequestBuilder this[int position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("certificate%2Did", position);
-                return new global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Letsencrypt.Item.CertificateItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("purchaseId", position);
+                return new global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Letsencrypt.Item.WithPurchaseItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

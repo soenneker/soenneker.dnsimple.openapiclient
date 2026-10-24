@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Letsencrypt.Item.Renewals
 {
     /// <summary>
-    /// Builds and executes requests for operations under \{account}\domains\{domain}\certificates\letsencrypt\{certificate-id}\renewals
+    /// Builds and executes requests for operations under \{account}\domains\{domain}\certificates\letsencrypt\{purchaseId}\renewals
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RenewalsRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Letsen
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RenewalsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{account}/domains/{domain}/certificates/letsencrypt/{certificate%2Did}/renewals", pathParameters)
+        public RenewalsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{account}/domains/{domain}/certificates/letsencrypt/{purchaseId}/renewals", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Letsen
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RenewalsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{account}/domains/{domain}/certificates/letsencrypt/{certificate%2Did}/renewals", rawUrl)
+        public RenewalsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{account}/domains/{domain}/certificates/letsencrypt/{purchaseId}/renewals", rawUrl)
         {
         }
         /// <summary>

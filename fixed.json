@@ -141,8 +141,13 @@
         "operationId": "ListCharges",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
             "description": "Only include results after the given date. Format is ISO8601 (YYYY-MM-DD).",
@@ -189,8 +194,13 @@
         "operationId": "ListDomains",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
             "description": "Only include results with a name field containing the given string",
@@ -227,8 +237,13 @@
         "operationId": "CreateDomain",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "requestBody": {
@@ -263,12 +278,22 @@
         "operationId": "GetDomain",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -301,12 +326,22 @@
         "operationId": "DeleteDomain",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -334,8 +369,13 @@
         "operationId": "GetDomainsResearchStatus",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
             "name": "domain",
@@ -383,12 +423,22 @@
         "operationId": "GetDomainDnssec",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -421,12 +471,22 @@
         "operationId": "EnableDomainDnssec",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -459,12 +519,22 @@
         "operationId": "DisableDomainDnssec",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -495,12 +565,22 @@
         "operationId": "ListDomainDelegationSignerRecords",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "description": "Sort results. Default sorting is by id.",
@@ -537,12 +617,22 @@
         "operationId": "CreateDomainDelegationSignerRecord",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -581,16 +671,31 @@
         "operationId": "GetDomainDelegationSignerRecord",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
+            "name": "ds",
+            "in": "path",
             "description": "The delegation signer record id",
-            "$ref": "#/components/parameters/DelegationSigner"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {
@@ -623,16 +728,31 @@
         "operationId": "DeleteDomainDelegationSignerRecord",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
+            "name": "ds",
+            "in": "path",
             "description": "The delegation signer record id",
-            "$ref": "#/components/parameters/DelegationSigner"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {
@@ -660,12 +780,22 @@
         "operationId": "ListEmailForwards",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "description": "Sort results. Default sorting is by id.",
@@ -702,12 +832,22 @@
         "operationId": "CreateEmailForward",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -746,16 +886,31 @@
         "operationId": "GetEmailForward",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
+            "name": "emailforward",
+            "in": "path",
             "description": "The email forward id",
-            "$ref": "#/components/parameters/EmailForward"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {
@@ -788,16 +943,31 @@
         "operationId": "DeleteEmailForward",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
+            "name": "emailforward",
+            "in": "path",
             "description": "The email forward id",
-            "$ref": "#/components/parameters/EmailForward"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {
@@ -821,12 +991,22 @@
         "operationId": "InitiateDomainPush",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -865,8 +1045,13 @@
         "operationId": "ListPushes",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {
@@ -893,12 +1078,22 @@
         "operationId": "AcceptPush",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "push",
+            "in": "path",
             "description": "The push id",
-            "$ref": "#/components/parameters/Push"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "requestBody": {
@@ -928,12 +1123,22 @@
         "operationId": "RejectPush",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "push",
+            "in": "path",
             "description": "The push id",
-            "$ref": "#/components/parameters/Push"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {
@@ -961,12 +1166,22 @@
         "operationId": "ListCertificates",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "description": "Sort results. Default sorting is by id.",
@@ -1001,16 +1216,31 @@
         "operationId": "GetCertificate",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
+            "name": "certificate",
+            "in": "path",
             "description": "The certificate id",
-            "$ref": "#/components/parameters/Certificate"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {
@@ -1041,16 +1271,31 @@
         "operationId": "DownloadCertificate",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
+            "name": "certificate",
+            "in": "path",
             "description": "The certificate id",
-            "$ref": "#/components/parameters/Certificate"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {
@@ -1081,16 +1326,31 @@
         "operationId": "GetCertificatePrivateKey",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
+            "name": "certificate",
+            "in": "path",
             "description": "The certificate id",
-            "$ref": "#/components/parameters/Certificate"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {
@@ -1121,12 +1381,22 @@
         "operationId": "PurchaseLetsencryptCertificate",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -1166,12 +1436,22 @@
         "operationId": "IssueLetsencryptCertificate",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "purchaseId",
@@ -1201,7 +1481,7 @@
         }
       }
     },
-    "/{account}/domains/{domain}/certificates/letsencrypt/{certificate}/renewals": {
+    "/{account}/domains/{domain}/certificates/letsencrypt/{purchaseId}/renewals": {
       "post": {
         "tags": [
           "domain certificates"
@@ -1211,16 +1491,31 @@
         "operationId": "PurchaseRenewalLetsencryptCertificate",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
+            "name": "purchaseId",
+            "in": "path",
             "description": "The certificate id",
-            "$ref": "#/components/parameters/Certificate"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "requestBody": {
@@ -1250,7 +1545,7 @@
         }
       }
     },
-    "/{account}/domains/{domain}/certificates/letsencrypt/{certificate}/renewals/{renewalId}/issue": {
+    "/{account}/domains/{domain}/certificates/letsencrypt/{purchaseId}/renewals/{renewalId}/issue": {
       "post": {
         "tags": [
           "domain certificates"
@@ -1260,16 +1555,31 @@
         "operationId": "IssueRenewalLetsencryptCertificate",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
+            "name": "purchaseId",
+            "in": "path",
             "description": "The certificate id",
-            "$ref": "#/components/parameters/Certificate"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
             "name": "renewalId",
@@ -1337,8 +1647,13 @@
         "operationId": "GetTld",
         "parameters": [
           {
+            "name": "tld",
+            "in": "path",
             "description": "The TLD string",
-            "$ref": "#/components/parameters/TLD"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -1369,8 +1684,13 @@
         "operationId": "GetTldExtendedAttributes",
         "parameters": [
           {
+            "name": "tld",
+            "in": "path",
             "description": "The TLD string",
-            "$ref": "#/components/parameters/TLD"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -1401,12 +1721,22 @@
         "operationId": "CheckDomain",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -1433,12 +1763,22 @@
         "operationId": "GetDomainPrices",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -1469,12 +1809,22 @@
         "operationId": "RegisterDomain",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -1509,16 +1859,31 @@
         "operationId": "GetDomainRegistration",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
+            "name": "domainregistration",
+            "in": "path",
             "description": "The domain registration id",
-            "$ref": "#/components/parameters/DomainRegistration"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {
@@ -1549,12 +1914,22 @@
         "operationId": "TransferDomain",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -1589,16 +1964,31 @@
         "operationId": "GetDomainTransfer",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
+            "name": "domaintransfer",
+            "in": "path",
             "description": "The domain transfer id",
-            "$ref": "#/components/parameters/DomainTransfer"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {
@@ -1627,16 +2017,31 @@
         "operationId": "CancelDomainTransfer",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
+            "name": "domaintransfer",
+            "in": "path",
             "description": "The domain transfer id",
-            "$ref": "#/components/parameters/DomainTransfer"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {
@@ -1667,12 +2072,22 @@
         "operationId": "RenewDomain",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -1707,16 +2122,31 @@
         "operationId": "GetDomainRenewal",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
+            "name": "domainrenewal",
+            "in": "path",
             "description": "The domain renewal id",
-            "$ref": "#/components/parameters/DomainRenewal"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {
@@ -1747,12 +2177,22 @@
         "operationId": "RestoreDomain",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -1795,16 +2235,31 @@
         "operationId": "GetDomainRestore",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
+            "name": "domainrestore",
+            "in": "path",
             "description": "The domain restore id",
-            "$ref": "#/components/parameters/DomainRestore"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {
@@ -1839,12 +2294,22 @@
         "operationId": "AuthorizeDomainTransferOut",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -1868,12 +2333,22 @@
         "operationId": "GetDomainDelegation",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -1902,12 +2377,22 @@
         "operationId": "ChangeDomainDelegation",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -1946,12 +2431,22 @@
         "operationId": "ChangeDomainDelegationToVanity",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -1992,12 +2487,22 @@
         "operationId": "ChangeDomainDelegationFromVanity",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -2029,12 +2534,22 @@
         "operationId": "GetDomainTransferLock",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -2063,12 +2578,22 @@
         "operationId": "EnableDomainTransferLock",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -2101,12 +2626,22 @@
         "operationId": "DisableDomainTransferLock",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -2141,12 +2676,22 @@
         "operationId": "EnableDomainAutoRenewal",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -2172,12 +2717,22 @@
         "operationId": "DisableDomainAutoRenewal",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -2205,12 +2760,22 @@
         "operationId": "EnableWhoisPrivacy",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -2249,12 +2814,22 @@
         "operationId": "DisableWhoisPrivacy",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -2285,8 +2860,13 @@
         "operationId": "ListPrimaryServers",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
             "description": "Sort results. Default sorting is ascending by id.",
@@ -2315,8 +2895,13 @@
         "operationId": "CreatePrimaryServer",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "requestBody": {
@@ -2351,12 +2936,22 @@
         "operationId": "GetPrimaryServer",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "primaryserver",
+            "in": "path",
             "description": "The primary server id",
-            "$ref": "#/components/parameters/PrimaryServer"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {
@@ -2389,12 +2984,22 @@
         "operationId": "RemovePrimaryServer",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "primaryserver",
+            "in": "path",
             "description": "The primary server id",
-            "$ref": "#/components/parameters/PrimaryServer"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {
@@ -2418,12 +3023,22 @@
         "operationId": "LinkPrimaryServer",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "primaryserver",
+            "in": "path",
             "description": "The primary server id",
-            "$ref": "#/components/parameters/PrimaryServer"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {
@@ -2458,12 +3073,22 @@
         "operationId": "UnlinkPrimaryServer",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "primaryserver",
+            "in": "path",
             "description": "The primary server id",
-            "$ref": "#/components/parameters/PrimaryServer"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {
@@ -2498,8 +3123,13 @@
         "operationId": "CreateSecondaryZone",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "requestBody": {
@@ -2534,8 +3164,13 @@
         "operationId": "ListZones",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
             "description": "Only include results with a name field containing the given string",
@@ -2570,12 +3205,22 @@
         "operationId": "GetZone",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "zone",
+            "in": "path",
             "description": "The zone name",
-            "$ref": "#/components/parameters/Zone"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -2606,12 +3251,22 @@
         "operationId": "GetZoneFile",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "zone",
+            "in": "path",
             "description": "The zone name",
-            "$ref": "#/components/parameters/Zone"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -2642,12 +3297,22 @@
         "operationId": "CheckZoneDistribution",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "zone",
+            "in": "path",
             "description": "The zone name",
-            "$ref": "#/components/parameters/Zone"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -2688,12 +3353,22 @@
         "operationId": "UpdateZoneNsRecords",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "zone",
+            "in": "path",
             "description": "The zone name",
-            "$ref": "#/components/parameters/Zone"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -2728,12 +3403,22 @@
         "operationId": "ListZoneRecords",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "zone",
+            "in": "path",
             "description": "The zone name",
-            "$ref": "#/components/parameters/Zone"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "description": "Only include results with a name field containing the given string",
@@ -2774,12 +3459,22 @@
         "operationId": "CreateZoneRecord",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "zone",
+            "in": "path",
             "description": "The zone name",
-            "$ref": "#/components/parameters/Zone"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -2818,16 +3513,31 @@
         "operationId": "GetZoneRecord",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "zone",
+            "in": "path",
             "description": "The zone name",
-            "$ref": "#/components/parameters/Zone"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
+            "name": "zonerecord",
+            "in": "path",
             "description": "The zone record id",
-            "$ref": "#/components/parameters/ZoneRecord"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {
@@ -2856,16 +3566,31 @@
         "operationId": "UpdateZoneRecord",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "zone",
+            "in": "path",
             "description": "The zone name",
-            "$ref": "#/components/parameters/Zone"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
+            "name": "zonerecord",
+            "in": "path",
             "description": "The zone record id",
-            "$ref": "#/components/parameters/ZoneRecord"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "requestBody": {
@@ -2902,16 +3627,31 @@
         "operationId": "DeleteZoneRecord",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "zone",
+            "in": "path",
             "description": "The zone name",
-            "$ref": "#/components/parameters/Zone"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
+            "name": "zonerecord",
+            "in": "path",
             "description": "The zone record id",
-            "$ref": "#/components/parameters/ZoneRecord"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {
@@ -2935,12 +3675,22 @@
         "operationId": "BatchChangeZoneRecords",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "zone",
+            "in": "path",
             "description": "The zone name",
-            "$ref": "#/components/parameters/Zone"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -2985,16 +3735,31 @@
         "operationId": "CheckZoneRecordDistribution",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "zone",
+            "in": "path",
             "description": "The zone name",
-            "$ref": "#/components/parameters/Zone"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
+            "name": "zonerecord",
+            "in": "path",
             "description": "The zone record id",
-            "$ref": "#/components/parameters/ZoneRecord"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {
@@ -3035,12 +3800,22 @@
         "operationId": "ActivateZoneService",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "zone",
+            "in": "path",
             "description": "The zone name",
-            "$ref": "#/components/parameters/Zone"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -3069,12 +3844,22 @@
         "operationId": "DeactivateZoneService",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "zone",
+            "in": "path",
             "description": "The zone name",
-            "$ref": "#/components/parameters/Zone"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -3105,8 +3890,13 @@
         "operationId": "ListContacts",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
             "description": "Sort results. Default sorting is by id ascending.",
@@ -3135,8 +3925,13 @@
         "operationId": "CreateContact",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "requestBody": {
@@ -3171,12 +3966,22 @@
         "operationId": "GetContact",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "contact",
+            "in": "path",
             "description": "The contact id",
-            "$ref": "#/components/parameters/Contact"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {
@@ -3205,12 +4010,22 @@
         "operationId": "UpdateContact",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "contact",
+            "in": "path",
             "description": "The contact id",
-            "$ref": "#/components/parameters/Contact"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "requestBody": {
@@ -3247,12 +4062,22 @@
         "operationId": "DeleteContact",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "contact",
+            "in": "path",
             "description": "The contact id",
-            "$ref": "#/components/parameters/Contact"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {
@@ -3276,8 +4101,13 @@
         "operationId": "ListRegistrantChanges",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
             "description": "Sort results. Default sorting is by id.",
@@ -3322,8 +4152,13 @@
         "operationId": "CreateRegistrantChange",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "requestBody": {
@@ -3368,8 +4203,13 @@
         "operationId": "CheckRegistrantChange",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "requestBody": {
@@ -3404,12 +4244,22 @@
         "operationId": "GetRegistrantChange",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "registrantchange",
+            "in": "path",
             "description": "The registrant change id",
-            "$ref": "#/components/parameters/RegistrantChange"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {
@@ -3438,12 +4288,22 @@
         "operationId": "DeleteRegistrantChange",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "registrantchange",
+            "in": "path",
             "description": "The registrant change id",
-            "$ref": "#/components/parameters/RegistrantChange"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {
@@ -3509,8 +4369,13 @@
         "operationId": "GetService",
         "parameters": [
           {
+            "name": "service",
+            "in": "path",
             "description": "The service sid or id",
-            "$ref": "#/components/parameters/Service"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -3541,12 +4406,22 @@
         "operationId": "ListDomainAppliedServices",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -3577,16 +4452,31 @@
         "operationId": "ApplyServiceToDomain",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
+            "name": "service",
+            "in": "path",
             "description": "The service sid or id",
-            "$ref": "#/components/parameters/Service"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -3616,16 +4506,31 @@
         "operationId": "UnapplyServiceFromDomain",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
+            "name": "service",
+            "in": "path",
             "description": "The service sid or id",
-            "$ref": "#/components/parameters/Service"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -3653,8 +4558,13 @@
         "operationId": "ListTemplates",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
             "description": "Sort results. Default sorting is by id ascending.",
@@ -3683,8 +4593,13 @@
         "operationId": "CreateTemplate",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "requestBody": {
@@ -3719,12 +4634,22 @@
         "operationId": "GetTemplate",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "template",
+            "in": "path",
             "description": "The template id or short name",
-            "$ref": "#/components/parameters/Template"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -3753,12 +4678,22 @@
         "operationId": "UpdateTemplate",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "template",
+            "in": "path",
             "description": "The template id or short name",
-            "$ref": "#/components/parameters/Template"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -3791,12 +4726,22 @@
         "operationId": "DeleteTemplate",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "template",
+            "in": "path",
             "description": "The template id or short name",
-            "$ref": "#/components/parameters/Template"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -3816,12 +4761,22 @@
         "operationId": "ListTemplateRecords",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "template",
+            "in": "path",
             "description": "The template id or short name",
-            "$ref": "#/components/parameters/Template"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "description": "Sort results. Default sorting is by id ascending.",
@@ -3850,12 +4805,22 @@
         "operationId": "CreateTemplateRecord",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "template",
+            "in": "path",
             "description": "The template id or short name",
-            "$ref": "#/components/parameters/Template"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -3886,16 +4851,31 @@
         "operationId": "GetTemplateRecord",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "template",
+            "in": "path",
             "description": "The template id or short name",
-            "$ref": "#/components/parameters/Template"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
+            "name": "templaterecord",
+            "in": "path",
             "description": "The template record id",
-            "$ref": "#/components/parameters/TemplateRecord"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {
@@ -3924,16 +4904,31 @@
         "operationId": "DeleteTemplateRecord",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "template",
+            "in": "path",
             "description": "The template id or short name",
-            "$ref": "#/components/parameters/Template"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
+            "name": "templaterecord",
+            "in": "path",
             "description": "The template record id",
-            "$ref": "#/components/parameters/TemplateRecord"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {
@@ -3957,16 +4952,31 @@
         "operationId": "ApplyTemplateToDomain",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
+            "name": "template",
+            "in": "path",
             "description": "The template id or short name",
-            "$ref": "#/components/parameters/Template"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -3990,12 +5000,22 @@
         "operationId": "EnableVanityNameServers",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -4028,12 +5048,22 @@
         "operationId": "DisableVanityNameServers",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "domain",
+            "in": "path",
             "description": "The domain name or id",
-            "$ref": "#/components/parameters/Domain"
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -4061,8 +5091,13 @@
         "operationId": "ListWebhooks",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
             "description": "Sort results. Default sorting is by name ascending.",
@@ -4091,8 +5126,13 @@
         "operationId": "CreateWebhook",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "requestBody": {
@@ -4158,12 +5198,22 @@
         "operationId": "GetWebhook",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "webhook",
+            "in": "path",
             "description": "The webhoook id",
-            "$ref": "#/components/parameters/Webhook"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {
@@ -4188,12 +5238,22 @@
         "operationId": "DeleteWebhook",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
+            "name": "webhook",
+            "in": "path",
             "description": "The webhoook id",
-            "$ref": "#/components/parameters/Webhook"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
         ],
         "responses": {
@@ -4214,8 +5274,13 @@
         "operationId": "QueryDnsAnalytics",
         "parameters": [
           {
+            "name": "account",
+            "in": "path",
             "description": "The account id",
-            "$ref": "#/components/parameters/Account"
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           },
           {
             "name": "start_date",
@@ -4224,7 +5289,8 @@
             "schema": {
               "type": "string",
               "description": "A date value formatted as ISO 8601.",
-              "format": "date"
+              "format": "date",
+              "example": "2010-01-01"
             }
           },
           {
@@ -4234,7 +5300,8 @@
             "schema": {
               "type": "string",
               "description": "A date value formatted as ISO 8601.",
-              "format": "date"
+              "format": "date",
+              "example": "2010-01-01"
             }
           },
           {
@@ -4377,12 +5444,14 @@
           "created_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was created, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "updated_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           }
         },
         "example": {
@@ -4456,7 +5525,8 @@
           "invitation_sent_at": {
             "type": "string",
             "description": "A date-time value formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "invitation_accepted_at": {
             "description": "A nullable date-time value. The value can be null, when present the value is formatted according to the ISO 8601 specification.",
@@ -4465,12 +5535,14 @@
           "created_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was created, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "updated_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           }
         }
       },
@@ -4671,22 +5743,26 @@
           "created_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was created, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "updated_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "expires_at": {
             "type": "string",
             "description": "A date-time value formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "expires_on": {
             "type": "string",
             "description": "A date value formatted as ISO 8601.",
-            "format": "date"
+            "format": "date",
+            "example": "2010-01-01"
           }
         },
         "example": {
@@ -4825,12 +5901,14 @@
           "created_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was created, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "updated_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           }
         },
         "example": {
@@ -4868,7 +5946,8 @@
           "invoiced_at": {
             "type": "string",
             "description": "A date-time value formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "total_amount": {
             "type": "string",
@@ -4990,12 +6069,14 @@
           "created_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was created, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "updated_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           }
         },
         "example": {
@@ -5064,17 +6145,20 @@
           "expires_on": {
             "type": "string",
             "description": "A date value formatted as ISO 8601.",
-            "format": "date"
+            "format": "date",
+            "example": "2010-01-01"
           },
           "created_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was created, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "updated_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           }
         },
         "example": {
@@ -5225,12 +6309,14 @@
           "created_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was created, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "updated_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           }
         },
         "example": {
@@ -5309,12 +6395,14 @@
           "created_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was created, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "updated_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           }
         },
         "example": {
@@ -5348,12 +6436,14 @@
           "created_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was created, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "updated_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           }
         },
         "example": {
@@ -5425,12 +6515,14 @@
           "created_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was created, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "updated_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           }
         },
         "example": {
@@ -5476,12 +6568,14 @@
           "created_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was created, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "updated_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           }
         },
         "example": {
@@ -5522,12 +6616,14 @@
           "created_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was created, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "updated_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           }
         },
         "example": {
@@ -6854,12 +7950,14 @@
           "created_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was created, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "updated_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           }
         }
       },
@@ -6889,12 +7987,14 @@
           "created_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was created, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "updated_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           }
         },
         "example": {
@@ -6927,12 +8027,14 @@
           "created_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was created, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "updated_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           }
         },
         "example": {
@@ -6971,12 +8073,14 @@
           "created_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was created, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "updated_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           }
         },
         "example": {
@@ -7014,12 +8118,14 @@
           "created_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was created, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "updated_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           }
         }
       },
@@ -7060,12 +8166,14 @@
           "created_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was created, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "updated_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           }
         },
         "example": {
@@ -7108,12 +8216,14 @@
           "created_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was created, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "updated_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "accepted_at": {
             "description": "A nullable date-time value. The value can be null, when present the value is formatted according to the ISO 8601 specification.",
@@ -7169,17 +8279,20 @@
           "irt_lock_lifted_by": {
             "type": "string",
             "description": "A date value formatted as ISO 8601.",
-            "format": "date"
+            "format": "date",
+            "example": "2010-01-01"
           },
           "created_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was created, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "updated_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           }
         },
         "example": {
@@ -7263,12 +8376,14 @@
           "created_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was created, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "updated_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           }
         }
       },
@@ -7324,12 +8439,14 @@
           "created_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was created, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "updated_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "settings": {
             "type": "array",
@@ -7431,12 +8548,14 @@
           "created_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was created, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "updated_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           }
         }
       },
@@ -7470,12 +8589,14 @@
           "created_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was created, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "updated_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           }
         },
         "example": {
@@ -7517,7 +8638,8 @@
           "ttl": {
             "minimum": 0,
             "type": "integer",
-            "description": "The Time To Live (TTL) value for the entry, in seconds."
+            "description": "The Time To Live (TTL) value for the entry, in seconds.",
+            "default": 3600
           },
           "priority": {
             "type": [
@@ -7532,12 +8654,14 @@
           "created_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was created, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "updated_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           }
         },
         "example": {
@@ -7575,7 +8699,6 @@
           "URL"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Supported DNS record types for templates.",
         "x-ms-enum": {
           "name": "TemplateRecordType",
@@ -7752,7 +8875,6 @@
           3
         ],
         "type": "integer",
-        "additionalProperties": false,
         "description": "TLD types are: * 1 - gTLD (global TLD) * 2 - ccTLD (country-code TLD) * 3 - newTLD (new global TLD)"
       },
       "Ttl": {
@@ -7779,12 +8901,14 @@
           "created_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was created, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "updated_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           }
         },
         "example": {
@@ -7820,12 +8944,14 @@
           "created_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was created, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "updated_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           }
         }
       },
@@ -7941,17 +9067,20 @@
           "expires_on": {
             "type": "string",
             "description": "A date value formatted as ISO 8601.",
-            "format": "date"
+            "format": "date",
+            "example": "2010-01-01"
           },
           "created_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was created, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "updated_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           }
         },
         "example": {
@@ -8010,12 +9139,14 @@
           "created_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was created, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "updated_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "records_count": {
             "type": "integer",
@@ -8114,7 +9245,8 @@
           "ttl": {
             "minimum": 0,
             "type": "integer",
-            "description": "The Time To Live (TTL) value for the entry, in seconds."
+            "description": "The Time To Live (TTL) value for the entry, in seconds.",
+            "default": 3600
           },
           "priority": {
             "type": [
@@ -8142,12 +9274,14 @@
           "created_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was created, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           },
           "updated_at": {
             "type": "string",
             "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
-            "format": "date-time"
+            "format": "date-time",
+            "example": "2010-01-01T01:00:00Z"
           }
         },
         "description": "A single DNS record in a zone.",
@@ -8181,7 +9315,6 @@
           "FRA"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "ZoneRecordRegion",
           "modelAsString": false,
@@ -8248,7 +9381,6 @@
           "URL"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The type of DNS record. Supported DNS record types are listed below. Note that some record types may only be available on specific plans.",
         "x-ms-enum": {
           "name": "ZoneRecordType",
@@ -8391,7 +9523,8 @@
         "type": "object",
         "properties": {
           "label": {
-            "type": "string"
+            "type": "string",
+            "default": ""
           },
           "first_name": {
             "type": "string"
@@ -8461,7 +9594,8 @@
         "type": "object",
         "properties": {
           "label": {
-            "type": "string"
+            "type": "string",
+            "default": ""
           },
           "first_name": {
             "type": "string"
@@ -8562,10 +9696,15 @@
         "type": "array",
         "items": {
           "type": "string"
-        }
+        },
+        "example": [
+          "ns1.dnsimple-edge.com",
+          "ns2.dnsimple-edge.net",
+          "ns3.dnsimple-edge.io",
+          "ns4.dnsimple-edge.org"
+        ]
       },
       "ZoneNsRecordsUpdateRequest": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/ZoneNsRecordsUpdateRequestAnyOf1"
@@ -8573,21 +9712,7 @@
           {
             "$ref": "#/components/schemas/ZoneNsRecordsUpdateRequestAnyOf2"
           }
-        ],
-        "properties": {
-          "ns_names": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "ns_set_ids": {
-            "type": "array",
-            "items": {
-              "type": "integer"
-            }
-          }
-        }
+        ]
       },
       "DomainRegisterRequest": {
         "required": [
@@ -8900,7 +10025,13 @@
         "type": "array",
         "items": {
           "type": "string"
-        }
+        },
+        "example": [
+          "ns1.example.com",
+          "ns2.example.com",
+          "ns3.example.com",
+          "ns4.example.com"
+        ]
       },
       "ZoneRecordCreateRequest": {
         "required": [
@@ -8923,7 +10054,8 @@
           "ttl": {
             "minimum": 0,
             "type": "integer",
-            "description": "The Time To Live (TTL) value for the entry, in seconds."
+            "description": "The Time To Live (TTL) value for the entry, in seconds.",
+            "default": 3600
           },
           "priority": {
             "type": "integer"
@@ -8938,7 +10070,11 @@
             "type": "array",
             "items": {
               "type": "integer"
-            }
+            },
+            "example": [
+              1,
+              2
+            ]
           }
         },
         "example": {
@@ -8965,7 +10101,8 @@
           "ttl": {
             "minimum": 0,
             "type": "integer",
-            "description": "The Time To Live (TTL) value for the entry, in seconds."
+            "description": "The Time To Live (TTL) value for the entry, in seconds.",
+            "default": 3600
           },
           "priority": {
             "type": "integer"
@@ -8980,7 +10117,11 @@
             "type": "array",
             "items": {
               "type": "integer"
-            }
+            },
+            "example": [
+              1,
+              2
+            ]
           }
         },
         "example": {
@@ -9052,7 +10193,6 @@
         }
       },
       "WebhookPayloadData": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/EventAccountAddSsoUser"
@@ -9319,95 +10459,6 @@
             "$ref": "#/components/schemas/EventZoneDelete"
           }
         ],
-        "properties": {
-          "account": {
-            "$ref": "#/components/schemas/Account"
-          },
-          "account_identity_provider": {
-            "$ref": "#/components/schemas/AccountIdentityProvider"
-          },
-          "user": {
-            "$ref": "#/components/schemas/User"
-          },
-          "billing_settings": {
-            "$ref": "#/components/schemas/EventAccountBillingSettingsUpdateBillingSettings"
-          },
-          "account_invitation": {
-            "$ref": "#/components/schemas/AccountInvitation"
-          },
-          "certificate": {
-            "$ref": "#/components/schemas/Certificate"
-          },
-          "contact": {
-            "$ref": "#/components/schemas/Contact"
-          },
-          "dnssec": {
-            "$ref": "#/components/schemas/Dnssec"
-          },
-          "zone": {
-            "description": "Represents a DNS zone.",
-            "$ref": "#/components/schemas/Zone"
-          },
-          "delegation_signer_record": {
-            "$ref": "#/components/schemas/DelegationSigner"
-          },
-          "domain": {
-            "$ref": "#/components/schemas/Domain"
-          },
-          "name_servers": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/NameServer"
-            }
-          },
-          "registration_notice": {
-            "$ref": "#/components/schemas/EventDomainRegistrationNoticeRegistrationNotice"
-          },
-          "registrant": {
-            "$ref": "#/components/schemas/Contact"
-          },
-          "auto": {
-            "type": "boolean"
-          },
-          "state_change": {
-            "description": "Prior and new domain registration states and reason for a domain.state_change webhook",
-            "$ref": "#/components/schemas/DomainStateChangeTransition"
-          },
-          "email_forward": {
-            "$ref": "#/components/schemas/EmailForward"
-          },
-          "invoice": {
-            "$ref": "#/components/schemas/Invoice"
-          },
-          "oauth_application": {
-            "$ref": "#/components/schemas/OAuthApplication"
-          },
-          "push": {
-            "$ref": "#/components/schemas/Push"
-          },
-          "zone_record": {
-            "description": "A single DNS record in a zone.",
-            "$ref": "#/components/schemas/ZoneRecord"
-          },
-          "configuration": {
-            "$ref": "#/components/schemas/SecondaryDns"
-          },
-          "subscription": {
-            "$ref": "#/components/schemas/Subscription"
-          },
-          "template": {
-            "$ref": "#/components/schemas/Template"
-          },
-          "template_record": {
-            "$ref": "#/components/schemas/TemplateRecord"
-          },
-          "webhook": {
-            "$ref": "#/components/schemas/Webhook"
-          },
-          "whois_privacy": {
-            "$ref": "#/components/schemas/WhoisPrivacy"
-          }
-        },
         "description": "The data attribute contains any data for the object or objects related to the event. Each object in the data object will be keyed on an object type name."
       },
       "WebhookPayloadAccount": {
@@ -9460,13 +10511,23 @@
             "type": "array",
             "items": {
               "type": "string"
-            }
+            },
+            "example": [
+              "ns1.dnsimple-edge.com",
+              "ns2.dnsimple-edge.net",
+              "ns3.dnsimple-edge.io",
+              "ns4.dnsimple-edge.org"
+            ]
           },
           "ns_set_ids": {
             "type": "array",
             "items": {
               "type": "integer"
-            }
+            },
+            "example": [
+              1,
+              2
+            ]
           }
         }
       },
@@ -9480,18 +10541,27 @@
             "type": "array",
             "items": {
               "type": "string"
-            }
+            },
+            "example": [
+              "ns1.dnsimple-edge.com",
+              "ns2.dnsimple-edge.net",
+              "ns3.dnsimple-edge.io",
+              "ns4.dnsimple-edge.org"
+            ]
           },
           "ns_set_ids": {
             "type": "array",
             "items": {
               "type": "integer"
-            }
+            },
+            "example": [
+              1,
+              2
+            ]
           }
         }
       },
       "RegistrantChangeCreateRequestDomainId": {
-        "type": "object",
         "oneOf": [
           {
             "type": "string"
@@ -9502,7 +10572,6 @@
         ]
       },
       "RegistrantChangeCreateRequestContactId": {
-        "type": "object",
         "oneOf": [
           {
             "type": "string"
@@ -9513,7 +10582,6 @@
         ]
       },
       "RegistrantChangeCheckRequestDomainId": {
-        "type": "object",
         "oneOf": [
           {
             "type": "string"
@@ -9524,7 +10592,6 @@
         ]
       },
       "RegistrantChangeCheckRequestContactId": {
-        "type": "object",
         "oneOf": [
           {
             "type": "string"
@@ -9629,7 +10696,8 @@
           "ttl": {
             "minimum": 0,
             "type": "integer",
-            "description": "The Time To Live (TTL) value for the entry, in seconds."
+            "description": "The Time To Live (TTL) value for the entry, in seconds.",
+            "default": 3600
           },
           "priority": {
             "type": "integer"
@@ -9661,7 +10729,8 @@
           "ttl": {
             "minimum": 0,
             "type": "integer",
-            "description": "The Time To Live (TTL) value for the entry, in seconds."
+            "description": "The Time To Live (TTL) value for the entry, in seconds.",
+            "default": 3600
           },
           "priority": {
             "type": "integer"
@@ -10023,7 +11092,11 @@
               "type": "string"
             },
             "description": "The certificate alternate names",
-            "default": []
+            "default": [],
+            "example": [
+              "docs.example.com",
+              "status.example.com"
+            ]
           },
           "signature_algorithm": {
             "type": "string",
@@ -11098,16 +12171,37 @@
         "type": "array",
         "items": {
           "type": "string"
-        }
+        },
+        "example": [
+          "ns1.dnsimple-edge.com",
+          "ns2.dnsimple-edge.net",
+          "ns3.dnsimple-edge.io",
+          "ns4.dnsimple-edge.org"
+        ]
       },
       "VanityNameServersRequestContent": {
         "type": "array",
         "items": {
           "type": "string"
-        }
+        },
+        "example": [
+          "ns1.example.com",
+          "ns2.example.com",
+          "ns3.example.com",
+          "ns4.example.com"
+        ]
+      },
+      "Whoami200ResponseData": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/Whoami200ResponseDataOneOf1"
+          },
+          {
+            "$ref": "#/components/schemas/Whoami200ResponseDataOneOf2"
+          }
+        ]
       },
       "QueryDnsAnalytics200ResponseDataRowsItemItem": {
-        "type": "object",
         "anyOf": [
           {
             "type": "integer"
@@ -11118,9 +12212,40 @@
           {
             "type": "string",
             "description": "A date value formatted as ISO 8601.",
-            "format": "date"
+            "format": "date",
+            "example": "2010-01-01"
           }
         ]
+      },
+      "Whoami200ResponseDataOneOf1": {
+        "required": [
+          "account",
+          "user"
+        ],
+        "type": "object",
+        "properties": {
+          "account": {
+            "$ref": "#/components/schemas/Account"
+          },
+          "user": {
+            "$ref": "#/components/schemas/Whoami200ResponseDataOneOf1User"
+          }
+        }
+      },
+      "Whoami200ResponseDataOneOf2": {
+        "required": [
+          "account",
+          "user"
+        ],
+        "type": "object",
+        "properties": {
+          "user": {
+            "$ref": "#/components/schemas/User"
+          },
+          "account": {
+            "$ref": "#/components/schemas/Whoami200ResponseDataOneOf2Account"
+          }
+        }
       },
       "EventAccountBillingSettingsUpdateBillingSettings": {
         "type": "object"
@@ -11129,6 +12254,10 @@
         "type": "object",
         "additionalProperties": {
           "type": "string"
+        },
+        "example": {
+          "x-fi-registrant-idnumber": "1234",
+          "x-cat-accept-highly-regulated-tac": "1"
         }
       },
       "DomainRegisterRequestExtendedAttributesProperty": {
@@ -11143,6 +12272,10 @@
         "type": "object",
         "additionalProperties": {
           "type": "string"
+        },
+        "example": {
+          "x-fi-registrant-idnumber": "1234",
+          "x-cat-accept-highly-regulated-tac": "1"
         }
       },
       "Value400ResponseErrorsProperty": {
@@ -11181,21 +12314,6 @@
         },
         "description": "Optional detailed validation errors"
       },
-      "Whoami200ResponseData": {
-        "required": [
-          "account",
-          "user"
-        ],
-        "type": "object",
-        "properties": {
-          "account": {
-            "$ref": "#/components/schemas/Account"
-          },
-          "user": {
-            "$ref": "#/components/schemas/Whoami200ResponseDataUser"
-          }
-        }
-      },
       "QueryDnsAnalytics200ResponseData": {
         "required": [
           "rows",
@@ -11210,13 +12328,25 @@
               "items": {
                 "$ref": "#/components/schemas/QueryDnsAnalytics200ResponseDataRowsItemItem"
               }
-            }
+            },
+            "example": [
+              [
+                "example.com",
+                "2024-08-01",
+                102985
+              ]
+            ]
           },
           "headers": {
             "type": "array",
             "items": {
               "type": "string"
-            }
+            },
+            "example": [
+              "zone_name",
+              "date",
+              "volume"
+            ]
           }
         }
       },
@@ -11268,7 +12398,13 @@
           }
         }
       },
-      "Whoami200ResponseDataUser": {
+      "Whoami200ResponseDataOneOf1User": {
+        "type": [
+          "null",
+          "object"
+        ]
+      },
+      "Whoami200ResponseDataOneOf2Account": {
         "type": [
           "null",
           "object"
@@ -11288,7 +12424,6 @@
           "failed"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "CertificateState",
           "modelAsString": false,
@@ -11343,7 +12478,6 @@
           "letsencrypt"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "CertificateAuthorityIdentifier",
           "modelAsString": false,
@@ -11369,7 +12503,6 @@
           "refunded"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "ChargeState",
           "modelAsString": false,
@@ -11392,7 +12525,6 @@
           "expired"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "DomainState",
           "modelAsString": false,
@@ -11421,7 +12553,6 @@
           "failed"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "DomainRegistrationState",
           "modelAsString": false,
@@ -11456,7 +12587,6 @@
           "unknown"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The availability status",
         "x-ms-enum": {
           "name": "DomainResearchAvailability",
@@ -11486,7 +12616,6 @@
           "failed"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "DomainRenewalState",
           "modelAsString": false,
@@ -11522,7 +12651,6 @@
           "cancelled"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "DomainRestoreState",
           "modelAsString": false,
@@ -11553,7 +12681,6 @@
           "expired"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "DomainStateChangeTransitionFrom",
           "modelAsString": false,
@@ -11580,7 +12707,6 @@
           "expired"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "DomainStateChangeTransitionTo",
           "modelAsString": false,
@@ -11611,7 +12737,6 @@
           "registration_removed"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "DomainStateChangeTransitionReason",
           "modelAsString": false,
@@ -11656,7 +12781,6 @@
           "failed"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "DomainTransferState",
           "modelAsString": false,
@@ -11698,7 +12822,6 @@
           "failed"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "LetsencryptCertificatePurchaseState",
           "modelAsString": false,
@@ -11755,7 +12878,6 @@
           "failed"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "LetsencryptCertificateRenewalState",
           "modelAsString": false,
@@ -11792,7 +12914,6 @@
           "completed"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "RegistrantChangeState",
           "modelAsString": false,
@@ -11856,7 +12977,6 @@
           "Corporate Yearly"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "SubscriptionPlanName",
           "modelAsString": false,
@@ -11961,7 +13081,6 @@
           "not_subscribed"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "SubscriptionState",
           "modelAsString": false,
@@ -11995,7 +13114,6 @@
           "key"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "type of data interface required for DNSSEC",
         "x-ms-enum": {
           "name": "TldDnssecInterfaceType",
@@ -12106,7 +13224,6 @@
           "zone.delete"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The name attribute contains a string representing the name of event that occurred. It will always have an object and action separated by a period. It may optionally include a state for objects that go through state changes, for example \u0060domain.registration:started\u0060.",
         "x-ms-enum": {
           "name": "WebhookPayloadName",
@@ -12480,7 +13597,6 @@
           "v2"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The api_version is the API version used to serialize the data in the payload. For version 2 of the API, this is the string v2. For example, you can expect a domain object to be serialized using the same domain attributes described in the corresponding API page.",
         "x-ms-enum": {
           "name": "V2ApiVersion",
@@ -12502,7 +13618,6 @@
           "cancelled"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "FilterRegistrantChangeState",
           "modelAsString": false,
@@ -12540,7 +13655,6 @@
           "expiration:desc"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "SortCertificates",
           "modelAsString": false,
@@ -12578,7 +13692,6 @@
           "invoiced:desc"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "SortCharges",
           "modelAsString": false,
@@ -12604,7 +13717,6 @@
           "email:desc"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "SortContacts",
           "modelAsString": false,
@@ -12646,7 +13758,6 @@
           "expiration:desc"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "SortDomains",
           "modelAsString": false,
@@ -12686,7 +13797,6 @@
           "created_at:desc"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "SortDelegationSignerRecords",
           "modelAsString": false,
@@ -12720,7 +13830,6 @@
           "destination_email:desc"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "SortEmailForwards",
           "modelAsString": false,
@@ -12760,7 +13869,6 @@
           "name:desc"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "SortPrimaryServers",
           "modelAsString": false,
@@ -12790,7 +13898,6 @@
           "id:desc"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "SortRegistrantChanges",
           "modelAsString": false,
@@ -12814,7 +13921,6 @@
           "sid:desc"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "SortServices",
           "modelAsString": false,
@@ -12848,7 +13954,6 @@
           "sid:desc"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "SortTemplates",
           "modelAsString": false,
@@ -12892,7 +13997,6 @@
           "type:desc"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "SortTemplateRecords",
           "modelAsString": false,
@@ -12938,7 +14042,6 @@
           "tld:desc"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "SortTlDs",
           "modelAsString": false,
@@ -12960,7 +14063,6 @@
           "id:desc"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "SortWebhooks",
           "modelAsString": false,
@@ -12984,7 +14086,6 @@
           "name:desc"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "SortZones",
           "modelAsString": false,
@@ -13020,7 +14121,6 @@
           "type:desc"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "SortZoneRecords",
           "modelAsString": false,
@@ -13067,7 +14167,6 @@
           "zone_name"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "QueryDnsAnalyticsGroupingsParameter",
           "modelAsString": false,
@@ -13472,7 +14571,8 @@
         "schema": {
           "type": "string",
           "description": "A date value formatted as ISO 8601.",
-          "format": "date"
+          "format": "date",
+          "example": "2010-01-01"
         }
       },
       "FilterEndDate": {
@@ -13482,7 +14582,8 @@
         "schema": {
           "type": "string",
           "description": "A date value formatted as ISO 8601.",
-          "format": "date"
+          "format": "date",
+          "example": "2010-01-01"
         }
       },
       "FilterType": {

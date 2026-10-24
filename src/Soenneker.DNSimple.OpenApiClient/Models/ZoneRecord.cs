@@ -71,6 +71,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             Priority = 0;
+            Ttl = 3600;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

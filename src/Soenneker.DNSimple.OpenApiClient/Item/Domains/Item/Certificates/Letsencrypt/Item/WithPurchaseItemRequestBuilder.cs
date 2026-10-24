@@ -11,10 +11,10 @@ using System;
 namespace Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Letsencrypt.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \{account}\domains\{domain}\certificates\letsencrypt\{certificate-id}
+    /// Builds and executes requests for operations under \{account}\domains\{domain}\certificates\letsencrypt\{purchaseId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CertificateItemRequestBuilder : BaseRequestBuilder
+    public partial class WithPurchaseItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The issue property</summary>
         public global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Letsencrypt.Item.Issue.IssueRequestBuilder Issue
@@ -27,19 +27,19 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Letsen
             get => new global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Letsencrypt.Item.Renewals.RenewalsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Letsencrypt.Item.CertificateItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Letsencrypt.Item.WithPurchaseItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CertificateItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{account}/domains/{domain}/certificates/letsencrypt/{certificate%2Did}", pathParameters)
+        public WithPurchaseItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{account}/domains/{domain}/certificates/letsencrypt/{purchaseId}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Letsencrypt.Item.CertificateItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Letsencrypt.Item.WithPurchaseItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CertificateItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{account}/domains/{domain}/certificates/letsencrypt/{certificate%2Did}", rawUrl)
+        public WithPurchaseItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/{account}/domains/{domain}/certificates/letsencrypt/{purchaseId}", rawUrl)
         {
         }
     }

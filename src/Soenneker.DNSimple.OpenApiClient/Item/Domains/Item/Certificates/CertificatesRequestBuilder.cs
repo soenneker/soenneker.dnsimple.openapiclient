@@ -25,9 +25,9 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates
             get => new global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Letsencrypt.LetsencryptRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.DNSimple.OpenApiClient.item.domains.item.certificates.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The certificate id</param>
         /// <returns>A <see cref="global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item.WithCertificateItemRequestBuilder"/></returns>
-        public global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item.WithCertificateItemRequestBuilder this[string position]
+        public global::Soenneker.DNSimple.OpenApiClient.Item.Domains.Item.Certificates.Item.WithCertificateItemRequestBuilder this[int position]
         {
             get
             {
