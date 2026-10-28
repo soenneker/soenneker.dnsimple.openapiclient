@@ -35,8 +35,10 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
 #endif
         /// <summary>The number of records in the zone. Returned only when retrieving a single zone.</summary>
         public int? RecordsCount { get; set; }
-        /// <summary>The maximum number of records the zone can hold. Returned only when retrieving a single zone.</summary>
+        /// <summary>The record limit of the zone. Depending on your plan, records above it are either charged or cannot be added. Returned only when retrieving a single zone.</summary>
         public int? RecordsLimit { get; set; }
+        /// <summary>The number of records above the limit, 0 when the zone is at or below its limit. Returned only when retrieving a single zone.</summary>
+        public int? RecordsOverage { get; set; }
         /// <summary>Returns true for a reverse zone, false for a forward zone.</summary>
         public bool? Reverse { get; set; }
         /// <summary>Returns true for a secondary zone, false for a primary zone.</summary>
@@ -76,6 +78,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "records_count", n => { RecordsCount = n.GetIntValue(); } },
                 { "records_limit", n => { RecordsLimit = n.GetIntValue(); } },
+                { "records_overage", n => { RecordsOverage = n.GetIntValue(); } },
                 { "reverse", n => { Reverse = n.GetBoolValue(); } },
                 { "secondary", n => { Secondary = n.GetBoolValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -96,6 +99,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("records_count", RecordsCount);
             writer.WriteIntValue("records_limit", RecordsLimit);
+            writer.WriteIntValue("records_overage", RecordsOverage);
             writer.WriteBoolValue("reverse", Reverse);
             writer.WriteBoolValue("secondary", Secondary);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

@@ -9154,7 +9154,11 @@
           },
           "records_limit": {
             "type": "integer",
-            "description": "The maximum number of records the zone can hold. Returned only when retrieving a single zone."
+            "description": "The record limit of the zone. Depending on your plan, records above it are either charged or cannot be added. Returned only when retrieving a single zone."
+          },
+          "records_overage": {
+            "type": "integer",
+            "description": "The number of records above the limit, 0 when the zone is at or below its limit. Returned only when retrieving a single zone."
           }
         },
         "description": "Represents a DNS zone.",
