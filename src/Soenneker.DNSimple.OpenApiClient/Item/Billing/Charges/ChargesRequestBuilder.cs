@@ -55,6 +55,8 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Billing.Charges
             {
                 { "401", global::Soenneker.DNSimple.OpenApiClient.Models.Value401Response.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.DNSimple.OpenApiClient.Models.Value429Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.ListCharges200Response>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.ListCharges200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

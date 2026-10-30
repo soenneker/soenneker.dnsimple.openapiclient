@@ -11,41 +11,65 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DomainTransferRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("auth_code") is { } nullNodeAuthCode && nullNodeAuthCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthCode = null;
+            if (parseNode.GetChildNode("auto_renew") is { } nullNodeAutoRenew && nullNodeAutoRenew.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoRenew = null;
+            if (parseNode.GetChildNode("extended_attributes") is { } nullNodeExtendedAttributes && nullNodeExtendedAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtendedAttributes = null;
+            if (parseNode.GetChildNode("premium_price") is { } nullNodePremiumPrice && nullNodePremiumPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PremiumPrice = null;
+            if (parseNode.GetChildNode("registrant_id") is { } nullNodeRegistrantId && nullNodeRegistrantId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegistrantId = null;
+            if (parseNode.GetChildNode("trustee") is { } nullNodeTrustee && nullNodeTrustee.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Trustee = null;
+            if (parseNode.GetChildNode("whois_privacy") is { } nullNodeWhoisPrivacy && nullNodeWhoisPrivacy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhoisPrivacy = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Required for TLDS that require authorization-based transfer (the vast majority of TLDs).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthCode { get; set; }
+        public string? AuthCode { get => _explicitNullValueAuthCode; set { _explicitNullValueAuthCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_code"); else _explicitNullProperties?.Remove("auth_code"); } }
+        private string? _explicitNullValueAuthCode = default!;
 #nullable restore
 #else
-        public string AuthCode { get; set; }
+        public string AuthCode { get => _explicitNullValueAuthCode; set { _explicitNullValueAuthCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_code"); else _explicitNullProperties?.Remove("auth_code"); } }
+        private string _explicitNullValueAuthCode = default!;
 #endif
         /// <summary>Set to true to enable the auto-renewal of the domain. Default: false.</summary>
-        public bool? AutoRenew { get; set; }
+        public bool? AutoRenew { get => _explicitNullValueAutoRenew; set { _explicitNullValueAutoRenew = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_renew"); else _explicitNullProperties?.Remove("auto_renew"); } }
+        private bool? _explicitNullValueAutoRenew = default!;
         /// <summary>Required for TLDs that require extended attributes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.DNSimple.OpenApiClient.Models.DomainTransferRequestExtendedAttributesProperty? ExtendedAttributes { get; set; }
+        public global::Soenneker.DNSimple.OpenApiClient.Models.DomainTransferRequestExtendedAttributesProperty? ExtendedAttributes { get => _explicitNullValueExtendedAttributes; set { _explicitNullValueExtendedAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extended_attributes"); else _explicitNullProperties?.Remove("extended_attributes"); } }
+        private global::Soenneker.DNSimple.OpenApiClient.Models.DomainTransferRequestExtendedAttributesProperty? _explicitNullValueExtendedAttributes = default!;
 #nullable restore
 #else
-        public global::Soenneker.DNSimple.OpenApiClient.Models.DomainTransferRequestExtendedAttributesProperty ExtendedAttributes { get; set; }
+        public global::Soenneker.DNSimple.OpenApiClient.Models.DomainTransferRequestExtendedAttributesProperty ExtendedAttributes { get => _explicitNullValueExtendedAttributes; set { _explicitNullValueExtendedAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extended_attributes"); else _explicitNullProperties?.Remove("extended_attributes"); } }
+        private global::Soenneker.DNSimple.OpenApiClient.Models.DomainTransferRequestExtendedAttributesProperty _explicitNullValueExtendedAttributes = default!;
 #endif
         /// <summary>Required as confirmation of the price, only if the domain is premium.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PremiumPrice { get; set; }
+        public string? PremiumPrice { get => _explicitNullValuePremiumPrice; set { _explicitNullValuePremiumPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("premium_price"); else _explicitNullProperties?.Remove("premium_price"); } }
+        private string? _explicitNullValuePremiumPrice = default!;
 #nullable restore
 #else
-        public string PremiumPrice { get; set; }
+        public string PremiumPrice { get => _explicitNullValuePremiumPrice; set { _explicitNullValuePremiumPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("premium_price"); else _explicitNullProperties?.Remove("premium_price"); } }
+        private string _explicitNullValuePremiumPrice = default!;
 #endif
         /// <summary>The ID of an existing contact in your account.</summary>
-        public int? RegistrantId { get; set; }
+        public int? RegistrantId { get => _explicitNullValueRegistrantId; set { _explicitNullValueRegistrantId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registrant_id"); else _explicitNullProperties?.Remove("registrant_id"); } }
+        private int? _explicitNullValueRegistrantId = default!;
         /// <summary>Set to true to use a trustee service for the transfer. An extra cost may apply. Default: false.</summary>
-        public bool? Trustee { get; set; }
+        public bool? Trustee { get => _explicitNullValueTrustee; set { _explicitNullValueTrustee = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trustee"); else _explicitNullProperties?.Remove("trustee"); } }
+        private bool? _explicitNullValueTrustee = default!;
         /// <summary>Set to true will attempt to purchase/enable the whois privacy as part of the transfer. An extra cost may apply. Default: false.</summary>
-        public bool? WhoisPrivacy { get; set; }
+        public bool? WhoisPrivacy { get => _explicitNullValueWhoisPrivacy; set { _explicitNullValueWhoisPrivacy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whois_privacy"); else _explicitNullProperties?.Remove("whois_privacy"); } }
+        private bool? _explicitNullValueWhoisPrivacy = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.DomainTransferRequest"/> and sets the default values.
         /// </summary>
@@ -61,7 +85,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         public static global::Soenneker.DNSimple.OpenApiClient.Models.DomainTransferRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.DNSimple.OpenApiClient.Models.DomainTransferRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.DNSimple.OpenApiClient.Models.DomainTransferRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,6 +118,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
             writer.WriteIntValue("registrant_id", RegistrantId);
             writer.WriteBoolValue("trustee", Trustee);
             writer.WriteBoolValue("whois_privacy", WhoisPrivacy);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

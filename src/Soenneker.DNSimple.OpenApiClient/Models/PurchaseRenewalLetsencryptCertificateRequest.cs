@@ -11,18 +11,30 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PurchaseRenewalLetsencryptCertificateRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("auto_renew") is { } nullNodeAutoRenew && nullNodeAutoRenew.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoRenew = null;
+            if (parseNode.GetChildNode("signature_algorithm") is { } nullNodeSignatureAlgorithm && nullNodeSignatureAlgorithm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignatureAlgorithm = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Enable the auto-renewal of the certificate</summary>
-        public bool? AutoRenew { get; set; }
+        public bool? AutoRenew { get => _explicitNullValueAutoRenew; set { _explicitNullValueAutoRenew = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_renew"); else _explicitNullProperties?.Remove("auto_renew"); } }
+        private bool? _explicitNullValueAutoRenew = default!;
         /// <summary>Optional string to determine the signature algorithm to be used. Either `ECDSA` or `RSA`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SignatureAlgorithm { get; set; }
+        public string? SignatureAlgorithm { get => _explicitNullValueSignatureAlgorithm; set { _explicitNullValueSignatureAlgorithm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature_algorithm"); else _explicitNullProperties?.Remove("signature_algorithm"); } }
+        private string? _explicitNullValueSignatureAlgorithm = default!;
 #nullable restore
 #else
-        public string SignatureAlgorithm { get; set; }
+        public string SignatureAlgorithm { get => _explicitNullValueSignatureAlgorithm; set { _explicitNullValueSignatureAlgorithm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature_algorithm"); else _explicitNullProperties?.Remove("signature_algorithm"); } }
+        private string _explicitNullValueSignatureAlgorithm = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.PurchaseRenewalLetsencryptCertificateRequest"/> and sets the default values.
@@ -41,7 +53,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         public static global::Soenneker.DNSimple.OpenApiClient.Models.PurchaseRenewalLetsencryptCertificateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.DNSimple.OpenApiClient.Models.PurchaseRenewalLetsencryptCertificateRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.DNSimple.OpenApiClient.Models.PurchaseRenewalLetsencryptCertificateRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,6 +76,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("auto_renew", AutoRenew);
             writer.WriteStringValue("signature_algorithm", SignatureAlgorithm);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

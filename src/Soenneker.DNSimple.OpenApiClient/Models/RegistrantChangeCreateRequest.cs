@@ -11,32 +11,48 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RegistrantChangeCreateRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("contact_id") is { } nullNodeContactId && nullNodeContactId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContactId = null;
+            if (parseNode.GetChildNode("domain_id") is { } nullNodeDomainId && nullNodeDomainId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainId = null;
+            if (parseNode.GetChildNode("extended_attributes") is { } nullNodeExtendedAttributes && nullNodeExtendedAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtendedAttributes = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The contact_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCreateRequestContactId? ContactId { get; set; }
+        public global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCreateRequestContactId? ContactId { get => _explicitNullValueContactId; set { _explicitNullValueContactId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contact_id"); else _explicitNullProperties?.Remove("contact_id"); } }
+        private global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCreateRequestContactId? _explicitNullValueContactId = default!;
 #nullable restore
 #else
-        public global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCreateRequestContactId ContactId { get; set; }
+        public global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCreateRequestContactId ContactId { get => _explicitNullValueContactId; set { _explicitNullValueContactId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contact_id"); else _explicitNullProperties?.Remove("contact_id"); } }
+        private global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCreateRequestContactId _explicitNullValueContactId = default!;
 #endif
         /// <summary>The domain_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCreateRequestDomainId? DomainId { get; set; }
+        public global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCreateRequestDomainId? DomainId { get => _explicitNullValueDomainId; set { _explicitNullValueDomainId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_id"); else _explicitNullProperties?.Remove("domain_id"); } }
+        private global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCreateRequestDomainId? _explicitNullValueDomainId = default!;
 #nullable restore
 #else
-        public global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCreateRequestDomainId DomainId { get; set; }
+        public global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCreateRequestDomainId DomainId { get => _explicitNullValueDomainId; set { _explicitNullValueDomainId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_id"); else _explicitNullProperties?.Remove("domain_id"); } }
+        private global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCreateRequestDomainId _explicitNullValueDomainId = default!;
 #endif
         /// <summary>The extended_attributes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCreateRequestExtendedAttributes? ExtendedAttributes { get; set; }
+        public global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCreateRequestExtendedAttributes? ExtendedAttributes { get => _explicitNullValueExtendedAttributes; set { _explicitNullValueExtendedAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extended_attributes"); else _explicitNullProperties?.Remove("extended_attributes"); } }
+        private global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCreateRequestExtendedAttributes? _explicitNullValueExtendedAttributes = default!;
 #nullable restore
 #else
-        public global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCreateRequestExtendedAttributes ExtendedAttributes { get; set; }
+        public global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCreateRequestExtendedAttributes ExtendedAttributes { get => _explicitNullValueExtendedAttributes; set { _explicitNullValueExtendedAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extended_attributes"); else _explicitNullProperties?.Remove("extended_attributes"); } }
+        private global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCreateRequestExtendedAttributes _explicitNullValueExtendedAttributes = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCreateRequest"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         public static global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCreateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCreateRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCreateRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCreateRequestContactId>("contact_id", ContactId);
             writer.WriteObjectValue<global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCreateRequestDomainId>("domain_id", DomainId);
             writer.WriteObjectValue<global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCreateRequestExtendedAttributes>("extended_attributes", ExtendedAttributes);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

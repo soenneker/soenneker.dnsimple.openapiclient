@@ -11,43 +11,79 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class Tld : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("auto_renew_only") is { } nullNodeAutoRenewOnly && nullNodeAutoRenewOnly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoRenewOnly = null;
+            if (parseNode.GetChildNode("dnssec_interface_type") is { } nullNodeDnssecInterfaceType && nullNodeDnssecInterfaceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DnssecInterfaceType = null;
+            if (parseNode.GetChildNode("idn") is { } nullNodeIdn && nullNodeIdn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Idn = null;
+            if (parseNode.GetChildNode("minimum_registration") is { } nullNodeMinimumRegistration && nullNodeMinimumRegistration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinimumRegistration = null;
+            if (parseNode.GetChildNode("name_server_max") is { } nullNodeNameServerMax && nullNodeNameServerMax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NameServerMax = null;
+            if (parseNode.GetChildNode("name_server_min") is { } nullNodeNameServerMin && nullNodeNameServerMin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NameServerMin = null;
+            if (parseNode.GetChildNode("registration_enabled") is { } nullNodeRegistrationEnabled && nullNodeRegistrationEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegistrationEnabled = null;
+            if (parseNode.GetChildNode("renewal_enabled") is { } nullNodeRenewalEnabled && nullNodeRenewalEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RenewalEnabled = null;
+            if (parseNode.GetChildNode("tld") is { } nullNodeTldProp && nullNodeTldProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TldProp = null;
+            if (parseNode.GetChildNode("tld_type") is { } nullNodeTldType && nullNodeTldType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TldType = null;
+            if (parseNode.GetChildNode("transfer_enabled") is { } nullNodeTransferEnabled && nullNodeTransferEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferEnabled = null;
+            if (parseNode.GetChildNode("trustee_service_enabled") is { } nullNodeTrusteeServiceEnabled && nullNodeTrusteeServiceEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrusteeServiceEnabled = null;
+            if (parseNode.GetChildNode("trustee_service_required") is { } nullNodeTrusteeServiceRequired && nullNodeTrusteeServiceRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrusteeServiceRequired = null;
+            if (parseNode.GetChildNode("whois_privacy") is { } nullNodeWhoisPrivacy && nullNodeWhoisPrivacy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhoisPrivacy = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>true if the suffix requires auto-renewal and can&apos;t be renewed manually</summary>
-        public bool? AutoRenewOnly { get; set; }
+        public bool? AutoRenewOnly { get => _explicitNullValueAutoRenewOnly; set { _explicitNullValueAutoRenewOnly = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_renew_only"); else _explicitNullProperties?.Remove("auto_renew_only"); } }
+        private bool? _explicitNullValueAutoRenewOnly = default!;
         /// <summary>type of data interface required for DNSSEC</summary>
-        public global::Soenneker.DNSimple.OpenApiClient.Models.TldDnssecInterfaceType? DnssecInterfaceType { get; set; }
+        public global::Soenneker.DNSimple.OpenApiClient.Models.TldDnssecInterfaceType? DnssecInterfaceType { get => _explicitNullValueDnssecInterfaceType; set { _explicitNullValueDnssecInterfaceType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dnssec_interface_type"); else _explicitNullProperties?.Remove("dnssec_interface_type"); } }
+        private global::Soenneker.DNSimple.OpenApiClient.Models.TldDnssecInterfaceType? _explicitNullValueDnssecInterfaceType = default!;
         /// <summary>true if the suffix supports Internationalized Domain Names (IDN)</summary>
-        public bool? Idn { get; set; }
+        public bool? Idn { get => _explicitNullValueIdn; set { _explicitNullValueIdn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idn"); else _explicitNullProperties?.Remove("idn"); } }
+        private bool? _explicitNullValueIdn = default!;
         /// <summary>The minimum_registration property</summary>
-        public int? MinimumRegistration { get; set; }
+        public int? MinimumRegistration { get => _explicitNullValueMinimumRegistration; set { _explicitNullValueMinimumRegistration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimum_registration"); else _explicitNullProperties?.Remove("minimum_registration"); } }
+        private int? _explicitNullValueMinimumRegistration = default!;
         /// <summary>maximum number of name servers allowed for this TLD</summary>
-        public int? NameServerMax { get; set; }
+        public int? NameServerMax { get => _explicitNullValueNameServerMax; set { _explicitNullValueNameServerMax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name_server_max"); else _explicitNullProperties?.Remove("name_server_max"); } }
+        private int? _explicitNullValueNameServerMax = default!;
         /// <summary>minimum number of name servers required for this TLD</summary>
-        public int? NameServerMin { get; set; }
+        public int? NameServerMin { get => _explicitNullValueNameServerMin; set { _explicitNullValueNameServerMin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name_server_min"); else _explicitNullProperties?.Remove("name_server_min"); } }
+        private int? _explicitNullValueNameServerMin = default!;
         /// <summary>true if DNSimple supports registrations for this TLD</summary>
-        public bool? RegistrationEnabled { get; set; }
+        public bool? RegistrationEnabled { get => _explicitNullValueRegistrationEnabled; set { _explicitNullValueRegistrationEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registration_enabled"); else _explicitNullProperties?.Remove("registration_enabled"); } }
+        private bool? _explicitNullValueRegistrationEnabled = default!;
         /// <summary>true if DNSimple supports renewals for this TLD</summary>
-        public bool? RenewalEnabled { get; set; }
+        public bool? RenewalEnabled { get => _explicitNullValueRenewalEnabled; set { _explicitNullValueRenewalEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renewal_enabled"); else _explicitNullProperties?.Remove("renewal_enabled"); } }
+        private bool? _explicitNullValueRenewalEnabled = default!;
         /// <summary>The registerable suffix. In most cases the suffix matches a TLD, but there are some cases where the suffix is a subzone of the TLD (e.g. com.au).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TldProp { get; set; }
+        public string? TldProp { get => _explicitNullValueTldProp; set { _explicitNullValueTldProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tld"); else _explicitNullProperties?.Remove("tld"); } }
+        private string? _explicitNullValueTldProp = default!;
 #nullable restore
 #else
-        public string TldProp { get; set; }
+        public string TldProp { get => _explicitNullValueTldProp; set { _explicitNullValueTldProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tld"); else _explicitNullProperties?.Remove("tld"); } }
+        private string _explicitNullValueTldProp = default!;
 #endif
         /// <summary>TLD types are: * 1 - gTLD (global TLD) * 2 - ccTLD (country-code TLD) * 3 - newTLD (new global TLD)</summary>
-        public int? TldType { get; set; }
+        public int? TldType { get => _explicitNullValueTldType; set { _explicitNullValueTldType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tld_type"); else _explicitNullProperties?.Remove("tld_type"); } }
+        private int? _explicitNullValueTldType = default!;
         /// <summary>true if DNSimple supports inbound transfers for this TLD</summary>
-        public bool? TransferEnabled { get; set; }
+        public bool? TransferEnabled { get => _explicitNullValueTransferEnabled; set { _explicitNullValueTransferEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_enabled"); else _explicitNullProperties?.Remove("transfer_enabled"); } }
+        private bool? _explicitNullValueTransferEnabled = default!;
         /// <summary>true if trustee service is enabled by default for this TLD</summary>
-        public bool? TrusteeServiceEnabled { get; set; }
+        public bool? TrusteeServiceEnabled { get => _explicitNullValueTrusteeServiceEnabled; set { _explicitNullValueTrusteeServiceEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trustee_service_enabled"); else _explicitNullProperties?.Remove("trustee_service_enabled"); } }
+        private bool? _explicitNullValueTrusteeServiceEnabled = default!;
         /// <summary>true if trustee is required for this TLD</summary>
-        public bool? TrusteeServiceRequired { get; set; }
+        public bool? TrusteeServiceRequired { get => _explicitNullValueTrusteeServiceRequired; set { _explicitNullValueTrusteeServiceRequired = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trustee_service_required"); else _explicitNullProperties?.Remove("trustee_service_required"); } }
+        private bool? _explicitNullValueTrusteeServiceRequired = default!;
         /// <summary>true if the suffix allows WHOIS privacy as a separate component. Some registries may provide WHOIS privacy at registry level by limiting the visibility of certain attributes in the WHOIS response.</summary>
-        public bool? WhoisPrivacy { get; set; }
+        public bool? WhoisPrivacy { get => _explicitNullValueWhoisPrivacy; set { _explicitNullValueWhoisPrivacy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whois_privacy"); else _explicitNullProperties?.Remove("whois_privacy"); } }
+        private bool? _explicitNullValueWhoisPrivacy = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.Tld"/> and sets the default values.
         /// </summary>
@@ -63,7 +99,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         public static global::Soenneker.DNSimple.OpenApiClient.Models.Tld CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.DNSimple.OpenApiClient.Models.Tld();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.DNSimple.OpenApiClient.Models.Tld(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -110,6 +146,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
             writer.WriteBoolValue("trustee_service_enabled", TrusteeServiceEnabled);
             writer.WriteBoolValue("trustee_service_required", TrusteeServiceRequired);
             writer.WriteBoolValue("whois_privacy", WhoisPrivacy);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

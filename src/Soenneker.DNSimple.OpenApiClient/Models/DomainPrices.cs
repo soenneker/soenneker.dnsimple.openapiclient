@@ -11,29 +11,51 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DomainPrices : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
+            if (parseNode.GetChildNode("premium") is { } nullNodePremium && nullNodePremium.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Premium = null;
+            if (parseNode.GetChildNode("registration_price") is { } nullNodeRegistrationPrice && nullNodeRegistrationPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegistrationPrice = null;
+            if (parseNode.GetChildNode("renewal_price") is { } nullNodeRenewalPrice && nullNodeRenewalPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RenewalPrice = null;
+            if (parseNode.GetChildNode("restore_price") is { } nullNodeRestorePrice && nullNodeRestorePrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RestorePrice = null;
+            if (parseNode.GetChildNode("transfer_price") is { } nullNodeTransferPrice && nullNodeTransferPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferPrice = null;
+            if (parseNode.GetChildNode("trustee_price") is { } nullNodeTrusteePrice && nullNodeTrusteePrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrusteePrice = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The domain name that was checked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Domain { get; set; }
+        public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        private string? _explicitNullValueDomain = default!;
 #nullable restore
 #else
-        public string Domain { get; set; }
+        public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        private string _explicitNullValueDomain = default!;
 #endif
         /// <summary>True if the domain is a premium domain and thus will have a non-standard registration, renewal, and/or transfer fee.</summary>
-        public bool? Premium { get; set; }
+        public bool? Premium { get => _explicitNullValuePremium; set { _explicitNullValuePremium = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("premium"); else _explicitNullProperties?.Remove("premium"); } }
+        private bool? _explicitNullValuePremium = default!;
         /// <summary>The domain registration price represented as a USD amount with dollars and cents.</summary>
-        public float? RegistrationPrice { get; set; }
+        public float? RegistrationPrice { get => _explicitNullValueRegistrationPrice; set { _explicitNullValueRegistrationPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registration_price"); else _explicitNullProperties?.Remove("registration_price"); } }
+        private float? _explicitNullValueRegistrationPrice = default!;
         /// <summary>The domain renewal price represented as a USD amount with dollars and cents.</summary>
-        public float? RenewalPrice { get; set; }
+        public float? RenewalPrice { get => _explicitNullValueRenewalPrice; set { _explicitNullValueRenewalPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renewal_price"); else _explicitNullProperties?.Remove("renewal_price"); } }
+        private float? _explicitNullValueRenewalPrice = default!;
         /// <summary>The domain restore price represented as a USD amount with dollars and cents.</summary>
-        public float? RestorePrice { get; set; }
+        public float? RestorePrice { get => _explicitNullValueRestorePrice; set { _explicitNullValueRestorePrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restore_price"); else _explicitNullProperties?.Remove("restore_price"); } }
+        private float? _explicitNullValueRestorePrice = default!;
         /// <summary>The domain transfer price represented as a USD amount with dollars and cents.</summary>
-        public float? TransferPrice { get; set; }
+        public float? TransferPrice { get => _explicitNullValueTransferPrice; set { _explicitNullValueTransferPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_price"); else _explicitNullProperties?.Remove("transfer_price"); } }
+        private float? _explicitNullValueTransferPrice = default!;
         /// <summary>The trustee service price represented as a USD amount with dollars and cents.</summary>
-        public float? TrusteePrice { get; set; }
+        public float? TrusteePrice { get => _explicitNullValueTrusteePrice; set { _explicitNullValueTrusteePrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trustee_price"); else _explicitNullProperties?.Remove("trustee_price"); } }
+        private float? _explicitNullValueTrusteePrice = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.DomainPrices"/> and sets the default values.
         /// </summary>
@@ -49,7 +71,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         public static global::Soenneker.DNSimple.OpenApiClient.Models.DomainPrices CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.DNSimple.OpenApiClient.Models.DomainPrices();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.DNSimple.OpenApiClient.Models.DomainPrices(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,6 +104,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
             writer.WriteFloatValue("restore_price", RestorePrice);
             writer.WriteFloatValue("transfer_price", TransferPrice);
             writer.WriteFloatValue("trustee_price", TrusteePrice);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

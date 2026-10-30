@@ -55,6 +55,8 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Zones.Item.Records.Item.Distribu
             {
                 { "404", global::Soenneker.DNSimple.OpenApiClient.Models.Value404Response.CreateFromDiscriminatorValue },
                 { "504", global::Soenneker.DNSimple.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.CheckZoneRecordDistribution200Response>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.CheckZoneRecordDistribution200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

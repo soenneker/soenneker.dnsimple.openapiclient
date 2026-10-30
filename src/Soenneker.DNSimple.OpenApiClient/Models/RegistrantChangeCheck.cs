@@ -11,23 +11,39 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RegistrantChangeCheck : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("contact_id") is { } nullNodeContactId && nullNodeContactId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContactId = null;
+            if (parseNode.GetChildNode("domain_id") is { } nullNodeDomainId && nullNodeDomainId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainId = null;
+            if (parseNode.GetChildNode("extended_attributes") is { } nullNodeExtendedAttributes && nullNodeExtendedAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtendedAttributes = null;
+            if (parseNode.GetChildNode("registry_owner_change") is { } nullNodeRegistryOwnerChange && nullNodeRegistryOwnerChange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegistryOwnerChange = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The contact_id property</summary>
-        public int? ContactId { get; set; }
+        public int? ContactId { get => _explicitNullValueContactId; set { _explicitNullValueContactId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contact_id"); else _explicitNullProperties?.Remove("contact_id"); } }
+        private int? _explicitNullValueContactId = default!;
         /// <summary>The domain_id property</summary>
-        public int? DomainId { get; set; }
+        public int? DomainId { get => _explicitNullValueDomainId; set { _explicitNullValueDomainId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_id"); else _explicitNullProperties?.Remove("domain_id"); } }
+        private int? _explicitNullValueDomainId = default!;
         /// <summary>The extended_attributes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.DNSimple.OpenApiClient.Models.ExtendedAttribute>? ExtendedAttributes { get; set; }
+        public List<global::Soenneker.DNSimple.OpenApiClient.Models.ExtendedAttribute>? ExtendedAttributes { get => _explicitNullValueExtendedAttributes; set { _explicitNullValueExtendedAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extended_attributes"); else _explicitNullProperties?.Remove("extended_attributes"); } }
+        private List<global::Soenneker.DNSimple.OpenApiClient.Models.ExtendedAttribute>? _explicitNullValueExtendedAttributes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.DNSimple.OpenApiClient.Models.ExtendedAttribute> ExtendedAttributes { get; set; }
+        public List<global::Soenneker.DNSimple.OpenApiClient.Models.ExtendedAttribute> ExtendedAttributes { get => _explicitNullValueExtendedAttributes; set { _explicitNullValueExtendedAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extended_attributes"); else _explicitNullProperties?.Remove("extended_attributes"); } }
+        private List<global::Soenneker.DNSimple.OpenApiClient.Models.ExtendedAttribute> _explicitNullValueExtendedAttributes = default!;
 #endif
         /// <summary>The registry_owner_change property</summary>
-        public bool? RegistryOwnerChange { get; set; }
+        public bool? RegistryOwnerChange { get => _explicitNullValueRegistryOwnerChange; set { _explicitNullValueRegistryOwnerChange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registry_owner_change"); else _explicitNullProperties?.Remove("registry_owner_change"); } }
+        private bool? _explicitNullValueRegistryOwnerChange = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCheck"/> and sets the default values.
         /// </summary>
@@ -43,7 +59,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         public static global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCheck CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCheck();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCheck(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -70,6 +86,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
             writer.WriteIntValue("domain_id", DomainId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.DNSimple.OpenApiClient.Models.ExtendedAttribute>("extended_attributes", ExtendedAttributes);
             writer.WriteBoolValue("registry_owner_change", RegistryOwnerChange);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

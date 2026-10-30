@@ -68,7 +68,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Domains
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.ListDomains200Response>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.ListDomains200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.ListDomains200Response>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.ListDomains200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a domain and the corresponding zone into the account.When you create a domain on a Solo, Solo Pro or Teams plan, DNSimple automatically enables DNS services for its zone. DNSimple charges for the zone on each subscription renewal invoice.
@@ -92,6 +92,8 @@ namespace Soenneker.DNSimple.OpenApiClient.Item.Domains
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.DNSimple.OpenApiClient.Models.Value400Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.DNSimple.OpenApiClient.Models.CreateDomain201Response>(requestInfo, global::Soenneker.DNSimple.OpenApiClient.Models.CreateDomain201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
