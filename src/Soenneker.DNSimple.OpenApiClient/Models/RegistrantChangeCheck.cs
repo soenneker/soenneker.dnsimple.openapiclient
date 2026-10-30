@@ -17,32 +17,36 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("contact_id") is { } nullNodeContactId && nullNodeContactId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContactId = null;
-            if (parseNode.GetChildNode("domain_id") is { } nullNodeDomainId && nullNodeDomainId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainId = null;
-            if (parseNode.GetChildNode("extended_attributes") is { } nullNodeExtendedAttributes && nullNodeExtendedAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtendedAttributes = null;
-            if (parseNode.GetChildNode("registry_owner_change") is { } nullNodeRegistryOwnerChange && nullNodeRegistryOwnerChange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegistryOwnerChange = null;
+            if (parseNode.GetChildNode("contact_id") is null) { _explicitNullValueContactId = default!; _explicitNullProperties?.Remove("contact_id"); }
+            else if (parseNode.GetChildNode("contact_id") is { } nullNodeContactId && nullNodeContactId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContactId = null;
+            if (parseNode.GetChildNode("domain_id") is null) { _explicitNullValueDomainId = default!; _explicitNullProperties?.Remove("domain_id"); }
+            else if (parseNode.GetChildNode("domain_id") is { } nullNodeDomainId && nullNodeDomainId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainId = null;
+            if (parseNode.GetChildNode("extended_attributes") is null) { _explicitNullValueExtendedAttributes = default!; _explicitNullProperties?.Remove("extended_attributes"); }
+            else if (parseNode.GetChildNode("extended_attributes") is { } nullNodeExtendedAttributes && nullNodeExtendedAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtendedAttributes = null;
+            if (parseNode.GetChildNode("registry_owner_change") is null) { _explicitNullValueRegistryOwnerChange = default!; _explicitNullProperties?.Remove("registry_owner_change"); }
+            else if (parseNode.GetChildNode("registry_owner_change") is { } nullNodeRegistryOwnerChange && nullNodeRegistryOwnerChange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegistryOwnerChange = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The contact_id property</summary>
-        public int? ContactId { get => _explicitNullValueContactId; set { _explicitNullValueContactId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contact_id"); else _explicitNullProperties?.Remove("contact_id"); } }
+        public int? ContactId { get => _explicitNullValueContactId; set { _explicitNullValueContactId = value; AdditionalData?.Remove("contact_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contact_id"); else _explicitNullProperties?.Remove("contact_id"); } }
         private int? _explicitNullValueContactId = default!;
         /// <summary>The domain_id property</summary>
-        public int? DomainId { get => _explicitNullValueDomainId; set { _explicitNullValueDomainId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_id"); else _explicitNullProperties?.Remove("domain_id"); } }
+        public int? DomainId { get => _explicitNullValueDomainId; set { _explicitNullValueDomainId = value; AdditionalData?.Remove("domain_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_id"); else _explicitNullProperties?.Remove("domain_id"); } }
         private int? _explicitNullValueDomainId = default!;
         /// <summary>The extended_attributes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.DNSimple.OpenApiClient.Models.ExtendedAttribute>? ExtendedAttributes { get => _explicitNullValueExtendedAttributes; set { _explicitNullValueExtendedAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extended_attributes"); else _explicitNullProperties?.Remove("extended_attributes"); } }
+        public List<global::Soenneker.DNSimple.OpenApiClient.Models.ExtendedAttribute>? ExtendedAttributes { get => _explicitNullValueExtendedAttributes; set { _explicitNullValueExtendedAttributes = value; AdditionalData?.Remove("extended_attributes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extended_attributes"); else _explicitNullProperties?.Remove("extended_attributes"); } }
         private List<global::Soenneker.DNSimple.OpenApiClient.Models.ExtendedAttribute>? _explicitNullValueExtendedAttributes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.DNSimple.OpenApiClient.Models.ExtendedAttribute> ExtendedAttributes { get => _explicitNullValueExtendedAttributes; set { _explicitNullValueExtendedAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extended_attributes"); else _explicitNullProperties?.Remove("extended_attributes"); } }
+        public List<global::Soenneker.DNSimple.OpenApiClient.Models.ExtendedAttribute> ExtendedAttributes { get => _explicitNullValueExtendedAttributes; set { _explicitNullValueExtendedAttributes = value; AdditionalData?.Remove("extended_attributes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extended_attributes"); else _explicitNullProperties?.Remove("extended_attributes"); } }
         private List<global::Soenneker.DNSimple.OpenApiClient.Models.ExtendedAttribute> _explicitNullValueExtendedAttributes = default!;
 #endif
         /// <summary>The registry_owner_change property</summary>
-        public bool? RegistryOwnerChange { get => _explicitNullValueRegistryOwnerChange; set { _explicitNullValueRegistryOwnerChange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registry_owner_change"); else _explicitNullProperties?.Remove("registry_owner_change"); } }
+        public bool? RegistryOwnerChange { get => _explicitNullValueRegistryOwnerChange; set { _explicitNullValueRegistryOwnerChange = value; AdditionalData?.Remove("registry_owner_change"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registry_owner_change"); else _explicitNullProperties?.Remove("registry_owner_change"); } }
         private bool? _explicitNullValueRegistryOwnerChange = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCheck"/> and sets the default values.

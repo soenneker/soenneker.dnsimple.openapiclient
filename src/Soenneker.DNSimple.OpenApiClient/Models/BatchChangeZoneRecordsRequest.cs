@@ -17,9 +17,12 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("creates") is { } nullNodeCreates && nullNodeCreates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Creates = null;
-            if (parseNode.GetChildNode("deletes") is { } nullNodeDeletes && nullNodeDeletes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deletes = null;
-            if (parseNode.GetChildNode("updates") is { } nullNodeUpdates && nullNodeUpdates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Updates = null;
+            if (parseNode.GetChildNode("creates") is null) { _explicitNullValueCreates = default!; _explicitNullProperties?.Remove("creates"); }
+            else if (parseNode.GetChildNode("creates") is { } nullNodeCreates && nullNodeCreates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Creates = null;
+            if (parseNode.GetChildNode("deletes") is null) { _explicitNullValueDeletes = default!; _explicitNullProperties?.Remove("deletes"); }
+            else if (parseNode.GetChildNode("deletes") is { } nullNodeDeletes && nullNodeDeletes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deletes = null;
+            if (parseNode.GetChildNode("updates") is null) { _explicitNullValueUpdates = default!; _explicitNullProperties?.Remove("updates"); }
+            else if (parseNode.GetChildNode("updates") is { } nullNodeUpdates && nullNodeUpdates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Updates = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         /// <summary>Zone records to create</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsRequestCreatesItem>? Creates { get => _explicitNullValueCreates; set { _explicitNullValueCreates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creates"); else _explicitNullProperties?.Remove("creates"); } }
+        public List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsRequestCreatesItem>? Creates { get => _explicitNullValueCreates; set { _explicitNullValueCreates = value; AdditionalData?.Remove("creates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creates"); else _explicitNullProperties?.Remove("creates"); } }
         private List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsRequestCreatesItem>? _explicitNullValueCreates = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsRequestCreatesItem> Creates { get => _explicitNullValueCreates; set { _explicitNullValueCreates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creates"); else _explicitNullProperties?.Remove("creates"); } }
+        public List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsRequestCreatesItem> Creates { get => _explicitNullValueCreates; set { _explicitNullValueCreates = value; AdditionalData?.Remove("creates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creates"); else _explicitNullProperties?.Remove("creates"); } }
         private List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsRequestCreatesItem> _explicitNullValueCreates = default!;
 #endif
         /// <summary>Zone record IDs to delete</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsRequestDeletesItem>? Deletes { get => _explicitNullValueDeletes; set { _explicitNullValueDeletes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletes"); else _explicitNullProperties?.Remove("deletes"); } }
+        public List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsRequestDeletesItem>? Deletes { get => _explicitNullValueDeletes; set { _explicitNullValueDeletes = value; AdditionalData?.Remove("deletes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletes"); else _explicitNullProperties?.Remove("deletes"); } }
         private List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsRequestDeletesItem>? _explicitNullValueDeletes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsRequestDeletesItem> Deletes { get => _explicitNullValueDeletes; set { _explicitNullValueDeletes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletes"); else _explicitNullProperties?.Remove("deletes"); } }
+        public List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsRequestDeletesItem> Deletes { get => _explicitNullValueDeletes; set { _explicitNullValueDeletes = value; AdditionalData?.Remove("deletes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletes"); else _explicitNullProperties?.Remove("deletes"); } }
         private List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsRequestDeletesItem> _explicitNullValueDeletes = default!;
 #endif
         /// <summary>Zone records to update</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsRequestUpdatesItem>? Updates { get => _explicitNullValueUpdates; set { _explicitNullValueUpdates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updates"); else _explicitNullProperties?.Remove("updates"); } }
+        public List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsRequestUpdatesItem>? Updates { get => _explicitNullValueUpdates; set { _explicitNullValueUpdates = value; AdditionalData?.Remove("updates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updates"); else _explicitNullProperties?.Remove("updates"); } }
         private List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsRequestUpdatesItem>? _explicitNullValueUpdates = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsRequestUpdatesItem> Updates { get => _explicitNullValueUpdates; set { _explicitNullValueUpdates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updates"); else _explicitNullProperties?.Remove("updates"); } }
+        public List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsRequestUpdatesItem> Updates { get => _explicitNullValueUpdates; set { _explicitNullValueUpdates = value; AdditionalData?.Remove("updates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updates"); else _explicitNullProperties?.Remove("updates"); } }
         private List<global::Soenneker.DNSimple.OpenApiClient.Models.BatchChangeZoneRecordsRequestUpdatesItem> _explicitNullValueUpdates = default!;
 #endif
         /// <summary>

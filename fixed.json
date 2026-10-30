@@ -9910,10 +9910,10 @@
         "type": "object",
         "properties": {
           "domain_id": {
-            "$ref": "#/components/schemas/RegistrantChangeCreateRequestDomainId"
+            "$ref": "#/components/schemas/RegistrantChangeCheckRequestContactId"
           },
           "contact_id": {
-            "$ref": "#/components/schemas/RegistrantChangeCreateRequestContactId"
+            "$ref": "#/components/schemas/RegistrantChangeCheckRequestContactId"
           },
           "extended_attributes": {
             "$ref": "#/components/schemas/RegistrantChangeCreateRequestExtendedAttributes"
@@ -9935,7 +9935,7 @@
         "type": "object",
         "properties": {
           "domain_id": {
-            "$ref": "#/components/schemas/RegistrantChangeCheckRequestDomainId"
+            "$ref": "#/components/schemas/RegistrantChangeCheckRequestContactId"
           },
           "contact_id": {
             "$ref": "#/components/schemas/RegistrantChangeCheckRequestContactId"
@@ -12224,12 +12224,6 @@
           },
           {
             "type": "string"
-          },
-          {
-            "type": "string",
-            "description": "A date value formatted as ISO 8601.",
-            "format": "date",
-            "example": "2010-01-01"
           }
         ]
       },

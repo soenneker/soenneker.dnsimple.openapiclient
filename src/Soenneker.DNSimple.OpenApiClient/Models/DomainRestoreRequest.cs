@@ -17,7 +17,8 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("premium_price") is { } nullNodePremiumPrice && nullNodePremiumPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PremiumPrice = null;
+            if (parseNode.GetChildNode("premium_price") is null) { _explicitNullValuePremiumPrice = default!; _explicitNullProperties?.Remove("premium_price"); }
+            else if (parseNode.GetChildNode("premium_price") is { } nullNodePremiumPrice && nullNodePremiumPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PremiumPrice = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         /// <summary>Required as confirmation of the price, only if the domain is premium.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PremiumPrice { get => _explicitNullValuePremiumPrice; set { _explicitNullValuePremiumPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("premium_price"); else _explicitNullProperties?.Remove("premium_price"); } }
+        public string? PremiumPrice { get => _explicitNullValuePremiumPrice; set { _explicitNullValuePremiumPrice = value; AdditionalData?.Remove("premium_price"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("premium_price"); else _explicitNullProperties?.Remove("premium_price"); } }
         private string? _explicitNullValuePremiumPrice = default!;
 #nullable restore
 #else
-        public string PremiumPrice { get => _explicitNullValuePremiumPrice; set { _explicitNullValuePremiumPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("premium_price"); else _explicitNullProperties?.Remove("premium_price"); } }
+        public string PremiumPrice { get => _explicitNullValuePremiumPrice; set { _explicitNullValuePremiumPrice = value; AdditionalData?.Remove("premium_price"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("premium_price"); else _explicitNullProperties?.Remove("premium_price"); } }
         private string _explicitNullValuePremiumPrice = default!;
 #endif
         /// <summary>

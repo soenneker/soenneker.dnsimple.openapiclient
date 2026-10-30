@@ -17,8 +17,10 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("new_account_email") is { } nullNodeNewAccountEmail && nullNodeNewAccountEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewAccountEmail = null;
-            if (parseNode.GetChildNode("new_account_identifier") is { } nullNodeNewAccountIdentifier && nullNodeNewAccountIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewAccountIdentifier = null;
+            if (parseNode.GetChildNode("new_account_email") is null) { _explicitNullValueNewAccountEmail = default!; _explicitNullProperties?.Remove("new_account_email"); }
+            else if (parseNode.GetChildNode("new_account_email") is { } nullNodeNewAccountEmail && nullNodeNewAccountEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewAccountEmail = null;
+            if (parseNode.GetChildNode("new_account_identifier") is null) { _explicitNullValueNewAccountIdentifier = default!; _explicitNullProperties?.Remove("new_account_identifier"); }
+            else if (parseNode.GetChildNode("new_account_identifier") is { } nullNodeNewAccountIdentifier && nullNodeNewAccountIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewAccountIdentifier = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewAccountEmail { get => _explicitNullValueNewAccountEmail; set { _explicitNullValueNewAccountEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_account_email"); else _explicitNullProperties?.Remove("new_account_email"); } }
+        public string? NewAccountEmail { get => _explicitNullValueNewAccountEmail; set { _explicitNullValueNewAccountEmail = value; AdditionalData?.Remove("new_account_email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_account_email"); else _explicitNullProperties?.Remove("new_account_email"); } }
         private string? _explicitNullValueNewAccountEmail = default!;
 #nullable restore
 #else
-        public string NewAccountEmail { get => _explicitNullValueNewAccountEmail; set { _explicitNullValueNewAccountEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_account_email"); else _explicitNullProperties?.Remove("new_account_email"); } }
+        public string NewAccountEmail { get => _explicitNullValueNewAccountEmail; set { _explicitNullValueNewAccountEmail = value; AdditionalData?.Remove("new_account_email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_account_email"); else _explicitNullProperties?.Remove("new_account_email"); } }
         private string _explicitNullValueNewAccountEmail = default!;
 #endif
         /// <summary>The account identifier of the target DNSimple account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewAccountIdentifier { get => _explicitNullValueNewAccountIdentifier; set { _explicitNullValueNewAccountIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_account_identifier"); else _explicitNullProperties?.Remove("new_account_identifier"); } }
+        public string? NewAccountIdentifier { get => _explicitNullValueNewAccountIdentifier; set { _explicitNullValueNewAccountIdentifier = value; AdditionalData?.Remove("new_account_identifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_account_identifier"); else _explicitNullProperties?.Remove("new_account_identifier"); } }
         private string? _explicitNullValueNewAccountIdentifier = default!;
 #nullable restore
 #else
-        public string NewAccountIdentifier { get => _explicitNullValueNewAccountIdentifier; set { _explicitNullValueNewAccountIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_account_identifier"); else _explicitNullProperties?.Remove("new_account_identifier"); } }
+        public string NewAccountIdentifier { get => _explicitNullValueNewAccountIdentifier; set { _explicitNullValueNewAccountIdentifier = value; AdditionalData?.Remove("new_account_identifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_account_identifier"); else _explicitNullProperties?.Remove("new_account_identifier"); } }
         private string _explicitNullValueNewAccountIdentifier = default!;
 #endif
         /// <summary>

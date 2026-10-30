@@ -17,8 +17,10 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("contact_id") is { } nullNodeContactId && nullNodeContactId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContactId = null;
-            if (parseNode.GetChildNode("domain_id") is { } nullNodeDomainId && nullNodeDomainId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainId = null;
+            if (parseNode.GetChildNode("contact_id") is null) { _explicitNullValueContactId = default!; _explicitNullProperties?.Remove("contact_id"); }
+            else if (parseNode.GetChildNode("contact_id") is { } nullNodeContactId && nullNodeContactId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContactId = null;
+            if (parseNode.GetChildNode("domain_id") is null) { _explicitNullValueDomainId = default!; _explicitNullProperties?.Remove("domain_id"); }
+            else if (parseNode.GetChildNode("domain_id") is { } nullNodeDomainId && nullNodeDomainId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DomainId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,22 +28,22 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         /// <summary>The contact_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCheckRequestContactId? ContactId { get => _explicitNullValueContactId; set { _explicitNullValueContactId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contact_id"); else _explicitNullProperties?.Remove("contact_id"); } }
+        public global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCheckRequestContactId? ContactId { get => _explicitNullValueContactId; set { _explicitNullValueContactId = value; AdditionalData?.Remove("contact_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contact_id"); else _explicitNullProperties?.Remove("contact_id"); } }
         private global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCheckRequestContactId? _explicitNullValueContactId = default!;
 #nullable restore
 #else
-        public global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCheckRequestContactId ContactId { get => _explicitNullValueContactId; set { _explicitNullValueContactId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contact_id"); else _explicitNullProperties?.Remove("contact_id"); } }
+        public global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCheckRequestContactId ContactId { get => _explicitNullValueContactId; set { _explicitNullValueContactId = value; AdditionalData?.Remove("contact_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contact_id"); else _explicitNullProperties?.Remove("contact_id"); } }
         private global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCheckRequestContactId _explicitNullValueContactId = default!;
 #endif
         /// <summary>The domain_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCheckRequestDomainId? DomainId { get => _explicitNullValueDomainId; set { _explicitNullValueDomainId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_id"); else _explicitNullProperties?.Remove("domain_id"); } }
-        private global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCheckRequestDomainId? _explicitNullValueDomainId = default!;
+        public global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCheckRequestContactId? DomainId { get => _explicitNullValueDomainId; set { _explicitNullValueDomainId = value; AdditionalData?.Remove("domain_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_id"); else _explicitNullProperties?.Remove("domain_id"); } }
+        private global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCheckRequestContactId? _explicitNullValueDomainId = default!;
 #nullable restore
 #else
-        public global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCheckRequestDomainId DomainId { get => _explicitNullValueDomainId; set { _explicitNullValueDomainId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_id"); else _explicitNullProperties?.Remove("domain_id"); } }
-        private global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCheckRequestDomainId _explicitNullValueDomainId = default!;
+        public global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCheckRequestContactId DomainId { get => _explicitNullValueDomainId; set { _explicitNullValueDomainId = value; AdditionalData?.Remove("domain_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain_id"); else _explicitNullProperties?.Remove("domain_id"); } }
+        private global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCheckRequestContactId _explicitNullValueDomainId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCheckRequest"/> and sets the default values.
@@ -69,7 +71,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "contact_id", n => { ContactId = n.GetObjectValue<global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCheckRequestContactId>(global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCheckRequestContactId.CreateFromDiscriminatorValue); } },
-                { "domain_id", n => { DomainId = n.GetObjectValue<global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCheckRequestDomainId>(global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCheckRequestDomainId.CreateFromDiscriminatorValue); } },
+                { "domain_id", n => { DomainId = n.GetObjectValue<global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCheckRequestContactId>(global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCheckRequestContactId.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -80,7 +82,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCheckRequestContactId>("contact_id", ContactId);
-            writer.WriteObjectValue<global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCheckRequestDomainId>("domain_id", DomainId);
+            writer.WriteObjectValue<global::Soenneker.DNSimple.OpenApiClient.Models.RegistrantChangeCheckRequestContactId>("domain_id", DomainId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

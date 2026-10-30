@@ -18,13 +18,14 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("distributed") is { } nullNodeDistributed && nullNodeDistributed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Distributed = null;
+            if (parseNode.GetChildNode("distributed") is null) { _explicitNullValueDistributed = default!; _explicitNullProperties?.Remove("distributed"); }
+            else if (parseNode.GetChildNode("distributed") is { } nullNodeDistributed && nullNodeDistributed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Distributed = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Returns true if the zone is fully distributed, false if not.</summary>
-        public bool? Distributed { get => _explicitNullValueDistributed; set { _explicitNullValueDistributed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distributed"); else _explicitNullProperties?.Remove("distributed"); } }
+        public bool? Distributed { get => _explicitNullValueDistributed; set { _explicitNullValueDistributed = value; AdditionalData?.Remove("distributed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distributed"); else _explicitNullProperties?.Remove("distributed"); } }
         private bool? _explicitNullValueDistributed = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.ZoneDistribution"/> and sets the default values.

@@ -17,10 +17,14 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("alternate_names") is { } nullNodeAlternateNames && nullNodeAlternateNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlternateNames = null;
-            if (parseNode.GetChildNode("auto_renew") is { } nullNodeAutoRenew && nullNodeAutoRenew.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoRenew = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("signature_algorithm") is { } nullNodeSignatureAlgorithm && nullNodeSignatureAlgorithm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignatureAlgorithm = null;
+            if (parseNode.GetChildNode("alternate_names") is null) { _explicitNullValueAlternateNames = default!; _explicitNullProperties?.Remove("alternate_names"); }
+            else if (parseNode.GetChildNode("alternate_names") is { } nullNodeAlternateNames && nullNodeAlternateNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlternateNames = null;
+            if (parseNode.GetChildNode("auto_renew") is null) { _explicitNullValueAutoRenew = default!; _explicitNullProperties?.Remove("auto_renew"); }
+            else if (parseNode.GetChildNode("auto_renew") is { } nullNodeAutoRenew && nullNodeAutoRenew.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoRenew = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("signature_algorithm") is null) { _explicitNullValueSignatureAlgorithm = default!; _explicitNullProperties?.Remove("signature_algorithm"); }
+            else if (parseNode.GetChildNode("signature_algorithm") is { } nullNodeSignatureAlgorithm && nullNodeSignatureAlgorithm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignatureAlgorithm = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,34 +32,34 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         /// <summary>The certificate alternate names</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AlternateNames { get => _explicitNullValueAlternateNames; set { _explicitNullValueAlternateNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alternate_names"); else _explicitNullProperties?.Remove("alternate_names"); } }
+        public List<string>? AlternateNames { get => _explicitNullValueAlternateNames; set { _explicitNullValueAlternateNames = value; AdditionalData?.Remove("alternate_names"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alternate_names"); else _explicitNullProperties?.Remove("alternate_names"); } }
         private List<string>? _explicitNullValueAlternateNames = default!;
 #nullable restore
 #else
-        public List<string> AlternateNames { get => _explicitNullValueAlternateNames; set { _explicitNullValueAlternateNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alternate_names"); else _explicitNullProperties?.Remove("alternate_names"); } }
+        public List<string> AlternateNames { get => _explicitNullValueAlternateNames; set { _explicitNullValueAlternateNames = value; AdditionalData?.Remove("alternate_names"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alternate_names"); else _explicitNullProperties?.Remove("alternate_names"); } }
         private List<string> _explicitNullValueAlternateNames = default!;
 #endif
         /// <summary>Enable the auto-renewal of the certificate</summary>
-        public bool? AutoRenew { get => _explicitNullValueAutoRenew; set { _explicitNullValueAutoRenew = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_renew"); else _explicitNullProperties?.Remove("auto_renew"); } }
+        public bool? AutoRenew { get => _explicitNullValueAutoRenew; set { _explicitNullValueAutoRenew = value; AdditionalData?.Remove("auto_renew"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_renew"); else _explicitNullProperties?.Remove("auto_renew"); } }
         private bool? _explicitNullValueAutoRenew = default!;
         /// <summary>The certificate name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Optional string to determine the signature algorithm to be used. Either `ECDSA` or `RSA`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SignatureAlgorithm { get => _explicitNullValueSignatureAlgorithm; set { _explicitNullValueSignatureAlgorithm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature_algorithm"); else _explicitNullProperties?.Remove("signature_algorithm"); } }
+        public string? SignatureAlgorithm { get => _explicitNullValueSignatureAlgorithm; set { _explicitNullValueSignatureAlgorithm = value; AdditionalData?.Remove("signature_algorithm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature_algorithm"); else _explicitNullProperties?.Remove("signature_algorithm"); } }
         private string? _explicitNullValueSignatureAlgorithm = default!;
 #nullable restore
 #else
-        public string SignatureAlgorithm { get => _explicitNullValueSignatureAlgorithm; set { _explicitNullValueSignatureAlgorithm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature_algorithm"); else _explicitNullProperties?.Remove("signature_algorithm"); } }
+        public string SignatureAlgorithm { get => _explicitNullValueSignatureAlgorithm; set { _explicitNullValueSignatureAlgorithm = value; AdditionalData?.Remove("signature_algorithm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature_algorithm"); else _explicitNullProperties?.Remove("signature_algorithm"); } }
         private string _explicitNullValueSignatureAlgorithm = default!;
 #endif
         /// <summary>

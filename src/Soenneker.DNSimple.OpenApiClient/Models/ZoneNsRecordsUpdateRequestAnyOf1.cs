@@ -17,8 +17,10 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ns_names") is { } nullNodeNsNames && nullNodeNsNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NsNames = null;
-            if (parseNode.GetChildNode("ns_set_ids") is { } nullNodeNsSetIds && nullNodeNsSetIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NsSetIds = null;
+            if (parseNode.GetChildNode("ns_names") is null) { _explicitNullValueNsNames = default!; _explicitNullProperties?.Remove("ns_names"); }
+            else if (parseNode.GetChildNode("ns_names") is { } nullNodeNsNames && nullNodeNsNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NsNames = null;
+            if (parseNode.GetChildNode("ns_set_ids") is null) { _explicitNullValueNsSetIds = default!; _explicitNullProperties?.Remove("ns_set_ids"); }
+            else if (parseNode.GetChildNode("ns_set_ids") is { } nullNodeNsSetIds && nullNodeNsSetIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NsSetIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         /// <summary>The ns_names property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NsNames { get => _explicitNullValueNsNames; set { _explicitNullValueNsNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ns_names"); else _explicitNullProperties?.Remove("ns_names"); } }
+        public List<string>? NsNames { get => _explicitNullValueNsNames; set { _explicitNullValueNsNames = value; AdditionalData?.Remove("ns_names"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ns_names"); else _explicitNullProperties?.Remove("ns_names"); } }
         private List<string>? _explicitNullValueNsNames = default!;
 #nullable restore
 #else
-        public List<string> NsNames { get => _explicitNullValueNsNames; set { _explicitNullValueNsNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ns_names"); else _explicitNullProperties?.Remove("ns_names"); } }
+        public List<string> NsNames { get => _explicitNullValueNsNames; set { _explicitNullValueNsNames = value; AdditionalData?.Remove("ns_names"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ns_names"); else _explicitNullProperties?.Remove("ns_names"); } }
         private List<string> _explicitNullValueNsNames = default!;
 #endif
         /// <summary>The ns_set_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? NsSetIds { get => _explicitNullValueNsSetIds; set { _explicitNullValueNsSetIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ns_set_ids"); else _explicitNullProperties?.Remove("ns_set_ids"); } }
+        public List<int?>? NsSetIds { get => _explicitNullValueNsSetIds; set { _explicitNullValueNsSetIds = value; AdditionalData?.Remove("ns_set_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ns_set_ids"); else _explicitNullProperties?.Remove("ns_set_ids"); } }
         private List<int?>? _explicitNullValueNsSetIds = default!;
 #nullable restore
 #else
-        public List<int?> NsSetIds { get => _explicitNullValueNsSetIds; set { _explicitNullValueNsSetIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ns_set_ids"); else _explicitNullProperties?.Remove("ns_set_ids"); } }
+        public List<int?> NsSetIds { get => _explicitNullValueNsSetIds; set { _explicitNullValueNsSetIds = value; AdditionalData?.Remove("ns_set_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ns_set_ids"); else _explicitNullProperties?.Remove("ns_set_ids"); } }
         private List<int?> _explicitNullValueNsSetIds = default!;
 #endif
         /// <summary>

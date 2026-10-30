@@ -17,13 +17,20 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("auth_code") is { } nullNodeAuthCode && nullNodeAuthCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthCode = null;
-            if (parseNode.GetChildNode("auto_renew") is { } nullNodeAutoRenew && nullNodeAutoRenew.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoRenew = null;
-            if (parseNode.GetChildNode("extended_attributes") is { } nullNodeExtendedAttributes && nullNodeExtendedAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtendedAttributes = null;
-            if (parseNode.GetChildNode("premium_price") is { } nullNodePremiumPrice && nullNodePremiumPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PremiumPrice = null;
-            if (parseNode.GetChildNode("registrant_id") is { } nullNodeRegistrantId && nullNodeRegistrantId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegistrantId = null;
-            if (parseNode.GetChildNode("trustee") is { } nullNodeTrustee && nullNodeTrustee.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Trustee = null;
-            if (parseNode.GetChildNode("whois_privacy") is { } nullNodeWhoisPrivacy && nullNodeWhoisPrivacy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhoisPrivacy = null;
+            if (parseNode.GetChildNode("auth_code") is null) { _explicitNullValueAuthCode = default!; _explicitNullProperties?.Remove("auth_code"); }
+            else if (parseNode.GetChildNode("auth_code") is { } nullNodeAuthCode && nullNodeAuthCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthCode = null;
+            if (parseNode.GetChildNode("auto_renew") is null) { _explicitNullValueAutoRenew = default!; _explicitNullProperties?.Remove("auto_renew"); }
+            else if (parseNode.GetChildNode("auto_renew") is { } nullNodeAutoRenew && nullNodeAutoRenew.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoRenew = null;
+            if (parseNode.GetChildNode("extended_attributes") is null) { _explicitNullValueExtendedAttributes = default!; _explicitNullProperties?.Remove("extended_attributes"); }
+            else if (parseNode.GetChildNode("extended_attributes") is { } nullNodeExtendedAttributes && nullNodeExtendedAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtendedAttributes = null;
+            if (parseNode.GetChildNode("premium_price") is null) { _explicitNullValuePremiumPrice = default!; _explicitNullProperties?.Remove("premium_price"); }
+            else if (parseNode.GetChildNode("premium_price") is { } nullNodePremiumPrice && nullNodePremiumPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PremiumPrice = null;
+            if (parseNode.GetChildNode("registrant_id") is null) { _explicitNullValueRegistrantId = default!; _explicitNullProperties?.Remove("registrant_id"); }
+            else if (parseNode.GetChildNode("registrant_id") is { } nullNodeRegistrantId && nullNodeRegistrantId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegistrantId = null;
+            if (parseNode.GetChildNode("trustee") is null) { _explicitNullValueTrustee = default!; _explicitNullProperties?.Remove("trustee"); }
+            else if (parseNode.GetChildNode("trustee") is { } nullNodeTrustee && nullNodeTrustee.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Trustee = null;
+            if (parseNode.GetChildNode("whois_privacy") is null) { _explicitNullValueWhoisPrivacy = default!; _explicitNullProperties?.Remove("whois_privacy"); }
+            else if (parseNode.GetChildNode("whois_privacy") is { } nullNodeWhoisPrivacy && nullNodeWhoisPrivacy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhoisPrivacy = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,44 +38,44 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         /// <summary>Required for TLDS that require authorization-based transfer (the vast majority of TLDs).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthCode { get => _explicitNullValueAuthCode; set { _explicitNullValueAuthCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_code"); else _explicitNullProperties?.Remove("auth_code"); } }
+        public string? AuthCode { get => _explicitNullValueAuthCode; set { _explicitNullValueAuthCode = value; AdditionalData?.Remove("auth_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_code"); else _explicitNullProperties?.Remove("auth_code"); } }
         private string? _explicitNullValueAuthCode = default!;
 #nullable restore
 #else
-        public string AuthCode { get => _explicitNullValueAuthCode; set { _explicitNullValueAuthCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_code"); else _explicitNullProperties?.Remove("auth_code"); } }
+        public string AuthCode { get => _explicitNullValueAuthCode; set { _explicitNullValueAuthCode = value; AdditionalData?.Remove("auth_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_code"); else _explicitNullProperties?.Remove("auth_code"); } }
         private string _explicitNullValueAuthCode = default!;
 #endif
         /// <summary>Set to true to enable the auto-renewal of the domain. Default: false.</summary>
-        public bool? AutoRenew { get => _explicitNullValueAutoRenew; set { _explicitNullValueAutoRenew = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_renew"); else _explicitNullProperties?.Remove("auto_renew"); } }
+        public bool? AutoRenew { get => _explicitNullValueAutoRenew; set { _explicitNullValueAutoRenew = value; AdditionalData?.Remove("auto_renew"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_renew"); else _explicitNullProperties?.Remove("auto_renew"); } }
         private bool? _explicitNullValueAutoRenew = default!;
         /// <summary>Required for TLDs that require extended attributes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.DNSimple.OpenApiClient.Models.DomainTransferRequestExtendedAttributesProperty? ExtendedAttributes { get => _explicitNullValueExtendedAttributes; set { _explicitNullValueExtendedAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extended_attributes"); else _explicitNullProperties?.Remove("extended_attributes"); } }
+        public global::Soenneker.DNSimple.OpenApiClient.Models.DomainTransferRequestExtendedAttributesProperty? ExtendedAttributes { get => _explicitNullValueExtendedAttributes; set { _explicitNullValueExtendedAttributes = value; AdditionalData?.Remove("extended_attributes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extended_attributes"); else _explicitNullProperties?.Remove("extended_attributes"); } }
         private global::Soenneker.DNSimple.OpenApiClient.Models.DomainTransferRequestExtendedAttributesProperty? _explicitNullValueExtendedAttributes = default!;
 #nullable restore
 #else
-        public global::Soenneker.DNSimple.OpenApiClient.Models.DomainTransferRequestExtendedAttributesProperty ExtendedAttributes { get => _explicitNullValueExtendedAttributes; set { _explicitNullValueExtendedAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extended_attributes"); else _explicitNullProperties?.Remove("extended_attributes"); } }
+        public global::Soenneker.DNSimple.OpenApiClient.Models.DomainTransferRequestExtendedAttributesProperty ExtendedAttributes { get => _explicitNullValueExtendedAttributes; set { _explicitNullValueExtendedAttributes = value; AdditionalData?.Remove("extended_attributes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extended_attributes"); else _explicitNullProperties?.Remove("extended_attributes"); } }
         private global::Soenneker.DNSimple.OpenApiClient.Models.DomainTransferRequestExtendedAttributesProperty _explicitNullValueExtendedAttributes = default!;
 #endif
         /// <summary>Required as confirmation of the price, only if the domain is premium.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PremiumPrice { get => _explicitNullValuePremiumPrice; set { _explicitNullValuePremiumPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("premium_price"); else _explicitNullProperties?.Remove("premium_price"); } }
+        public string? PremiumPrice { get => _explicitNullValuePremiumPrice; set { _explicitNullValuePremiumPrice = value; AdditionalData?.Remove("premium_price"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("premium_price"); else _explicitNullProperties?.Remove("premium_price"); } }
         private string? _explicitNullValuePremiumPrice = default!;
 #nullable restore
 #else
-        public string PremiumPrice { get => _explicitNullValuePremiumPrice; set { _explicitNullValuePremiumPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("premium_price"); else _explicitNullProperties?.Remove("premium_price"); } }
+        public string PremiumPrice { get => _explicitNullValuePremiumPrice; set { _explicitNullValuePremiumPrice = value; AdditionalData?.Remove("premium_price"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("premium_price"); else _explicitNullProperties?.Remove("premium_price"); } }
         private string _explicitNullValuePremiumPrice = default!;
 #endif
         /// <summary>The ID of an existing contact in your account.</summary>
-        public int? RegistrantId { get => _explicitNullValueRegistrantId; set { _explicitNullValueRegistrantId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registrant_id"); else _explicitNullProperties?.Remove("registrant_id"); } }
+        public int? RegistrantId { get => _explicitNullValueRegistrantId; set { _explicitNullValueRegistrantId = value; AdditionalData?.Remove("registrant_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registrant_id"); else _explicitNullProperties?.Remove("registrant_id"); } }
         private int? _explicitNullValueRegistrantId = default!;
         /// <summary>Set to true to use a trustee service for the transfer. An extra cost may apply. Default: false.</summary>
-        public bool? Trustee { get => _explicitNullValueTrustee; set { _explicitNullValueTrustee = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trustee"); else _explicitNullProperties?.Remove("trustee"); } }
+        public bool? Trustee { get => _explicitNullValueTrustee; set { _explicitNullValueTrustee = value; AdditionalData?.Remove("trustee"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trustee"); else _explicitNullProperties?.Remove("trustee"); } }
         private bool? _explicitNullValueTrustee = default!;
         /// <summary>Set to true will attempt to purchase/enable the whois privacy as part of the transfer. An extra cost may apply. Default: false.</summary>
-        public bool? WhoisPrivacy { get => _explicitNullValueWhoisPrivacy; set { _explicitNullValueWhoisPrivacy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whois_privacy"); else _explicitNullProperties?.Remove("whois_privacy"); } }
+        public bool? WhoisPrivacy { get => _explicitNullValueWhoisPrivacy; set { _explicitNullValueWhoisPrivacy = value; AdditionalData?.Remove("whois_privacy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whois_privacy"); else _explicitNullProperties?.Remove("whois_privacy"); } }
         private bool? _explicitNullValueWhoisPrivacy = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.DNSimple.OpenApiClient.Models.DomainTransferRequest"/> and sets the default values.
