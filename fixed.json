@@ -264,6 +264,17 @@
           "400": {
             "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
+          },
+          "200": {
+            "description": "Domain created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateDomain201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -507,6 +518,17 @@
           "404": {
             "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
+          },
+          "200": {
+            "description": "Successfully enabled DNSSEC",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EnableDomainDnssec201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -657,6 +679,17 @@
           "404": {
             "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
+          },
+          "200": {
+            "description": "Successfully added delegation signer record",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateDomainDelegationSignerRecord201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -872,6 +905,17 @@
           "404": {
             "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
+          },
+          "200": {
+            "description": "Successfully created new email forward.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateEmailForward201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -1031,6 +1075,17 @@
           "404": {
             "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
+          },
+          "200": {
+            "description": "Successfully initiated the push.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InitiateDomainPush201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -1422,6 +1477,17 @@
           "404": {
             "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
+          },
+          "200": {
+            "description": "Successfully created the certificate purchase order.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PurchaseLetsencryptCertificate201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -1477,6 +1543,17 @@
           "404": {
             "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
+          },
+          "200": {
+            "description": "Successfully requested the issuance of the certificate.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IssueLetsencryptCertificate202Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         }
       }
@@ -1541,6 +1618,17 @@
           "404": {
             "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
+          },
+          "200": {
+            "description": "Successfully created the certificate renewal order.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PurchaseRenewalLetsencryptCertificate201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -1605,6 +1693,17 @@
           "404": {
             "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
+          },
+          "200": {
+            "description": "Successfully requested the issuance of the certificate renewal.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IssueRenewalLetsencryptCertificate202Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         }
       }
@@ -1845,6 +1944,17 @@
           "400": {
             "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
+          },
+          "200": {
+            "description": "Domain successfully registered",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegisterDomain201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -1950,6 +2060,17 @@
           "400": {
             "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
+          },
+          "200": {
+            "description": "Domain transfer created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransferDomain201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -2058,6 +2179,17 @@
           "404": {
             "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
+          },
+          "200": {
+            "description": "Domain transfer cancellation accepted and queued for processing.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CancelDomainTransfer202Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         }
       }
@@ -2108,6 +2240,17 @@
           "400": {
             "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
+          },
+          "200": {
+            "description": "Domain renewal created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RenewDomain201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -2221,6 +2364,17 @@
           "404": {
             "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
+          },
+          "200": {
+            "description": "Domain restore created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RestoreDomain201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -2614,6 +2768,17 @@
           "404": {
             "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
+          },
+          "200": {
+            "description": "Successfully locked the domain.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EnableDomainTransferLock201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -2928,6 +3093,17 @@
           "400": {
             "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
+          },
+          "200": {
+            "description": "Primary Server created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreatePrimaryServer201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -3156,6 +3332,17 @@
           "400": {
             "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
+          },
+          "200": {
+            "description": "Secondary Zone created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateSecondaryZone201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -3505,6 +3692,17 @@
           "404": {
             "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
+          },
+          "200": {
+            "description": "Successfully created zone record.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateZoneRecord201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -3958,6 +4156,17 @@
           "400": {
             "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
+          },
+          "200": {
+            "description": "Successfully created contact.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateContact201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -4201,6 +4410,20 @@
           "400": {
             "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
+          },
+          "200": {
+            "description": "Successfully changed the contact.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateRegistrantChangeSuccessResponse"
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/CreateRegistrantChange201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -4339,6 +4562,17 @@
           "404": {
             "description": "The requested resource doesn\u0027t exist.",
             "$ref": "#/components/responses/404"
+          },
+          "200": {
+            "description": "The registrant change is cancelling.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteRegistrantChange202Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         }
       }
@@ -4632,6 +4866,17 @@
           "400": {
             "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
+          },
+          "200": {
+            "description": "Successfully created a template.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateTemplate201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -4849,6 +5094,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Successfully create a template record.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateTemplateRecord201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -5170,6 +5426,17 @@
           "400": {
             "description": "A required parameter is missing or the request is invalid.",
             "$ref": "#/components/responses/400"
+          },
+          "200": {
+            "description": "Successfully created a webhook.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateWebhook201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "callbacks": {
