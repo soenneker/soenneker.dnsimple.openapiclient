@@ -15,10 +15,6 @@
     {
       "url": "https://api.dnsimple.com/v2",
       "description": "DNSimple Production API"
-    },
-    {
-      "url": "https://api.sandbox.dnsimple.com/v2",
-      "description": "DNSimple Sandbox API used for testing"
     }
   ],
   "paths": {
@@ -5621,30 +5617,6 @@
   },
   "components": {
     "schemas": {
-      "Date": {
-        "type": "string",
-        "description": "A date value formatted as ISO 8601.",
-        "format": "date",
-        "example": "2010-01-01"
-      },
-      "DateTime": {
-        "type": "string",
-        "description": "A date-time value formatted as ISO 8601.",
-        "format": "date-time",
-        "example": "2010-01-01T01:00:00Z"
-      },
-      "DateTimeCreatedAt": {
-        "type": "string",
-        "description": "A date-time value, representing when the entry was created, formatted as ISO 8601.",
-        "format": "date-time",
-        "example": "2010-01-01T01:00:00Z"
-      },
-      "DateTimeUpdatedAt": {
-        "type": "string",
-        "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
-        "format": "date-time",
-        "example": "2010-01-01T01:00:00Z"
-      },
       "NullableDate": {
         "type": [
           "null",
@@ -5741,30 +5713,6 @@
           "updated_at": "2016-06-09T20:03:39Z"
         }
       },
-      "WebhookAccount": {
-        "required": [
-          "id",
-          "display",
-          "identifier"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer"
-          },
-          "display": {
-            "type": "string"
-          },
-          "identifier": {
-            "type": "string"
-          }
-        },
-        "example": {
-          "id": 1,
-          "display": "Personal",
-          "identifier": "example@example.com"
-        }
-      },
       "AccountIdentityProvider": {
         "required": [
           "organization_identifier"
@@ -5822,25 +5770,6 @@
             "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
             "format": "date-time",
             "example": "2010-01-01T01:00:00Z"
-          }
-        }
-      },
-      "Actor": {
-        "required": [
-          "id",
-          "identifier",
-          "pretty"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer"
-          },
-          "identifier": {
-            "type": "string"
-          },
-          "pretty": {
-            "type": "string"
           }
         }
       },
@@ -5963,9 +5892,6 @@
           }
         },
         "description": "Client request error for batch change of zone records"
-      },
-      "BillingSettings": {
-        "type": "object"
       },
       "Certificate": {
         "required": [
@@ -6488,9 +6414,6 @@
           "trustee": true
         }
       },
-      "DomainNameServer": {
-        "type": "string"
-      },
       "DomainPrices": {
         "required": [
           "domain",
@@ -6885,12 +6808,12 @@
           "alias_email": {
             "type": "string",
             "description": "The receiving email recipient.",
-            "format": "email"
+            "x-client-original-format": "email"
           },
           "destination_email": {
             "type": "string",
             "description": "The email recipient the messages are delivered to.",
-            "format": "email"
+            "x-client-original-format": "email"
           },
           "created_at": {
             "type": "string",
@@ -7602,15 +7525,6 @@
         },
         "description": "Payload for domain.state_change."
       },
-      "EventEmailForwardActivate": {
-        "type": "object",
-        "properties": {
-          "email_forward": {
-            "$ref": "#/components/schemas/EmailForward"
-          }
-        },
-        "description": "Payload for email_forward.activate"
-      },
       "EventEmailForwardCreate": {
         "required": [
           "email_forward"
@@ -7622,18 +7536,6 @@
           }
         },
         "description": "Payload for email_forward.create"
-      },
-      "EventEmailForwardDeactivate": {
-        "required": [
-          "email_forward"
-        ],
-        "type": "object",
-        "properties": {
-          "email_forward": {
-            "$ref": "#/components/schemas/EmailForward"
-          }
-        },
-        "description": "Payload for email_forward.deactivate"
       },
       "EventEmailForwardDelete": {
         "required": [
@@ -8175,16 +8077,6 @@
             }
           ],
           "title": "UK Legal Type"
-        }
-      },
-      "TradeExtendedAttributes": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        },
-        "example": {
-          "x-fi-registrant-idnumber": "1234",
-          "x-cat-accept-highly-regulated-tac": "1"
         }
       },
       "ExtendedAttributeOption": {
@@ -9156,12 +9048,6 @@
         "type": "integer",
         "description": "TLD types are: * 1 - gTLD (global TLD) * 2 - ccTLD (country-code TLD) * 3 - newTLD (new global TLD)"
       },
-      "Ttl": {
-        "minimum": 0,
-        "type": "integer",
-        "description": "The Time To Live (TTL) value for the entry, in seconds.",
-        "default": 3600
-      },
       "User": {
         "required": [
           "id",
@@ -9247,7 +9133,7 @@
           },
           "url": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           },
           "suppressed_at": {
             "description": "A nullable date-time value. The value can be null, when present the value is formatted according to the ISO 8601 specification.",
@@ -9975,18 +9861,6 @@
           }
         }
       },
-      "DomainNameServersRequest": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        },
-        "example": [
-          "ns1.dnsimple-edge.com",
-          "ns2.dnsimple-edge.net",
-          "ns3.dnsimple-edge.io",
-          "ns4.dnsimple-edge.org"
-        ]
-      },
       "ZoneNsRecordsUpdateRequest": {
         "anyOf": [
           {
@@ -10112,7 +9986,7 @@
           "destination_email": {
             "type": "string",
             "description": "The email recipient the messages are delivered to.",
-            "format": "email"
+            "x-client-original-format": "email"
           }
         },
         "example": {
@@ -10303,18 +10177,6 @@
           "ttl": 600,
           "priority": 10
         }
-      },
-      "VanityNameServersRequest": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        },
-        "example": [
-          "ns1.example.com",
-          "ns2.example.com",
-          "ns3.example.com",
-          "ns4.example.com"
-        ]
       },
       "ZoneRecordCreateRequest": {
         "required": [
@@ -10844,36 +10706,6 @@
           }
         }
       },
-      "RegistrantChangeCreateRequestDomainId": {
-        "oneOf": [
-          {
-            "type": "string"
-          },
-          {
-            "type": "integer"
-          }
-        ]
-      },
-      "RegistrantChangeCreateRequestContactId": {
-        "oneOf": [
-          {
-            "type": "string"
-          },
-          {
-            "type": "integer"
-          }
-        ]
-      },
-      "RegistrantChangeCheckRequestDomainId": {
-        "oneOf": [
-          {
-            "type": "string"
-          },
-          {
-            "type": "integer"
-          }
-        ]
-      },
       "RegistrantChangeCheckRequestContactId": {
         "oneOf": [
           {
@@ -11038,20 +10870,6 @@
           }
         }
       },
-      "DomainRegisterRequestExtendedAttributes": {
-        "type": "object",
-        "description": "Required for TLDs that require extended attributes."
-      },
-      "DomainTransferRequestExtendedAttributes": {
-        "type": "object",
-        "description": "Required for TLDs that require extended attributes."
-      },
-      "Value400ResponseErrors": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Value400ResponseErrorsAdditionalProperties"
-        }
-      },
       "BatchChangeZoneRecordsInvalidRequestErrorErrorsCreatesItem": {
         "required": [
           "index",
@@ -11125,36 +10943,6 @@
             }
           }
         }
-      },
-      "BatchChangeZoneRecordsInvalidRequestErrorErrorsCreatesItemErrors": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "description": "Optional detailed validation errors"
-      },
-      "BatchChangeZoneRecordsInvalidRequestErrorErrorsUpdatesItemErrors": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "description": "Optional detailed validation errors"
-      },
-      "BatchChangeZoneRecordsInvalidRequestErrorErrorsDeletesItemErrors": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "description": "Optional detailed validation errors"
       },
       "Whoami200Response": {
         "required": [
@@ -11611,7 +11399,7 @@
         "properties": {
           "url": {
             "type": "string",
-            "format": "uri"
+            "x-client-original-format": "uri"
           }
         }
       },
@@ -11633,10 +11421,6 @@
             "$ref": "#/components/schemas/Pagination"
           }
         }
-      },
-      "ExamplePayload": {
-        "type": "object",
-        "description": "Placeholder schema for path example refs"
       },
       "ListAccounts200Response": {
         "required": [
@@ -15460,5 +15244,229 @@
   ],
   "externalDocs": {
     "url": "https://developer.dnsimple.com"
+  },
+  "x-client-original-servers": [
+    {
+      "url": "https://api.dnsimple.com/v2",
+      "description": "DNSimple Production API"
+    },
+    {
+      "url": "https://api.sandbox.dnsimple.com/v2",
+      "description": "DNSimple Sandbox API used for testing"
+    }
+  ],
+  "x-client-unused-schemas": {
+    "Date": {
+      "type": "string",
+      "description": "A date value formatted as ISO 8601.",
+      "format": "date",
+      "example": "2010-01-01"
+    },
+    "DateTime": {
+      "type": "string",
+      "description": "A date-time value formatted as ISO 8601.",
+      "format": "date-time",
+      "example": "2010-01-01T01:00:00Z"
+    },
+    "DateTimeCreatedAt": {
+      "type": "string",
+      "description": "A date-time value, representing when the entry was created, formatted as ISO 8601.",
+      "format": "date-time",
+      "example": "2010-01-01T01:00:00Z"
+    },
+    "DateTimeUpdatedAt": {
+      "type": "string",
+      "description": "A date-time value, representing when the entry was last updated, formatted as ISO 8601.",
+      "format": "date-time",
+      "example": "2010-01-01T01:00:00Z"
+    },
+    "WebhookAccount": {
+      "required": [
+        "id",
+        "display",
+        "identifier"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "display": {
+          "type": "string"
+        },
+        "identifier": {
+          "type": "string"
+        }
+      },
+      "example": {
+        "id": 1,
+        "display": "Personal",
+        "identifier": "example@example.com"
+      }
+    },
+    "Actor": {
+      "required": [
+        "id",
+        "identifier",
+        "pretty"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "identifier": {
+          "type": "string"
+        },
+        "pretty": {
+          "type": "string"
+        }
+      }
+    },
+    "BillingSettings": {
+      "type": "object"
+    },
+    "DomainNameServer": {
+      "type": "string"
+    },
+    "EventEmailForwardActivate": {
+      "type": "object",
+      "properties": {
+        "email_forward": {
+          "$ref": "#/components/schemas/EmailForward"
+        }
+      },
+      "description": "Payload for email_forward.activate"
+    },
+    "EventEmailForwardDeactivate": {
+      "required": [
+        "email_forward"
+      ],
+      "type": "object",
+      "properties": {
+        "email_forward": {
+          "$ref": "#/components/schemas/EmailForward"
+        }
+      },
+      "description": "Payload for email_forward.deactivate"
+    },
+    "TradeExtendedAttributes": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "example": {
+        "x-fi-registrant-idnumber": "1234",
+        "x-cat-accept-highly-regulated-tac": "1"
+      }
+    },
+    "Ttl": {
+      "minimum": 0,
+      "type": "integer",
+      "description": "The Time To Live (TTL) value for the entry, in seconds.",
+      "default": 3600
+    },
+    "DomainNameServersRequest": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "example": [
+        "ns1.dnsimple-edge.com",
+        "ns2.dnsimple-edge.net",
+        "ns3.dnsimple-edge.io",
+        "ns4.dnsimple-edge.org"
+      ]
+    },
+    "VanityNameServersRequest": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "example": [
+        "ns1.example.com",
+        "ns2.example.com",
+        "ns3.example.com",
+        "ns4.example.com"
+      ]
+    },
+    "RegistrantChangeCreateRequestDomainId": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "RegistrantChangeCreateRequestContactId": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "RegistrantChangeCheckRequestDomainId": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "DomainRegisterRequestExtendedAttributes": {
+      "type": "object",
+      "description": "Required for TLDs that require extended attributes."
+    },
+    "DomainTransferRequestExtendedAttributes": {
+      "type": "object",
+      "description": "Required for TLDs that require extended attributes."
+    },
+    "Value400ResponseErrors": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Value400ResponseErrorsAdditionalProperties"
+      }
+    },
+    "BatchChangeZoneRecordsInvalidRequestErrorErrorsCreatesItemErrors": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "description": "Optional detailed validation errors"
+    },
+    "BatchChangeZoneRecordsInvalidRequestErrorErrorsUpdatesItemErrors": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "description": "Optional detailed validation errors"
+    },
+    "BatchChangeZoneRecordsInvalidRequestErrorErrorsDeletesItemErrors": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "description": "Optional detailed validation errors"
+    },
+    "ExamplePayload": {
+      "type": "object",
+      "description": "Placeholder schema for path example refs"
+    }
   }
 }
