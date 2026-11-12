@@ -10760,7 +10760,7 @@
         "properties": {
           "type": {
             "type": "string",
-            "description": "Notice family. New values may be added at any time; treat an unknown value as informational and fall back to displaying \u0060message\u0060 verbatim. Values currently emitted:\n- \u0060de_holder_verification_notice\u0060\n- \u0060de_holder_verification_suspension\u0060\n- \u0060se_registrant_verification_notice\u0060\n- \u0060icann_email_verification_notice\u0060\n- \u0060icann_email_verification_suspension\u0060\n- \u0060icann_email_verification_reactivation\u0060\n"
+            "description": "Notice family. New values may be added at any time; treat an unknown value as informational and fall back to displaying \u0060message\u0060 verbatim. Values currently emitted:\n- \u0060de_holder_verification_notice\u0060\n- \u0060de_holder_verification_suspension\u0060\n- \u0060se_registrant_verification_notice\u0060\n- \u0060icann_email_verification_notice\u0060\n- \u0060icann_email_verification_suspension\u0060\n- \u0060icann_email_verification_reactivation\u0060\n- \u0060au_eligibility_notice\u0060\n- \u0060au_eligibility_verified\u0060: the domain is eligible again and an earlier \u0060au_eligibility_notice\u0060 no longer applies; no action required.\n"
           },
           "message": {
             "type": "string",
@@ -12795,7 +12795,8 @@
           "transfer_out",
           "renewal",
           "restoration",
-          "registration_removed"
+          "registration_removed",
+          "registry_deletion"
         ],
         "type": "string",
         "x-ms-enum": {
@@ -12829,6 +12830,10 @@
             {
               "value": "registration_removed",
               "name": "RegistrationRemoved"
+            },
+            {
+              "value": "registry_deletion",
+              "name": "RegistryDeletion"
             }
           ]
         }
