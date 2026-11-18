@@ -143,7 +143,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(14)
             {
                 { "alternate_names", n => { AlternateNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "authority_identifier", n => { var parsed = n.GetEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.CertificateAuthorityIdentifier>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAuthorityIdentifier = default; _explicitNullProperties?.Remove("authority_identifier"); AdditionalData["authority_identifier"] = unknown; } else { AuthorityIdentifier = parsed; AdditionalData.Remove("authority_identifier"); } } },

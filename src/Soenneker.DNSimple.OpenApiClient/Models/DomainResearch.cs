@@ -85,7 +85,7 @@ namespace Soenneker.DNSimple.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "availability", n => { var parsed = n.GetEnumValue<global::Soenneker.DNSimple.OpenApiClient.Models.DomainResearchAvailability>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAvailability = default; _explicitNullProperties?.Remove("availability"); AdditionalData["availability"] = unknown; } else { Availability = parsed; AdditionalData.Remove("availability"); } } },
                 { "domain", n => { Domain = n.GetStringValue(); } },
